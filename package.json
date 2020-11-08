@@ -1,0 +1,30 @@
+{
+  "name": "projet-final-prog-internet-2",
+  "version": "1.0.0",
+  "description": "Site Web pour le projet final du cours de Programmagtion Internet 2",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "cross-env PORT=1337 npm-run-all -p nodemon browser-sync",
+    "nodemon": "nodemon --ignore public/ server.js",
+    "browser-sync": "browser-sync start --config './browser-sync.js'"
+  },
+  "author": "Gabriel Bellemare",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.5.3",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "jquery": "^3.5.1",
+    "popper.js": "^1.16.1",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.12",
+    "cross-env": "^7.0.2",
+    "nodemon": "^2.0.4",
+    "npm-run-all": "^4.1.5"
+  }
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Required meta tags-->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maison Samorn</title>
+
+  <!--CDN-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
+
+  <!--Stylesheets-->
+  <link href="css/normalize.css" rel="stylesheet" />
+  <link href="css/food-menu.css" rel="stylesheet" />
+  <link href="css/nav-bar.css" rel="stylesheet" />
+  <link href="css/social-bar.css" rel="stylesheet" />
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+  <header>
+    <div class="nav-container">
+      <div class="top-nav">
+        <div class="emplacement">
+          <img src="./img/nav-bar/map-pinpoint.svg" alt="Find your location" />
+          <a href="#">Trouver votre emplacement</a>
+        </div>
+        <div class="menu-langues">
+          <span>Découvrer notre menu</span>
+          <div class="langues">
+            <a href="#">EN</a>
+            <span> |</span>
+            <a href="#">FR</a>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-nav">
+        <div class="logo">
+          <span class="logo-text">MAISON SAMORN</span>
+          <img src="./img/nav-bar/chopsticks.png" />
+        </div>
+        <div class="bottom-nav-right" id="myLink">
+          <a href="#">Menu</a>
+          <a href="#">À propos</a>
+          <a href="#" id="connecterCompte">Se connecter</a>
+          <a href="#" class="spaceBarFix">/</a>
+          <a href="#" id="inscriptionCompte">S'inscrire</a>
+          <a href="#" id="logoBonhomme">
+            <i class="far fa-user"></i>
+          </a>
+        </div>
+        <div class="bottom-nav-menu-burger">
+          <a href="#" id="menuBurger">
+            <i class="fas fa-bars"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="social-bar">
+      <ul>
+        <li>
+          <a href="https://www.facebook.com/Maison-Samorn-433974266640265/">
+            <i class="fab fa-facebook-f"></i>
+            <span>Facebook</span>
+          </a>
+        </li>
+        <li>
+          <a href="https://instagram.com/maisonsamorn?igshid=15cg3s9ymoq05">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-phone"></i>
+            <span>(111)111-1111</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <i class="fas fa-envelope"></i>
+            <span>test123@gmail.com</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <!-- <div id="MenuTitre">
+      <p id="titre">Menu</p>
+    </div> -->
+    <div class="menuCollapse">
+      <button class="collapsible">▸ Soupe - Soup</button>
+      <div class="content" id="contentCollapse1">
+        <div class="itemConteneur">
+          <div class="contientItemDiv">
+            <div class="contientImageDiv">
+              <img src="img/food-pictures/tom-yum-goong.jpg" alt="tom yum crevette" />
+            </div>
+            <div class="itemDetails">
+              <div class="itemTitre">
+                <p>Tom Yum Goong 7$</p>
+              </div>
+              <p>Bouillon a la citronnelle aux crevettes/</p>
+              <p>Hot and sour lemongrass soup with shrimps</p>
+            </div>
+          </div>
+          <div class="contientItemDiv">
+            <div class="contientImageDiv">
+              <img src="img/food-pictures/tom-kha-goong.jpg" alt="tom kha crevette" />
+            </div>
+            <div class="itemDetails">
+              <div class="itemTitre">
+                <p>Tom Kha Goong 7$</p>
+              </div>
+              <p>Potage au lait de noix de coco aux crevettes/</p>
+              <p>Coconut milk soup with shrimps</p>
+            </div>
+          </div>
+          <div class="contientItemDiv">
+            <div class="contientImageDiv">
+              <img src="img/food-pictures/tom-yum-gai.jpg" alt="tom yum poulet" />
+            </div>
+            <div class="itemDetails">
+              <div class="itemTitre">
+                <p>Tom Kha Goong 6$</p>
+              </div>
+              <p>Bouillon a la citronnelle au poulet/</p>
+              <p>Hot and sour lemongrass soup with chicken</p>
+            </div>
+          </div>
+          <div class="contientItemDiv">
+            <div class="contientImageDiv">
+              <img src="img/food-pictures/tom-kha-gai.jpg" alt="tom kha poulet" />
+            </div>
+            <div class="itemDetails">
+              <div class="itemTitre">
+                <p>Tom Kha Gai 6$</p>
+              </div>
+              <p>Bouillon a la citronnelle au poulet/</p>
+              <p>Coconut milk soup with chicken</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="collapsible">▸ Entrées - Appetizer</button>
+      <div class="content" id="contentCollapse2">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <button class="collapsible">▸ Salades - Salads</button>
+      <div class="content" id="contentCollapse3">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <button class="collapsible">▸ Fruit De Mer - Seafood</button>
+      <div class="content" id="contentCollapse4">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <button class="collapsible">▸ Cari - Curry</button>
+      <div class="content" id="contentCollapse5">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <button class="collapsible">▸ Sautés - Stir-Fries</button>
+      <div class="content" id="contentCollapse6">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <button class="collapsible">▸ Riz Frit - Fried Rice</button>
+      <div class="content" id="contentCollapse7">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+      <button class="collapsible">▸ Nouilles - Noodles</button>
+      <div class="content" id="contentCollapse8">
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+      </div>
+    </div>
+  </main>
+  <footer></footer>
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+  <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
+  <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,101 @@
+/*========================Fonts========================*/
+@font-face {
+  font-family: "asianFont";
+  src: url("../font/navbar/Moyko.ttf");
+  font-style: normal;
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: itemTitle;
+  src: url(../font/OpenSansCondensed-Bold.ttf);
+}
+
+/*========================Background Cover========================*/
+main {
+  background: url("../img/food-pictures/soupe1.jpg") no-repeat center center
+    fixed;
+  filter: brightness(90%);
+  background-size: cover;
+}
+
+/*========================Menu Title========================*/
+#MenuTitre {
+  padding-top: 5em;
+  padding-bottom: 2em;
+
+  text-align: center;
+}
+#titre {
+  margin: 0 auto;
+  font-family: asianFont;
+  font-weight: bold;
+  font-size: 10em;
+  color: white;
+  text-shadow: 1.5px 1.5px 2px black;
+}
+
+/*========================Food Menu========================*/
+.menuCollapse {
+  
+  padding-left: 10%;
+  padding-right: 10%;
+  
+}
+.collapsible {
+  background-color: rgba(0, 0, 0, 0.63);
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 1em;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 20px;
+  font-family: itemTitle;
+}
+
+.active,
+.collapsible:hover {
+  background-color: rgba(0, 0, 0, 0.808);
+}
+
+.content {
+  display: none;
+  padding: 1.8em 2em;
+  overflow: hidden;
+  transition: 0.3s ease-out;
+  background-color: #838383d0;
+}
+
+.itemConteneur {
+  display: flex;
+  justify-content: center;
+}
+.contientItemDiv {
+  padding: 0 1em;
+  width: 25%;
+}
+
+.contientImageDiv img {
+  width: 100%;
+  object-fit: cover;
+}
+.itemDetails {
+  width: 100%;
+}
+.itemDetails p {
+  width: 100%;
+  font-weight: bold;
+  text-align: left;
+  margin: 0 auto;
+  font-family: itemTitle;
+  font-size: 0.9em;
+}
+.itemTitre p {
+  width: 100%;
+  padding-bottom: 0.5em;
+  font-size: 1.2em;
+  font-family: itemTitle;
+}
