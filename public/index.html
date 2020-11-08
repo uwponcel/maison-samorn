@@ -1,232 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!--Required meta tags-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Samorn</title>
 
-<head>
-  <!--Required meta tags-->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *"
-    /> -->
+    <!--Font Awesome Icons-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    />
 
-  <title>Maison Samorn</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
 
-  <!--Font Awesome Icons-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-  <!--Stylesheets-->
-  <link href="css/normalize.css" rel="stylesheet" />
-  <link href="css/food-menu.css" rel="stylesheet" />
-  <link href="css/nav-bar.css" rel="stylesheet" />
-  <link href="css/social-bar.css" rel="stylesheet" />
-  <link href="css/inscription-form.css" rel="stylesheet" />
-</head>
+    <!--Stylesheets-->
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/food-menu.css" rel="stylesheet" />
+    <link href="css/nav-bar.css" rel="stylesheet" />
+    <link href="css/social-bar.css" rel="stylesheet" />
+    <link href="css/inscription-form.css" rel="stylesheet" />
+  </head>
 
-<body>
-  <header>
-    <!--Navigation-->
-    <div class="nav-container">
-      <div class="top-nav">
-        <div class="emplacement">
-          <img src="./img/nav-bar/map-pinpoint.svg" alt="Find your location" />
-          <a href="#">Trouver votre emplacement</a>
-        </div>
-        <div class="menu-langues">
-          <span>Découvrer notre menu</span>
-          <div class="langues">
-            <a href="#">EN</a>
-            <span> |</span>
-            <a href="#">FR</a>
+  <body>
+    <header>
+      <!--Navigation-->
+      <div class="nav-container">
+        <div class="top-nav">
+          <div class="emplacement">
+            <img
+              src="./img/nav-bar/map-pinpoint.svg"
+              alt="Find your location"
+            />
+            <a href="#">Trouver votre emplacement</a>
+          </div>
+          <div class="menu-langues">
+            <span>Découvrer notre menu</span>
+            <div class="langues">
+              <a href="#">EN</a>
+              <span> |</span>
+              <a href="#">FR</a>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bottom-nav">
-        <div class="logo">
-          <span class="logo-text">MAISON SAMORN</span>
-          <img src="./img/nav-bar/chopsticks.png" />
-        </div>
-        <div class="bottom-nav-right" id="myLink">
-          <a href="#">Menu</a>
-          <a href="#">À propos</a>
-          <a href="#" id="connectButton">Se connecter</a>
-          <a href="#" class="spaceBarFix">/</a>
-          <a href="#" id="signUpButton">S'inscrire</a>
-          <a href="#" id="logoBonhomme">
-            <i class="far fa-user"></i>
-          </a>
-        </div>
-        <div class="bottom-nav-menu-burger">
-          <a href="#" id="menuBurger">
-            <i class="fas fa-bars"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-    <!--Modal Signup Form-->
-    <div id="id01" class="modal">
-      <form class="modal-content" action="...">
-        <div class="container">
-          <h1>Sign Up</h1>
-          <p>Veuillez remplir ce formulaire pour créer un compte.</p>
-          <hr />
-          <label><b>Email</b></label>
-          <input type="text" placeholder="Entrez votre email" name="email" required />
-
-          <label><b>Mot de passe</b></label>
-          <input type="password" placeholder="Entrer un mot de passe" name="psw" required />
-
-          <label><b>Confirmation Mot de passe</b></label>
-          <input type="password" placeholder="Répéter le mot de passe" name="psw-repeat" required />
-
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom: 15px" />
-            Se souvenir de moi
-          </label>
-
-          <p>
-            En créant un compte, vous acceptez nos
-            <a href="#" style="color: dodgerblue">Conditions et Confidentialité</a>.
-          </p>
-
-          <div class="clearfix">
-            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">
-              Cancel
-            </button>
-            <button type="submit" class="signupbtn">Sign Up</button>
+        <div class="bottom-nav">
+          <div class="logo">
+            <span class="logo-text">MAISON SAMORN</span>
+            <img src="./img/nav-bar/chopsticks.png" />
           </div>
-        </div>
-      </form>
-    </div>
-  </header>
-  <main>
-    <!--Social Icons-->
-    <div class="social-bar">
-      <ul>
-        <li>
-          <a href="https://www.facebook.com/Maison-Samorn-433974266640265/">
-            <i class="fab fa-facebook-f"></i>
-            <span>Facebook</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://instagram.com/maisonsamorn?igshid=15cg3s9ymoq05">
-            <i class="fab fa-instagram"></i>
-            <span>Instagram</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-phone"></i>
-            <span>(111)111-1111</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-envelope"></i>
-            <span>test123@gmail.com</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- <div id="MenuTitre">
-      <p id="titre">Menu</p>
-    </div> -->
-
-    <!--Food Menu Container-->
-    <div class="container my-4">
-      <!--Accordion wrapper-->
-      <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
-        <!-- Accordion card -->
-        <div class="card">
-          <!--Accordion card Header -->
-          <div class="card-header" role="tab" id="headingOne1">
-            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1" aria-expanded="true"
-              aria-controls="collapseOne1">
-              <h5 class="mb-0">
-                Entrées - Appetizer
-                <i class="fas fa-angle-down rotate-icon"></i>
-              </h5>
+          <div class="bottom-nav-right" id="myLink">
+            <a href="#">Menu</a>
+            <a href="#">À propos</a>
+            <a href="#" id="connectButton">Se connecter</a>
+            <a href="#" class="spaceBarFix">/</a>
+            <a href="#" id="signUpButton">S'inscrire</a>
+            <a href="#" id="logoBonhomme">
+              <i class="far fa-user"></i>
             </a>
           </div>
-          <!--Accordion card Body -->
-          <div id="collapseOne1" class="collapse show" role="tabpanel" aria-labelledby="headingOne1"
-            data-parent="#accordionEx">
+          <div class="bottom-nav-menu-burger">
+            <a href="#" id="menuBurger">
+              <i class="fas fa-bars"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!--Modal Signup Form-->
+      <div id="id01" class="modal">
+        <form class="modal-content" action="...">
+          <div class="container">
+            <h1>Sign Up</h1>
+            <p>Veuillez remplir ce formulaire pour créer un compte.</p>
+            <hr />
+            <label><b>Email</b></label>
+            <input
+              type="text"
+              placeholder="Entrez votre email"
+              name="email"
+              required
+            />
 
-            <!-- Card Element 1 -->
-            <div class="card element" style="width: 15rem">
-              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Tom Yum Goong 7$</h5>
-                <p class="card-text">
-                  Bouillon a la citronnelle aux crevettes/
-                </p>
-                <p class="card-text">
-                  Hot and sour lemongrass soup with shrimps
-                </p>
-                <button class="btn btn-primary">Ajouter a la commande</button>
-              </div>
+            <label><b>Mot de passe</b></label>
+            <input
+              type="password"
+              placeholder="Entrer un mot de passe"
+              name="psw"
+              required
+            />
+
+            <label><b>Confirmation Mot de passe</b></label>
+            <input
+              type="password"
+              placeholder="Répéter le mot de passe"
+              name="psw-repeat"
+              required
+            />
+
+            <label>
+              <input
+                type="checkbox"
+                checked="checked"
+                name="remember"
+                style="margin-bottom: 15px"
+              />
+              Se souvenir de moi
+            </label>
+
+            <p>
+              En créant un compte, vous acceptez nos
+              <a href="#" style="color: dodgerblue"
+                >Conditions et Confidentialité</a
+              >.
+            </p>
+
+            <div class="clearfix">
+              <button
+                type="button"
+                onclick="document.getElementById('id01').style.display='none'"
+                class="cancelbtn"
+              >
+                Cancel
+              </button>
+              <button type="submit" class="signupbtn">Sign Up</button>
             </div>
+          </div>
+        </form>
+      </div>
+    </header>
+    <main>
+      <!--Social Icons-->
+      <div class="social-bar">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/Maison-Samorn-433974266640265/">
+              <i class="fab fa-facebook-f"></i>
+              <span>Facebook</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/maisonsamorn?igshid=15cg3s9ymoq05">
+              <i class="fab fa-instagram"></i>
+              <span>Instagram</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-phone"></i>
+              <span>(111)111-1111</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+              <span>test123@gmail.com</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="MenuTitre">
+      <p id="titre">Menu</p>
+    </div>
 
-            <!-- Card Element 2 -->
-            <div class="card element" style="width: 15rem">
-              <img src="img/food-pictures/tom-kha-goong.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Tom Kha Goong 7$</h5>
-                <p class="card-text">
-                  Potage au lait de noix de coco aux crevettes/
-                </p>
-                <p class="card-text">Coconut milk soup with shrimps</p>
-                <button class="btn btn-primary">Ajouter a la commande</button>
-              </div>
+      <!--Food Menu Container-->
+      <div class="container my-4">
+        <!--Accordion wrapper-->
+        <div
+          class="accordion md-accordion"
+          id="accordionEx"
+          role="tablist"
+          aria-multiselectable="true"
+        >
+          <!-- Accordion card -->
+          <div class="card">
+            <!--Accordion card Header -->
+            <div class="card-header" role="tab" id="headingOne1">
+              <a
+                data-toggle="collapse"
+                data-parent="#accordionEx"
+                href="#collapseOne1"
+                aria-expanded="true"
+                aria-controls="collapseOne1"
+              >
+                <h5 class="mb-0">
+                  Entrées - Appetizer
+                  <i class="fas fa-angle-down rotate-icon"></i>
+                </h5>
+              </a>
             </div>
-
-            <!-- Card Element 3 -->
-            <div class="card element" style="width: 15rem">
-              <img src="img/food-pictures/tom-yum-gai.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Tom Yum Gai 6$</h5>
-                <p class="card-text">
-                  Bouillon a la citronnelle aux poulets/
-                </p>
-                <p class="card-text">
-                  Hot and sour lemongrass soup with chicken
-                </p>
-                <button class="btn btn-primary">Ajouter a la commande</button>
+            <!--Accordion card Body -->
+            <div
+              id="collapseOne1"
+              class="collapse show"
+              role="tabpanel"
+              aria-labelledby="headingOne1"
+              data-parent="#accordionEx"
+            >
+              <!-- Card Element 1 -->
+              <div class="card element" style="width: 15rem">
+                <img
+                  src="img/food-pictures/tom-yum-goong.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Tom Yum Goong 7$</h5>
+                  <p class="card-text">
+                    Bouillon a la citronnelle aux crevettes/
+                  </p>
+                  <p class="card-text">
+                    Hot and sour lemongrass soup with shrimps
+                  </p>
+                  <button class="btn btn-primary">Ajouter a la commande</button>
+                </div>
               </div>
-            </div>
 
-            <!-- Card Element 4 -->
-            <div class="card element" style="width: 15rem">
-              <img src="img/food-pictures/tom-kha-gai.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title">Tom Kha Gai 6$</h5>
-                <p class="card-text">
-                  Potage au lait de noix de coco aux poulets/
-                </p>
-                <p class="card-text">Coconut milk soup with chicken</p>
-                <button class="btn btn-primary">Ajouter a la commande</button>
+              <!-- Card Element 2 -->
+              <div class="card element" style="width: 15rem">
+                <img
+                  src="img/food-pictures/tom-kha-goong.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Tom Kha Goong 7$</h5>
+                  <p class="card-text">
+                    Potage au lait de noix de coco aux crevettes/
+                  </p>
+                  <p class="card-text">Coconut milk soup with shrimps</p>
+                  <button class="btn btn-primary">Ajouter a la commande</button>
+                </div>
+              </div>
+
+              <!-- Card Element 3 -->
+              <div class="card element" style="width: 15rem">
+                <img
+                  src="img/food-pictures/tom-yum-gai.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Tom Yum Gai 6$</h5>
+                  <p class="card-text">
+                    Bouillon a la citronnelle aux poulets/
+                  </p>
+                  <p class="card-text">
+                    Hot and sour lemongrass soup with chicken
+                  </p>
+                  <button class="btn btn-primary">Ajouter a la commande</button>
+                </div>
+              </div>
+
+              <!-- Card Element 4 -->
+              <div class="card element" style="width: 15rem">
+                <img
+                  src="img/food-pictures/tom-kha-gai.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title">Tom Kha Gai 6$</h5>
+                  <p class="card-text">
+                    Potage au lait de noix de coco aux poulets/
+                  </p>
+                  <p class="card-text">Coconut milk soup with chicken</p>
+                  <button class="btn btn-primary">Ajouter a la commande</button>
+                </div>
               </div>
             </div>
           </div>
         </div>
-
-
       </div>
-    </div>
-  </main>
-  <footer></footer>
+    </main>
+    <footer></footer>
 
-  <!-- jQuery first, then Popper.js, then Bootstrap JS. -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
-    crossorigin="anonymous"></script>
-  <script src="js/main.js"></script>
-</body>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
+    <script src="js/main.js"></script>
+  </body>
 </html>
