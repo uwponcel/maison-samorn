@@ -36,15 +36,16 @@ main {
 }
 
 /*========================Food Menu========================*/
-.menuCollapse {
-  
-  padding-left: 10%;
-  padding-right: 10%;
-  
-}
-.collapsible {
-  background-color: rgba(0, 0, 0, 0.63);
+.mb-0{
   color: white;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.em .5em;  
+  text-align: left;
+  outline: none;
+}
+.card-header{
+  background-color: rgba(0, 0, 0, 0.63);
   font-weight: bold;
   cursor: pointer;
   padding: 1em;
@@ -53,49 +54,68 @@ main {
   text-align: left;
   outline: none;
   font-size: 20px;
-  font-family: itemTitle;
 }
-
-.active,
-.collapsible:hover {
+.card-header:hover{
   background-color: rgba(0, 0, 0, 0.808);
 }
 
-.content {
-  display: none;
-  padding: 1.8em 2em;
-  overflow: hidden;
-  transition: 0.3s ease-out;
-  background-color: #838383d0;
+.card-header:active{
+  display: block;
+  background-color: rgba(0, 0, 0, 0.808);
 }
-
-.itemConteneur {
+.collapse.show{
   display: flex;
-  justify-content: center;
+  background-color: #83838391;
 }
-.contientItemDiv {
-  padding: 0 1em;
-  width: 25%;
+.card{
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  
+}
+.card-title{
+  font-size: larger;
+  font-weight: 700;
+  margin-bottom: 0.3em;
+  
+}
+.card-text{
+  margin-bottom: 0;
+  font-weight: normal;
+  font-weight: 500;
+}
+.card-body p:last-of-type{
+  padding-bottom: .75em;
+}
+.card-body{
+  padding: 0;
+  
+}
+.element{
+  margin: 1em;
+  padding: .6em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.445);
+  
 }
 
-.contientImageDiv img {
-  width: 100%;
-  object-fit: cover;
+.btn-primary{
+ 
+  float: right;
+  background-color: rgb(238, 98, 4);
+  border: none;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 2px 3px rgba(0, 0, 0, 0.452);
+  font-size: 18px;
+  
 }
-.itemDetails {
-  width: 100%;
+.btn-primary:hover{
+  border: none;
+  background-color: rgb(255, 115, 22);
 }
-.itemDetails p {
-  width: 100%;
-  font-weight: bold;
-  text-align: left;
-  margin: 0 auto;
-  font-family: itemTitle;
-  font-size: 0.9em;
+.btn-primary:active{
+  border: none;
+  background-color: rgb(255, 115, 22);
+  transform: translateY(2px) translateX(1px);
 }
-.itemTitre p {
-  width: 100%;
-  padding-bottom: 0.5em;
-  font-size: 1.2em;
-  font-family: itemTitle;
-}
+
