@@ -1,0 +1,4 @@
+/* Show the modal upfront. */
+.modal-backdrop {
+    z-index: -1;
+  }
