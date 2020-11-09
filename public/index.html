@@ -70,7 +70,7 @@
       </div>
       <!-- Modal Signup Form -->
       <div id="SignUpModal" class="modal">
-        <form class="modal-content">
+        <form class="modal-content" id="largeurModalSignUp">
           <div class="container">
             <h1>S'inscrire</h1>
             <button
@@ -124,11 +124,8 @@
               >.
             </p>
 
-            <div class="clearfix">
-              <button type="button" class="cancelbtn" id="signupCancelButton">
-                Annuler
-              </button>
-              <button type="submit" class="signupbtn">S'inscrire</button>
+            <div class="clearfix">             
+              <button type="submit" id="signupInscrireButton">S'inscrire</button>
             </div>
           </div>
         </form>
@@ -172,6 +169,7 @@
               <div class="md-form mb-5">
                 <input
                   type="email"
+                  placeholder="Votre email"
                   id="Form-email1"
                   class="form-control validate"
                 />
@@ -183,6 +181,7 @@
               <div class="md-form pb-3">
                 <input
                   type="password"
+                  placeholder=" Votre Mot de passe"
                   id="Form-pass1"
                   class="form-control validate"
                 />

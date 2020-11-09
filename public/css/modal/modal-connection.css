@@ -42,10 +42,11 @@
 
 
 #connecterButton {
+    
     background-color:#df5e25;
     color: white;            
     box-shadow: 0 0 5px rgb(250, 92, 0);
-    border-radius: 10px;
+    
 }
 #connecterButton:hover{
     background-color:#b93c06;
@@ -57,7 +58,9 @@
 .close span:hover{
     color:#df5e25;
 }
-
+#Form-email1, #Form-pass1 {
+    margin: 0 ;
+}
 
 
 
