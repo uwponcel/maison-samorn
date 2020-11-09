@@ -23,11 +23,10 @@ main {
 #MenuTitre {
   padding-top: 5em;
   padding-bottom: 2em;
-
   text-align: center;
 }
 #titre {
-  margin: 0 auto;
+  margin: -240px auto 0;
   font-family: asianFont;
   font-weight: bold;
   font-size: 10em;
@@ -36,6 +35,9 @@ main {
 }
 
 /*========================Food Menu========================*/
+a:hover{
+  text-decoration: none;
+}
 .mb-0{
   color: white;
   font-weight: bold;
@@ -65,10 +67,13 @@ main {
 }
 .collapse.show{
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   background-color: #83838391;
 }
 .card{
   border: none;
+  
   background-color: rgba(0, 0, 0, 0);
   
 }
@@ -92,10 +97,15 @@ main {
 }
 .element{
   margin: 1em;
+  max-width: 15em;
+  min-width: 10em;
   padding: .6em;
   color: white;
   background-color: rgba(0, 0, 0, 0.445);
   
+}
+.mb-4, .my-4 {
+  margin-bottom: 0!important; 
 }
 
 .btn-primary{
