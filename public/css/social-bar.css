@@ -19,8 +19,6 @@
   position: sticky;
   width: 4em;
   top: 30%;
-  
-  
 }
 
 .social-bar li {
@@ -29,7 +27,7 @@
 }
 
 .social-bar ul li a {
-  color: #fff;
+  color: white;
   display: block;
   height: 100%;
   width: 100%;
@@ -70,4 +68,7 @@
   font-family: socialBar;
 }
 
+.social-bar i{
+  color: white;
+}
 

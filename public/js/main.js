@@ -1,7 +1,7 @@
 $("#navSignUpButton").on("click", () => {
   $("#SignUpModal").modal();
 });
-$("#navConnectionButton").on("click", () => {
+$("#navConnectButton").on("click", () => {
   $("#ConnectionModal").modal();
 });
 $("#signupCancelButton").on("click", () => {
@@ -13,4 +13,3 @@ $("#Connection-Inscription").on("click", () => {
 $("#Connection-Inscription").on("click", () => {
   $("#SignUpModal").modal();
 });
-
