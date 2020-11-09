@@ -1,0 +1,63 @@
+.form-elegant .font-small {
+    font-size: 1rem; 
+}
+
+.form-elegant .z-depth-1a {
+    -webkit-box-shadow: 0 2px 5px 0 rgba(248, 246, 245, 0.26), 0 4px 12px 0 rgba(240, 229, 219, 0.25);
+    box-shadow: 0 2px 5px 0 rgba(248, 120, 0, 0.459), 0 4px 12px 0 rgba(254, 192, 121, 0.25); 
+}
+
+.form-elegant .z-depth-1-half,
+.form-elegant .btn:hover {
+    -webkit-box-shadow: 0 5px 11px 0 rgba(255, 161, 85, 0.28), 0 4px 15px 0 rgba(255, 160, 36, 0.15);
+    box-shadow: 0 5px 11px 0 rgba(238, 143, 0, 0.425), 0 4px 15px 0 rgba(245, 147, 19, 0.315); 
+}
+
+.form-elegant .modal-header {
+    border-bottom: none; 
+}
+
+.modal-dialog .form-elegant .btn .fab {
+    color: white!important; 
+}
+
+.form-elegant .modal-body, .form-elegant .modal-footer {
+    font-weight: 400; 
+}
+
+
+#ConnectionModal h3 {
+    color: white;
+}
+#ConnectionModal p {
+    color: white;
+}
+      
+#ConnectionModal label {
+    color:white;
+}
+#ConnectionModal a {
+    color:#df5e25;
+}
+
+
+#connecterButton {
+    background-color:#df5e25;
+    color: white;            
+    box-shadow: 0 0 5px rgb(250, 92, 0);
+    border-radius: 10px;
+}
+#connecterButton:hover{
+    background-color:#b93c06;
+    box-shadow: 0 0 5px rgb(255, 100, 10);
+}
+.close span{
+    float: right;
+}
+.close span:hover{
+    color:#df5e25;
+}
+
+
+
+

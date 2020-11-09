@@ -1,6 +1,16 @@
 $("#navSignUpButton").on("click", () => {
-  $("#myModal").modal();
+  $("#SignUpModal").modal();
+});
+$("#navConnectionButton").on("click", () => {
+  $("#ConnectionModal").modal();
 });
 $("#signupCancelButton").on("click", () => {
-  $("#myModal").modal("hide");
+  $("#SignUpModal").modal("hide");
 });
+$("#Connection-Inscription").on("click", () => {
+  $("#ConnectionModal").modal("hide");
+});
+$("#Connection-Inscription").on("click", () => {
+  $("#SignUpModal").modal();
+});
+

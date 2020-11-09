@@ -55,13 +55,13 @@ button:hover {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color:rgba(0, 0, 0, 0.685);
+  background-color:rgba(0, 0, 0, 0.801);
   padding-top: 50px;
 }
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: rgba(0, 0, 0, 0.63);
+  background-color: rgba(0, 0, 0, 0.733);
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
@@ -106,6 +106,7 @@ hr {
 .container label {
   color:white;
 }
+
 
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
