@@ -108,24 +108,45 @@ a:hover{
   margin-bottom: 0!important; 
 }
 
-.btn-primary{
- 
+
+.container .ajoutButton{
+  margin-right: 10px;
+  margin-bottom: 3px;
+  width: 40px;
+  height: 40px;
+  color: white;
   float: right;
   background-color: rgb(238, 98, 4);
   border: none;
   outline: none;
-  border-radius: 15px;
   box-shadow: 2px 3px rgba(0, 0, 0, 0.452);
-  font-size: 18px;
-  
+  border-radius: 100px;
 }
-.btn-primary:hover{
-  border: none;
+.card-body .ajoutButton span{
+  min-width: 3.5em;
+  display: none;
+}
+.card-body .ajoutButton i:hover{
+  
   background-color: rgb(255, 115, 22);
 }
-.btn-primary:active{
+.card-body .ajoutButton:hover span{
+  border: none;
+  display: block;
+  
+}
+.card-body .ajoutButton:hover{
+  transition: width 0.35s ease-in-out;
+  width: 6em;
+}
+.card-body .ajoutButton:hover i{
+  display: none;
+}
+
+.card-body .ajoutButton:active{
   border: none;
   background-color: rgb(255, 115, 22);
   transform: translateY(2px) translateX(1px);
 }
+
 

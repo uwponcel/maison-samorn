@@ -32,7 +32,7 @@ input[type=text]:focus, input[type=password]:focus {
 .container {
   padding: 16px;
 }
-.container button {
+#SignUpModal .container button {
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -42,7 +42,7 @@ input[type=text]:focus, input[type=password]:focus {
   opacity: 0.9;
 }
 
-button:hover {
+#SignUpModal button:hover {
   opacity:1;
 }
 /* The Modal (background) */
