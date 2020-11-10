@@ -3,7 +3,10 @@
   font-family: navBar;
   src: url(../font/OpenSansCondensed-Bold.ttf);
 }
-
+@font-face {
+  font-family: navBarText;
+  src: url(../font/OpenSansCondensed-Light.ttf);
+}
 @font-face {
   font-family: navBar2;
   src: url(../font/navbar/Moyko.ttf);
@@ -81,9 +84,6 @@ nav {
 .navbar-brand {
   color: white;
 }
-.navbar-brand:hover {
-  color: var(--main-accent-color);
-}
 .navbar-brand img {
   filter: invert(100%);
 }
@@ -95,7 +95,9 @@ nav {
 }
 
 .nav-link{
-  text-align: left;
+  font-family: navBarText;
+  letter-spacing: 1.2px;
+  font-weight: bold;
 }
 
 .nav-link:hover {

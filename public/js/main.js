@@ -1,15 +1,13 @@
+//Open the modals on nav buttons click.
 $("#navSignUpButton").on("click", () => {
-  $("#SignUpModal").modal();
+  $("#signUpModal").modal();
 });
 $("#navConnectButton").on("click", () => {
-  $("#ConnectionModal").modal();
+  $("#connectionModal").modal();
 });
-$("#signupCancelButton").on("click", () => {
-  $("#SignUpModal").modal("hide");
-});
-$("#Connection-Inscription").on("click", () => {
-  $("#ConnectionModal").modal("hide");
-});
-$("#Connection-Inscription").on("click", () => {
-  $("#SignUpModal").modal();
+
+//Switch modal windows connect -> signup
+$("#connectInscription").on("click", () => {
+  $("#connectionModal").modal("hide");
+  $("#signUpModal").modal();
 });

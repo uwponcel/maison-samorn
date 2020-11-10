@@ -1,0 +1,98 @@
+@font-face {
+    font-family: modalTitle;
+    src: url(../../font/OpenSansCondensed-Bold.ttf);
+}
+@font-face {
+    font-family: modalText;
+    src: url(../../font/OpenSansCondensed-Light.ttf	);
+}
+@font-face {
+    font-family: modalTextItalic;
+    src: url(../../font/OpenSansCondensed-LightItalic.ttf);
+}
+  
+  
+  :root {
+    --main-accent-color: #df5e25;
+  
+    /* #e33a36*/
+  }
+  
+  
+  /* The Modal (background) */
+  .modal {
+    background-color:rgba(0, 0, 0, 0.600);  
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: rgba(0, 0, 0, 0.600);
+  }
+  
+  .modal-header {
+    border-bottom: 2px solid white;
+  }
+
+  .modal-footer {
+    border-top: 2px solid white;
+  }
+   
+  /* The Close Button (x) */
+  .modal .close {
+    font-size: 40px;
+    color: white;
+  }
+  
+  .modal .close:hover,
+  .modal .close:focus {
+    color: var(--main-accent-color);
+  }
+  
+  
+  .modal #connectButton,
+  .modal #registerButton {
+    background-color:#df5e25;
+    font-size: 1.1em;
+    font-family: modalText;
+    font-weight: bold;
+    width: 100%;
+    color: white;            
+    box-shadow: 0 0 3px rgb(250, 92, 0);
+  }
+  
+  .modal #connectButton:hover,
+  .modal #registerButton:hover {
+    background-color:#b93c06;
+    box-shadow: 0 0 3px rgb(255, 100, 10);
+  }
+
+  .modal .social-connect .btn{
+      color: white;
+  }
+
+  .modal .social-connect .btn:hover{
+    transform: scale(1.2);
+}
+
+  .modal p,
+  .modal span,
+  .modal label{
+      color: white;
+      font-family: modalText;
+      font-weight: bold;
+      font-size: 1.1em;
+      letter-spacing: 1.2px;
+      
+  }
+  .modal a{
+      color: var(--main-accent-color);
+  }
+
+  .modal h1 {
+      font-family: modalText;
+      font-weight: bold;
+      letter-spacing: 1.2px;
+  }
+  
+  
+  
