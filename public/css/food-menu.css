@@ -19,6 +19,7 @@ main {
   background-size: cover;
 }
 
+
 /*========================Menu Title========================*/
 #MenuTitre {
   padding-top: 5em;
@@ -66,17 +67,19 @@ a:hover{
   background-color: rgba(0, 0, 0, 0.808);
 }
 .collapse.show{
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   background-color: #83838391;
-}
+} 
 .card{
   border: none;
   
   background-color: rgba(0, 0, 0, 0);
   
 }
+
+.card-header h5{
+ font-family: itemTitle;
+}
+
 .card-title{
   font-size: larger;
   font-weight: 700;
@@ -104,10 +107,6 @@ a:hover{
   background-color: rgba(0, 0, 0, 0.445);
   
 }
-.mb-4, .my-4 {
-  margin-bottom: 0!important; 
-}
-
 
 .container .ajoutButton{
   margin-right: 10px;

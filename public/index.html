@@ -22,7 +22,7 @@
 
 </head>
 
-<body>
+<body class="d-flex flex-column min-vh-100 bg-dark">
   <!-- Top Orange Bar -->
   <div class="top-nav">
     <div class="emplacement">
@@ -162,7 +162,8 @@
             </div>
             <div class="form-group text-white">
               <label for="signUpPassword">Mot de passe</label>
-              <input type="password" class="form-control" id="signUpMotDePasse" placeholder="Entrer un mot de passe" required>
+              <input type="password" class="form-control" id="signUpMotDePasse" placeholder="Entrer un mot de passe"
+                required>
             </div>
             <div class="form-group text-white">
               <label for="signUpPasswordConfirm">Confirmation du mot de passe</label>
@@ -191,10 +192,10 @@
   </div>
   <!-- ./ Modal Signup Form -->
 
-  
 
-   <!-- Sticky Navigation -->
-   <header class="sticky-top">
+
+  <!-- Sticky Navigation -->
+  <header class="sticky-top">
     <nav class="navbar navbar-expand-lg">
       <a class="navbar-brand" href="#">MAISON SAMORN<img src="./img/nav-bar/chopsticks.png" height="60" alt="" /></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#burgerMenu">
@@ -228,7 +229,7 @@
   </header>
   <!-- ./ Sticky Navigation -->
 
-  <main>
+  <main class="wrapper flex-grow-1">
     <!-- Social Bar -->
     <div class="social-bar">
       <ul>
@@ -265,14 +266,14 @@
     </div>
 
     <!--Food Menu Container-->
-    <div class="container my-4">
+    <div class="container my-4 mb-5">
       <!--Accordion wrapper-->
-      <div class="accordion md-accordion" id="accordionEx" role="tablist">
+      <div id="accordionAppetizer">
         <!-- Accordion card -->
         <div class="card">
           <!--Accordion card Header -->
-          <div class="card-header" role="tab" id="headingOne1">
-            <a data-toggle="collapse" data-parent="#accordionEx" href="#collapseOne1">
+          <div class="card-header" id="headingOne1">
+            <a data-toggle="collapse" data-parent="#accordionAppetizer" href="#collapseAppetizer">
               <h5 class="mb-0">
                 Entrées - Appetizer
                 <i class="fas fa-angle-down rotate-icon"></i>
@@ -280,7 +281,7 @@
             </a>
           </div>
           <!--Accordion card Body -->
-          <div id="collapseOne1" class="collapse show" role="tabpanel" data-parent="#accordionEx">
+          <div id="collapseAppetizer" class="collapse" data-parent="#accordionAppetizer">
             <!-- Card Element 1 -->
             <div class="card element">
               <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
@@ -335,7 +336,7 @@
                 <p class="card-text text-center">
                   Potage au lait de noix de coco aux poulets
                 </p>
-                <button class="ajoutButton"> 
+                <button class="ajoutButton">
                   <i class="fa fa-plus" aria-hidden="true"></i>
                   <span>Ajouter</span>
                 </button>
@@ -346,7 +347,9 @@
       </div>
     </div>
   </main>
-  <footer></footer>
+  <footer class="bg-dark">
+     test 
+  </footer>
 
   <script src="/js/jquery.js"></script>
   <script src="/js/bootstrap.min.js"></script>
