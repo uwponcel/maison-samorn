@@ -8,7 +8,7 @@ USE maison_samorn;
 DROP TABLE IF EXISTS compte;
 CREATE TABLE compte (
 	id_compte INT AUTO_INCREMENT,
-    type_de_compte VARCHAR(11),
+    type_de_compte VARCHAR(11) DEFAULT 'client',
     prenom VARCHAR(50) NOT NULL,
     nom VARCHAR(50) NOT NULL,
     adresse VARCHAR(100) NOT NULL,
@@ -16,7 +16,8 @@ CREATE TABLE compte (
     ville VARCHAR(50) NOT NULL,
     courriel VARCHAR(50) NOT NULL,
     mot_de_passe VARCHAR(50) NOT NULL,
-    CONSTRAINT PRIMARY KEY(id_compte)
+    CONSTRAINT PRIMARY KEY(id_compte),
+    CONSTRAINT UNIQUE (courriel)
 );
 
 DROP TABLE IF EXISTS commande;
@@ -77,4 +78,5 @@ REFERENCES item(id_item)
 ON DELETE RESTRICT
 ON UPDATE CASCADE;
 
-CREATE INDEX idx_nom_item ON item(nom);
+-- Recherches
+-- CREATE INDEX idx_nom_item ON item(nom);

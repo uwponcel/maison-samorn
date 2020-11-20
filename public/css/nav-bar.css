@@ -19,32 +19,37 @@
 }
 
 /**========================Top Orange NavBar ========================*/
-.top-nav {
+.top-nav,
+.top-nav .row {
   background-color: var(--main-accent-color);
-  height: 2.7em;
+  height: 3em;
 }
-.top-nav .emplacement {
+.top-nav img{
+  height: 1.7em;
+}
+.top-nav a,
+.top-nav span {
+  text-decoration: none;
+  font-size: 1.3em;
+  font-family: navBar;
+  color:white;
+}
+/* .top-nav .emplacement {
   height: 2.7em;
   display: flex;
   justify-content: left;
   align-items: center;
   float: left;
-}
-.top-nav .emplacement img {
+} */
+/* .top-nav .emplacement img {
   height: 1.7em;
   margin-left: 2em;
   filter: invert(100%);
-}
-.top-nav .emplacement a {
-  margin-left: 0.2em;
-  text-decoration: none;
-  color: white;
-  font-size: 1.3em;
-  font-family: navBar;
-  text-transform: uppercase;
-}
+} */
 
-.top-nav .menu-langues {
+
+
+/* .top-nav .menu-langues {
   height: 2.7em;
   margin-right: 2em;
   display: flex;
@@ -71,7 +76,7 @@
   font-size: 1.3em;
   font-family: navBar;
   text-transform: uppercase;
-}
+} */
 
 /**======================== NavBar ========================*/
 .navbar-brand{
@@ -87,19 +92,10 @@ nav {
 .navbar-brand:hover {
   color:white;
 }
-.navbar-brand img  {
-  filter: invert(100%);
-}
-.nav-link{
-  font-size: 1.5em;
-  color: white;
-}
-.navbar-text{
-  font-size: 1.5em;
-  color: white;
-}
 
-.nav-link{
+.nav-link,
+.navbar-text{
+  font-size: 1.2em;
   font-family: navBarText;
   letter-spacing: 1.2px;
   font-weight: bold;
@@ -107,23 +103,14 @@ nav {
 
 .nav-link:hover {
   transform: scale(1.1);
-  color: var(--main-accent-color);
+  color: var(--main-accent-color) !important;
 }
 
-.navbar-toggler{
-  color: white;
-}
 .collapse.show {
   background-color: transparent !important;
 }
 
 
-/**======================== Media Queries ========================*/
-@media screen and (max-width: 991px) {
-  .top-nav {
-    display: none;
-  }
-}
 
 
 

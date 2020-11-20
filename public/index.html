@@ -5,9 +5,9 @@
   <!--Required meta tag-->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
+
   <title>Maison Samorn</title>
-  <link rel="icon" href="./img/favicon/chopsticks_white.png" class="favicon">
+  <link rel="icon" href="./img/nav-bar/chopsticks_white.png" class="favicon">
 
 
   <!--Font Awesome Icons-->
@@ -22,25 +22,39 @@
   <link href="css/social-bar.css" rel="stylesheet" />
   <link href="css/food-menu.css" rel="stylesheet" />
   <link href="css/modal/modal.css" rel="stylesheet" />
-  
+
 
 </head>
 
 <body class="d-flex flex-column min-vh-100 bg-dark">
   <!-- Top Orange Bar -->
-  <div class="top-nav">
-    <div class="emplacement">
-      <img src="./img/nav-bar/map-pinpoint.svg" alt="Find your location" />
-      <a href="#">Trouver votre emplacement</a>
-    </div>
-    <div class="menu-langues">
-      <span>Découvrer notre menu</span>
-      <div class="langues">
-        <a href="#">EN</a>
-        <span> |</span>
+  <div class="top-nav d-none d-sm-none d-md-block container-fluid">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-4">
+        <img src="./img/nav-bar/map-pinpoint.svg" alt="Find your location" />
+        <a href="#" class="ml-1 text-white text-uppercase">Trouver votre emplacement</a>
+      </div>
+      <div class="col-4 d-flex justify-content-center">
+        <span class="text-uppercase mr-4">Découvrer notre menu</span>
+        <a href="#" class="mr-2">EN</a>
+        <span class="mr-2"> |</span>
         <a href="#">FR</a>
       </div>
     </div>
+
+
+
+    <!-- <div class="row justify-content-between align-items-center">
+      <div class="col-6">
+        <span>Découvrer notre menu</span>
+      </div>
+      <div class="col-6 d-flex justify-content-center">
+        <a href="#" class="mr-2">EN</a>
+        <span class="mr-2"> |</span>
+        <a href="#">FR</a>
+      </div>
+    </div> -->
+
   </div>
   <!-- ./ Top Orange Bar -->
 
@@ -201,29 +215,31 @@
   <!-- Sticky Navigation -->
   <header class="sticky-top">
     <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#">MAISON SAMORN<img src="./img/nav-bar/chopsticks.png" height="60" alt="" /></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#burgerMenu" id="navbarToggler">
+      <a class="navbar-brand" href="#">MAISON SAMORN<img src="./img/nav-bar/chopsticks_white.png" height="60"
+          alt="" /></a>
+      <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#burgerMenu"
+        id="navbarToggler">
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="burgerMenu">
         <ul class="navbar-nav ml-auto" id="navBarContainer">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Menu</a>
+            <a class="nav-link text-white" href="#">Menu</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">À propos</a>
+            <a class="nav-link text-white" href="#">À propos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="navConnectButton">Se connecter</a>
+            <a class="nav-link text-white href=" #" id="navConnectButton">Se connecter</a>
           </li>
           <li class="slash-bar">
-            <span class="navbar-text">/</span>
+            <span class="navbar-text text-white">/</span>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" id="navSignUpButton">S'inscrire</a>
+            <a class="nav-link text-white" href="#" id="navSignUpButton">S'inscrire</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link text-white" href="#">
               <i class="far fa-user"></i>
             </a>
           </li>
@@ -352,7 +368,7 @@
     </div>
   </main>
   <footer class="bg-dark">
-     test 
+    test
   </footer>
 
   <script src="/js/jquery.js"></script>
