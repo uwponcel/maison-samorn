@@ -14,8 +14,6 @@
 
 :root {
   --main-accent-color: #df5e25;
-
-  /* #e33a36*/
 }
 
 /**========================Top Orange NavBar ========================*/
@@ -26,6 +24,7 @@
 }
 .top-nav img{
   height: 1.7em;
+  filter: invert(100%);
 }
 .top-nav a,
 .top-nav span {
@@ -34,50 +33,10 @@
   font-family: navBar;
   color:white;
 }
-/* .top-nav .emplacement {
-  height: 2.7em;
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  float: left;
-} */
-/* .top-nav .emplacement img {
-  height: 1.7em;
-  margin-left: 2em;
-  filter: invert(100%);
-} */
 
-
-
-/* .top-nav .menu-langues {
-  height: 2.7em;
-  margin-right: 2em;
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  float: right;
+.top-nav a:hover{
+  transform: scale(1.1);
 }
-
-.top-nav .menu-langues .langues {
-  margin-left: 1.5em;
-}
-
-.top-nav .menu-langues span {
-  color: white;
-  font-size: 1.3em;
-  font-family: navBar;
-  text-transform: uppercase;
-}
-.top-nav .menu-langues a {
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  text-decoration: none;
-  color: white;
-  font-size: 1.3em;
-  font-family: navBar;
-  text-transform: uppercase;
-} */
-
 /**======================== NavBar ========================*/
 .navbar-brand{
   font-family: navBar2;
