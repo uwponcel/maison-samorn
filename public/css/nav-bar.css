@@ -113,6 +113,9 @@ nav {
 .navbar-toggler{
   color: white;
 }
+.collapse.show {
+  background-color: none;
+}
 
 
 

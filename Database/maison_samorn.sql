@@ -22,6 +22,7 @@ CREATE TABLE compte (
 DROP TABLE IF EXISTS commande;
 CREATE TABLE commande (
 	id_commande INT AUTO_INCREMENT,
+    id_compte INT,
     etat VARCHAR(13),
     date DATETIME,
     prix_total FLOAT,
@@ -29,7 +30,7 @@ CREATE TABLE commande (
     CONSTRAINT prix_total CHECK(
         prix_total >= 0
     ),
-    CONSTRAINT PRIMARY KEY(id_compte)
+    CONSTRAINT PRIMARY KEY(id_commande)
 );
 
 DROP TABLE IF EXISTS item;
@@ -40,7 +41,7 @@ CREATE TABLE item (
     image TINYTEXT,
     prix FLOAT,
     description TINYTEXT,
-    CONSTRAINT PRIMARY KEY(id_compte)
+    CONSTRAINT PRIMARY KEY(id_item)
 );
 
 DROP TABLE IF EXISTS commande_item;
@@ -49,8 +50,8 @@ CREATE TABLE commande_item (
     id_item INT,
 	quantite INT NOT NULL DEFAULT 1,
     prix_total_produit FLOAT,
-	CONSTRAINT prix_total CHECK(
-        prix_total >= 0
+	CONSTRAINT prix_total_produit CHECK(
+        prix_total_produit >= 0
     ),
     CONSTRAINT PRIMARY KEY(id_commande,id_item)
 );

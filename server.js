@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const serveStatic = require("serve-static");
 const cors = require("cors");
 const sse = require("./middleware-sse.js");
+const compte = require("./Database/compte");
 
 /** Port pour le serveur */
 const PORT = process.env.PORT;
@@ -31,6 +32,20 @@ app.use("/js", express.static(__dirname + "/node_modules/jquery/dist"));
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
 
 // Ajouter vos routes ici
+app.post("/compte", async (request, response) => {
+  compte.add(
+    request.body.idCompte,
+    request.body.typeDeCompte,
+    request.body.prenom,
+    request.body.nom,
+    request.body.adresse,
+    request.body.codePostal,
+    request.body.ville,
+    request.body.email,
+    request.body.motDePasse
+  );
+  response.sendStatus(200);
+});
 
 // Renvoyer une erreur 404 pour les routes non définies
 app.use(function (request, response) {
