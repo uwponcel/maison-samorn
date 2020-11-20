@@ -16,6 +16,8 @@ $("#connectInscription").on("click", () => {
 $("#collapseAppetizer").on("show.bs.collapse", function () {
   // do something…
   $("#collapseAppetizer").addClass("d-flex flex-wrap justify-content-around");
+  $(".card-header").find("i").removeClass("fas fa-angle-right rotate-icon");
+  $(".card-header").find("i").addClass("fas fa-angle-down rotate-icon");
 });
 
 $("#collapseAppetizer").on("hidden.bs.collapse", function () {
@@ -23,4 +25,6 @@ $("#collapseAppetizer").on("hidden.bs.collapse", function () {
   $("#collapseAppetizer").removeClass(
     "d-flex flex-wrap justify-content-around"
   );
+  $(".card-header").find("i").removeClass("fas fa-angle-down rotate-icon");
+  $(".card-header").find("i").addClass("fas fa-angle-right rotate-icon");
 });
