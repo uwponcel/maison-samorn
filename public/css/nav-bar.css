@@ -114,13 +114,12 @@ nav {
   color: white;
 }
 .collapse.show {
-  background-color: none;
+  background-color: transparent !important;
 }
 
 
-
 /**======================== Media Queries ========================*/
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 991px) {
   .top-nav {
     display: none;
   }
