@@ -1,3 +1,14 @@
+/* Selection is so the player cant select text.*/
+::selection {
+    color: none;
+    background: none;
+}
+
+/* It is the same as before but for firefox.*/
+::-moz-selection {
+  color: none;
+  background: none;
+}
 /*========================Fonts========================*/
 @font-face {
   font-family: "asianFont";
