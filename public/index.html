@@ -1,366 +1,501 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!--Required meta tag-->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <!--Required meta tag-->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maison Samorn</title>
+    <link
+      rel="icon"
+      href="./img/nav-bar/chopsticks_white.png"
+      class="favicon"
+    />
 
-  <title>Maison Samorn</title>
-  <link rel="icon" href="./img/nav-bar/chopsticks_white.png" class="favicon">
+    <!--Font Awesome Icons-->
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    />
 
+    <!--Bootstrap Stylesheets-->
+    <link href="/css/bootstrap.min.css" rel="stylesheet" />
 
-  <!--Font Awesome Icons-->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" />
+    <!--Custom Stylesheets-->
+    <link href="css/normalize.css" rel="stylesheet" />
+    <link href="css/nav-bar.css" rel="stylesheet" />
+    <link href="css/social-bar.css" rel="stylesheet" />
+    <link href="css/food-menu.css" rel="stylesheet" />
+    <link href="css/modal/modal.css" rel="stylesheet" />
+  </head>
 
-  <!--Bootstrap Stylesheets-->
-  <link href="/css/bootstrap.min.css" rel="stylesheet" />
-
-  <!--Custom Stylesheets-->
-  <link href="css/normalize.css" rel="stylesheet" />
-  <link href="css/nav-bar.css" rel="stylesheet" />
-  <link href="css/social-bar.css" rel="stylesheet" />
-  <link href="css/food-menu.css" rel="stylesheet" />
-  <link href="css/modal/modal.css" rel="stylesheet" />
-
-
-</head>
-
-<body class="d-flex flex-column min-vh-100 bg-dark">
-  <!-- Top Orange Bar -->
-  <div class="top-nav d-none d-sm-none d-md-block container-fluid">
-    <div class="row justify-content-between">
-      <div class="col-6 d-flex align-items-center justify-content-start" id="emplacement">
-        <img src="./img/nav-bar/map-pinpoint.svg" alt="Find your location" class="mr-1" />
-        <a href="#" class="ml-1 text-white text-uppercase">Trouver votre emplacement</a>
-      </div>
-      <div class="col-6 d-flex align-items-center justify-content-end">
-        <span class="text-uppercase mr-4">Découvrer notre menu</span>
-        <a href="#" class="mr-2">EN</a>
-        <span class="mr-2"> |</span>
-        <a href="#">FR</a>
+  <body class="d-flex flex-column min-vh-100 bg-dark">
+    <!-- Top Orange Bar -->
+    <div class="top-nav d-none d-sm-none d-md-block container-fluid">
+      <div class="row justify-content-between">
+        <div
+          class="col-6 d-flex align-items-center justify-content-start"
+          id="emplacement"
+        >
+          <img
+            src="./img/nav-bar/map-pinpoint.svg"
+            alt="Find your location"
+            class="mr-1"
+          />
+          <a href="#" class="ml-1 text-white text-uppercase"
+            >Trouver votre emplacement</a
+          >
+        </div>
+        <div class="col-6 d-flex align-items-center justify-content-end">
+          <span class="text-uppercase mr-4">Découvrer notre menu</span>
+          <a href="#" class="mr-2">EN</a>
+          <span class="mr-2"> |</span>
+          <a href="#">FR</a>
+        </div>
       </div>
     </div>
-  </div>
-  <!-- ./ Top Orange Bar -->
+    <!-- ./ Top Orange Bar -->
 
-  <!-- Modal Connect Form -->
-  <div class="modal fade" id="connectionModal">
-    <div class="modal-dialog">
-      <!--Content-->
-      <div class="modal-content">
-        <!-- Header -->
-        <div class="modal-header mx-3 px-0">
-          <div class="container-fluid">
-            <div class="row mb-3">
-              <h1 class="modal-title text-white">Se connecter</h1>
-              <button type="button" class="close mr-3" data-dismiss="modal">
-                <span>&times;</span>
-              </button>
-            </div>
-            <div class="row text-white">
-              <span>Veuillez remplir ce formulaire pour vous connecter à un compte.</span>
+    <!-- Modal Connect Form -->
+    <div class="modal fade" id="connectionModal">
+      <div class="modal-dialog">
+        <!--Content-->
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-header mx-3 px-0">
+            <div class="container-fluid">
+              <div class="row mb-3">
+                <h1 class="modal-title text-white">Se connecter</h1>
+                <button type="button" class="close mr-3" data-dismiss="modal">
+                  <span>&times;</span>
+                </button>
+              </div>
+              <div class="row text-white">
+                <span
+                  >Veuillez remplir ce formulaire pour vous connecter à un
+                  compte.</span
+                >
+              </div>
             </div>
           </div>
-        </div>
-        <!--Body-->
-        <div class="modal-body">
-          <form>
-            <div class="form-group text-white">
-              <label for="signUpEmail">Email</label>
-              <input type="email" class="form-control" id="signUpEmail" placeholder="Entrer votre email" required>
+          <!--Body-->
+          <div class="modal-body">
+            <form>
+              <div class="form-group text-white">
+                <label for="signUpEmail">Email</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="signUpEmail"
+                  placeholder="Entrer votre email"
+                  required
+                />
+              </div>
+              <div class="form-group text-white">
+                <label for="signUpPassword">Mot de passe</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="signUpPassword"
+                  placeholder="Entrer un mot de passe"
+                  required
+                />
+                <p class="font-small d-flex justify-content-end">
+                  <a href="#" class="ml-1"> Mot de passe oublié ?</a>
+                </p>
+              </div>
+            </form>
+            <div class="text-center mb-3">
+              <button
+                type="button"
+                class="btn btn-block btn-rounded z-depth-1a"
+                id="connectButton"
+              >
+                Se connecter
+              </button>
             </div>
-            <div class="form-group text-white">
-              <label for="signUpPassword">Mot de passe</label>
-              <input type="password" class="form-control" id="signUpPassword" placeholder="Entrer un mot de passe"
-                required>
-              <p class="font-small d-flex justify-content-end">
-                <a href="#" class="ml-1"> Mot de passe oublié ?</a>
-              </p>
+            <p class="d-flex justify-content-center mb-3 pt-2">
+              ou connectez-vous avec :
+            </p>
+            <!-- Social Connect -->
+            <div class="row my-3 d-flex justify-content-center social-connect">
+              <!--Facebook-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+              >
+                <i class="fab fa-facebook-f text-center"></i>
+              </button>
+              <!--Twitter-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded mr-md-3 z-depth-1a"
+              >
+                <i class="fab fa-twitter"></i>
+              </button>
+              <!--Google +-->
+              <button
+                type="button"
+                class="btn btn-white btn-rounded z-depth-1a"
+              >
+                <i class="fab fa-google-plus-g"></i>
+              </button>
+            </div>
+          </div>
+          <!-- ./ Body -->
+          <!--Footer-->
+          <div class="modal-footer mx-3 pt-3 mb-1">
+            <p class="font-small d-flex justify-content-end">
+              Vous n’êtes pas membre?
+              <a href="#" class="ml-1" id="connectInscription"> S'inscrire</a>
+            </p>
+          </div>
+        </div>
+        <!--/.Content-->
+      </div>
+    </div>
+    <!-- ./ Modal Connect Form -->
+
+    <!-- Modal Signup Form -->
+    <div class="modal fade" id="signUpModal">
+      <div class="modal-dialog">
+        <!--Content-->
+        <div class="modal-content">
+          <!-- Header -->
+          <div class="modal-header mx-3 px-0">
+            <div class="container-fluid">
+              <div class="row mb-3">
+                <h1 class="modal-title text-white">S'inscrire</h1>
+                <button type="button" class="close mr-3" data-dismiss="modal">
+                  <span>&times;</span>
+                </button>
+              </div>
+              <div class="row text-white">
+                <span
+                  >Veuillez remplir ce formulaire pour créer un compte.</span
+                >
+              </div>
+            </div>
+          </div>
+          <!-- Body -->
+          <form novalidate>
+            <div class="modal-body">
+              <div class="form-row">
+                <div class="form-group col text-white">
+                  <label for="signUpFirstName">Prénom</label>
+                  <input
+                    autocomplete="chrome-off"
+                    list="autocompleteOff"
+                    type="text"
+                    class="form-control"
+                    id="signUpFirstName"
+                    placeholder="Prénom"
+                    required
+                  />
+                </div>
+                <div class="form-group col text-white">
+                  <label for="signUpLastName">Nom</label>
+                  <input
+                    autocomplete="chrome-off"
+                    list="autocompleteOff"
+                    type="text"
+                    class="form-control"
+                    id="signUpLastName"
+                    placeholder="Nom"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-9 text-white">
+                  <label for="signUpFirstName">Adresse</label>
+                  <input
+                    autocomplete="chrome-off"
+                    list="autocompleteOff"
+                    type="text"
+                    class="form-control"
+                    id="signUpAdress"
+                    placeholder="Entrer une adresse"
+                    required
+                  />
+                </div>
+                <div class="form-group col-md-3 text-white">
+                  <label for="signUpLastName">Code Postal</label>
+                  <input
+                    autocomplete="chrome-off"
+                    list="autocompleteOff"
+                    type="text"
+                    class="form-control"
+                    id="signUpCodePostal"
+                    placeholder="A1A 1A1"
+                    required
+                  />
+                </div>
+              </div>
+              <div class="form-group text-white">
+                <label for="signUpEmail">Email</label>
+                <input
+                  autocomplete="chrome-off"
+                  list="autocompleteOff"
+                  type="email"
+                  class="form-control"
+                  id="signUpCourriel"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group text-white">
+                <label for="signUpPassword">Mot de passe</label>
+                <input
+                  autocomplete="chrome-off"
+                  list="autocompleteOff"
+                  type="password"
+                  class="form-control"
+                  id="signUpMotDePasse"
+                  placeholder="Entrer un mot de passe"
+                  required
+                />
+              </div>
+              <div class="form-group text-white">
+                <label for="signUpPasswordConfirm"
+                  >Confirmation du mot de passe</label
+                >
+                <input
+                  autocomplete="chrome-off"
+                  list="autocompleteOff"
+                  type="password"
+                  class="form-control"
+                  id="signUpPasswordConfirm"
+                  placeholder="Confirmer le mot de passe"
+                  required
+                />
+              </div>
+              <div class="form-group text-white">
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="signUpRememberMe"
+                  />
+                  <label class="form-check-label" for="signUpRememberMe">
+                    Se souvenir de moi
+                  </label>
+                </div>
+              </div>
+              <div class="text-white mb-3">
+                <span
+                  >En créant un compte, vous acceptez nos termes de
+                  <a href="#" class="ml-1"> Conditions et Confidentailité.</a>
+                </span>
+              </div>
+              <button
+                type="button"
+                class="btn btn-block btn-rounded"
+                id="registerButton"
+              >
+                S'inscrire
+              </button>
             </div>
           </form>
-          <div class="text-center mb-3">
-            <button type="button" class="btn btn-block btn-rounded z-depth-1a" id="connectButton">
-              Se connecter
-            </button>
-          </div>
-          <p class="d-flex justify-content-center mb-3 pt-2">
-            ou connectez-vous avec :
-          </p>
-          <!-- Social Connect -->
-          <div class="row my-3 d-flex justify-content-center social-connect">
-            <!--Facebook-->
-            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a">
-              <i class="fab fa-facebook-f text-center"></i>
-            </button>
-            <!--Twitter-->
-            <button type="button" class="btn btn-white btn-rounded mr-md-3 z-depth-1a">
-              <i class="fab fa-twitter"></i>
-            </button>
-            <!--Google +-->
-            <button type="button" class="btn btn-white btn-rounded z-depth-1a">
-              <i class="fab fa-google-plus-g"></i>
-            </button>
-          </div>
-        </div>
-        <!-- ./ Body -->
-        <!--Footer-->
-        <div class="modal-footer mx-3 pt-3 mb-1">
-          <p class="font-small d-flex justify-content-end">
-            Vous n’êtes pas membre?
-            <a href="#" class="ml-1" id="connectInscription">
-              S'inscrire</a>
-          </p>
         </div>
       </div>
-      <!--/.Content-->
     </div>
-  </div>
-  <!-- ./ Modal Connect Form -->
+    <!-- ./ Modal Signup Form -->
 
-  <!-- Modal Signup Form -->
-  <div class="modal fade" id="signUpModal">
-    <div class="modal-dialog">
-      <!--Content-->
-      <div class="modal-content">
-        <!-- Header -->
-        <div class="modal-header mx-3 px-0">
-          <div class="container-fluid">
-            <div class="row mb-3">
-              <h1 class="modal-title text-white">S'inscrire</h1>
-              <button type="button" class="close mr-3" data-dismiss="modal">
-                <span>&times;</span>
-              </button>
-            </div>
-            <div class="row text-white">
-              <span>Veuillez remplir ce formulaire pour créer un compte.</span>
-            </div>
-          </div>
+    <!-- Sticky Navigation -->
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg">
+        <a class="navbar-brand" href="#"
+          >MAISON SAMORN<img
+            src="./img/nav-bar/chopsticks_white.png"
+            height="60"
+            alt=""
+        /></a>
+        <button
+          class="navbar-toggler text-white"
+          type="button"
+          data-toggle="collapse"
+          data-target="#burgerMenu"
+          id="navbarToggler"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="burgerMenu">
+          <ul class="navbar-nav ml-auto" id="navBarContainer">
+            <li class="nav-item active">
+              <a class="nav-link text-white" href="#">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">À propos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href=" #" id="navConnectButton"
+                >Se connecter</a
+              >
+            </li>
+            <li class="slash-bar">
+              <span class="navbar-text text-white">/</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#" id="navSignUpButton"
+                >S'inscrire</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-white" href="#">
+                <i class="far fa-user"></i>
+              </a>
+            </li>
+          </ul>
         </div>
-        <!-- Body -->
-        <form novalidate>
-          <div class="modal-body">
-            <div class="form-row">
-              <div class="form-group col text-white">
-                <label for="signUpFirstName">Prénom</label>
-                <input type="text" class="form-control" id="signUpFirstName" placeholder="Prénom" required>
-              </div>
-              <div class="form-group col text-white">
-                <label for="signUpLastName">Nom</label>
-                <input type="text" class="form-control" id="signUpLastName" placeholder="Nom" required>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group col-md-9 text-white">
-                <label for="signUpFirstName">Adresse</label>
-                <input type="text" class="form-control" id="signUpAdress" placeholder="Entrer une adresse" required>
-              </div>
-              <div class="form-group col-md-3 text-white">
-                <label for="signUpLastName">Code Postal</label>
-                <input type="text" class="form-control" id="signUpCodePostal" placeholder="A1A 1A1" required>
-              </div>
-            </div>
-            <div class="form-group text-white">
-              <label for="signUpEmail">Email</label>
-              <input type="email" class="form-control" id="signUpCourriel" placeholder="Email" required>
-            </div>
-            <div class="form-group text-white">
-              <label for="signUpPassword">Mot de passe</label>
-              <input type="password" class="form-control" id="signUpMotDePasse" placeholder="Entrer un mot de passe"
-                required>
-            </div>
-            <div class="form-group text-white">
-              <label for="signUpPasswordConfirm">Confirmation du mot de passe</label>
-              <input type="password" class="form-control" id="signUpPasswordConfirm"
-                placeholder="Confirmer le mot de passe" required>
-            </div>
-            <div class="form-group text-white">
-              <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="signUpRememberMe">
-                <label class="form-check-label" for="signUpRememberMe">
-                  Se souvenir de moi
-                </label>
-              </div>
-            </div>
-            <div class="text-white mb-3">
-              <span>En créant un compte, vous acceptez nos termes de
-                <a href="#" class="ml-1">
-                  Conditions et Confidentailité.</a>
-              </span>
-            </div>
-            <button type="button" class="btn btn-block btn-rounded" id="registerButton">S'inscrire</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <!-- ./ Modal Signup Form -->
+      </nav>
+    </header>
+    <!-- ./ Sticky Navigation -->
 
-
-
-  <!-- Sticky Navigation -->
-  <header class="sticky-top">
-    <nav class="navbar navbar-expand-lg">
-      <a class="navbar-brand" href="#">MAISON SAMORN<img src="./img/nav-bar/chopsticks_white.png" height="60"
-          alt="" /></a>
-      <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#burgerMenu"
-        id="navbarToggler">
-        <i class="fas fa-bars"></i>
-      </button>
-      <div class="collapse navbar-collapse" id="burgerMenu">
-        <ul class="navbar-nav ml-auto" id="navBarContainer">
-          <li class="nav-item active">
-            <a class="nav-link text-white" href="#">Menu</a>
+    <main class="wrapper flex-grow-1">
+      <!-- Social Bar -->
+      <div class="social-bar">
+        <ul>
+          <li>
+            <a href="https://www.facebook.com/Maison-Samorn-433974266640265/">
+              <i class="fab fa-facebook-f"></i>
+              <span>MaisonSamorn</span>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">À propos</a>
+          <li>
+            <a href="https://instagram.com/maisonsamorn?igshid=15cg3s9ymoq05">
+              <i class="fab fa-instagram"></i>
+              <span>@maisonsamorn</span>
+            </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href=" #" id="navConnectButton">Se connecter</a>
+          <li>
+            <a href="#">
+              <i class="fas fa-phone"></i>
+              <span>(819)595-0232</span>
+            </a>
           </li>
-          <li class="slash-bar">
-            <span class="navbar-text text-white">/</span>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#" id="navSignUpButton">S'inscrire</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="#">
-              <i class="far fa-user"></i>
+          <li>
+            <a href="#">
+              <i class="fas fa-envelope"></i>
+              <span>maisonsamorn@gmail.com</span>
             </a>
           </li>
         </ul>
       </div>
-    </nav>
-  </header>
-  <!-- ./ Sticky Navigation -->
+      <!-- ./ Social Bar -->
 
-  <main class="wrapper flex-grow-1">
-    <!-- Social Bar -->
-    <div class="social-bar">
-      <ul>
-        <li>
-          <a href="https://www.facebook.com/Maison-Samorn-433974266640265/">
-            <i class="fab fa-facebook-f"></i>
-            <span>MaisonSamorn</span>
-          </a>
-        </li>
-        <li>
-          <a href="https://instagram.com/maisonsamorn?igshid=15cg3s9ymoq05">
-            <i class="fab fa-instagram"></i>
-            <span>@maisonsamorn</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-phone"></i>
-            <span>(819)595-0232</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <i class="fas fa-envelope"></i>
-            <span>maisonsamorn@gmail.com</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-    <!-- ./ Social Bar -->
+      <div id="MenuTitre">
+        <p id="titre">Menu</p>
+      </div>
 
-    <div id="MenuTitre">
-      <p id="titre">Menu</p>
-    </div>
-
-    <!--Food Menu Container-->
-    <div class="container my-4 mb-5">
-      <!--Accordion wrapper-->
-      <div id="accordionAppetizer">
-        <!-- Accordion card -->
-        <div class="card">
-          <!--Accordion card Header -->
-          <div class="card-header" id="headingOne1">
-            <a data-toggle="collapse" data-parent="#accordionAppetizer" href="#collapseAppetizer">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Entrées
-              </h5>
-            </a>
-          </div>
-          <!--Accordion card Body -->
-          <div id="collapseAppetizer" class="collapse" data-parent="#accordionAppetizer">
-            <!-- Card Element 1 -->
-            <div class="card element">
-              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
-                <p class="card-text">
-                  Bouillon a la citronnelle aux crevettes
-                </p>
-                <button class="ajoutButton">
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span>Ajouter</span>
-
-                </button>
-              </div>
+      <!--Food Menu Container-->
+      <div class="container my-4 mb-5">
+        <!--Accordion wrapper-->
+        <div id="accordionAppetizer">
+          <!-- Accordion card -->
+          <div class="card">
+            <!--Accordion card Header -->
+            <div class="card-header" id="headingOne1">
+              <a
+                data-toggle="collapse"
+                data-parent="#accordionAppetizer"
+                href="#collapseAppetizer"
+              >
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Entrées
+                </h5>
+              </a>
             </div>
-
-            <!-- Card Element 2 -->
-            <div class="card element">
-              <img src="img/food-pictures/tom-kha-goong.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title text-center mt-1">Tom Kha Goong 7$</h5>
-                <p class="card-text">
-                  Potage au lait de noix de coco aux crevettes
-                </p>
-                <button class="ajoutButton">
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span>Ajouter</span>
-                </button>
+            <!--Accordion card Body -->
+            <div
+              id="collapseAppetizer"
+              class="collapse"
+              data-parent="#accordionAppetizer"
+            >
+              <!-- Card Element 1 -->
+              <div class="card element">
+                <img
+                  src="img/food-pictures/tom-yum-goong.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                  <p class="card-text">
+                    Bouillon a la citronnelle aux crevettes
+                  </p>
+                  <button class="ajoutButton">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <span>Ajouter</span>
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Card Element 3 -->
-            <div class="card element">
-              <img src="img/food-pictures/tom-yum-gai.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title text-center mt-1">Tom Yum Gai 6$</h5>
-                <p class="card-text">
-                  Bouillon a la citronnelle aux poulets
-                </p>
-                <button class="ajoutButton">
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span>Ajouter</span>
-                </button>
+              <!-- Card Element 2 -->
+              <div class="card element">
+                <img
+                  src="img/food-pictures/tom-kha-goong.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center mt-1">Tom Kha Goong 7$</h5>
+                  <p class="card-text">
+                    Potage au lait de noix de coco aux crevettes
+                  </p>
+                  <button class="ajoutButton">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <span>Ajouter</span>
+                  </button>
+                </div>
               </div>
-            </div>
 
-            <!-- Card Element 4 -->
-            <div class="card element">
-              <img src="img/food-pictures/tom-kha-gai.jpg" class="card-img-top" alt="..." />
-              <div class="card-body">
-                <h5 class="card-title text-center mt-1">Tom Kha Gai 6$</h5>
-                <p class="card-text text-center">
-                  Potage au lait de noix de coco aux poulets
-                </p>
-                <button class="ajoutButton">
-                  <i class="fa fa-plus" aria-hidden="true"></i>
-                  <span>Ajouter</span>
-                </button>
+              <!-- Card Element 3 -->
+              <div class="card element">
+                <img
+                  src="img/food-pictures/tom-yum-gai.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center mt-1">Tom Yum Gai 6$</h5>
+                  <p class="card-text">Bouillon a la citronnelle aux poulets</p>
+                  <button class="ajoutButton">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <span>Ajouter</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Card Element 4 -->
+              <div class="card element">
+                <img
+                  src="img/food-pictures/tom-kha-gai.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <h5 class="card-title text-center mt-1">Tom Kha Gai 6$</h5>
+                  <p class="card-text text-center">
+                    Potage au lait de noix de coco aux poulets
+                  </p>
+                  <button class="ajoutButton">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                    <span>Ajouter</span>
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </main>
-  <footer class="bg-dark">
-    test
-  </footer>
+    </main>
+    <footer class="bg-dark">test</footer>
 
-  <script src="/js/jquery.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
 
-  <script src="js/main.js"></script>
-</body>
-
+    <script src="js/main.js"></script>
+  </body>
 </html>
