@@ -23,14 +23,16 @@
 }
 
 /*========================Background Cover========================*/
-main {
+/* main {
   background: url("../img/food-pictures/soupe1.jpg") no-repeat center center
     fixed;
   filter: brightness(90%);
   background-size: cover;
+} */
+
+#menu{
+  min-height: 100vh;
 }
-
-
 /*========================Menu Title========================*/
 #MenuTitre {
   padding-top: 5em;

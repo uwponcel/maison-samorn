@@ -1,0 +1,81 @@
+@font-face {
+  font-family: headerMain;
+  src: url(../font/OpenSansCondensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: headerSub2;
+    src: url(../font/OpenSansCondensed-Light.ttf);
+  }
+
+@font-face {
+  font-family: headerSub;
+  src: url(../font/OpenSansCondensed-LightItalic.ttf);
+}
+
+@font-face {
+  font-family: headerAccent;
+  src: url(../font/navbar/Moyko.ttf);
+}
+
+.masthead {
+  background: url("../img/food-pictures/soupe1.jpg") no-repeat center fixed;
+  filter: brightness(90%);
+  height: 100vh;
+}
+
+.masthead h1 {
+  font-size: 6em;
+  color: white;
+  font-family: headerSub;
+  text-transform: uppercase;
+  text-shadow: 1.5px 1.5px 2px black;
+
+}
+
+.masthead h2 {
+  font-size: 6em;
+  color: #fff;
+  font-family: headerAccent;
+  text-transform: uppercase;
+  text-shadow: 1.5px 1.5px 2px black;
+}
+
+.masthead h3 {
+  font-size: 2rem;
+  color: #fff;
+  font-family: headerSub;
+  text-transform: uppercase;
+  display:flex;
+  text-shadow: 1.5px 1.5px 2px black;
+  
+}
+
+.masthead h3:before,
+.masthead h3:after {
+  content: "";
+  flex: 1;
+  border-bottom: 3px solid white;
+  margin: auto 0.25em;
+
+}
+
+.masthead .text-accent {
+    padding: 0 10em;
+  }
+
+.masthead .btn {
+  background-color: black;
+  border-color: black;
+}
+
+/* @media (min-width: 992px) {
+  .masthead h1 {
+    font-size: 5.5rem;
+  }
+} */
+
+/* no-repeat center center
+fixed;
+
+background-size: cover; */
