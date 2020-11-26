@@ -30,9 +30,19 @@
   background-size: cover;
 } */
 
-#menu{
+/* #menu{
   min-height: 100vh;
 }
+
+
+.main-background #image1{
+  background: url("../img/food-pictures/pad-thai-jay.jpg") no-repeat center center
+  fixed;
+  min-height: 100%;
+  
+} */
+
+
 /*========================Menu Title========================*/
 #MenuTitre {
   padding-top: 5em;

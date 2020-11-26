@@ -12,23 +12,6 @@ $("#connectInscription").on("click", () => {
   $("#signUpModal").modal();
 });
 
-//Collapse delay fix //TODO Do for all the collapses
-$("#collapseAppetizer").on("show.bs.collapse", () => {
-  // do something…
-  $("#collapseAppetizer").addClass("d-flex flex-wrap justify-content-around");
-  $(".card-header").find("i").removeClass("fas fa-angle-right rotate-icon");
-  $(".card-header").find("i").addClass("fas fa-angle-down rotate-icon");
-});
-
-$("#collapseAppetizer").on("hidden.bs.collapse", () => {
-  // do something…
-  $("#collapseAppetizer").removeClass(
-    "d-flex flex-wrap justify-content-around"
-  );
-  $(".card-header").find("i").removeClass("fas fa-angle-down rotate-icon");
-  $(".card-header").find("i").addClass("fas fa-angle-right rotate-icon");
-});
-
 $("#registerButton").on("click", () => {
   let formData = {
     prenom: $("#signUpFirstName").val(),

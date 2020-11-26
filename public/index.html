@@ -90,7 +90,7 @@
       <h1 class="mb-1">Bienvenue</h1>
       <h2 class="mb-1">Maison Samorn</h1>
       <h3 class="mb-5 text-accent"><span>Consulter notre menu</span></h3>
-      <a class="btn btn-primary btn-xl js-scroll-trigger" role="button" href="#social" id="menu-link">
+      <a class="btn btn-primary btn-xl js-scroll-trigger bounce" role="button" href="#social" id="menu-link">
         <i class="fas fa-chevron-down"></i>
       </a>
     </div>
@@ -288,30 +288,43 @@
   <!-- ./ Modal Signup Form -->
 
   <main class="wrapper flex-grow-1" id="menu">
-    
-    
+    <!-- //TODO background images -->
+    <!-- <div class= "container main-background">
+    <div class="row">
+      <div class="col-12 text-white" id="image1">Image 1</div>
+    </div>
+    <div class="row">
+      <div class="col-6 text-white" id="image2">Image 2</div>
+      <div class="col-6 text-white" id="image3">Image 3</div>
+    </div>
+  </div> -->
+
 
     <div id="MenuTitre">
       <p id="titre">Notre Menu</p>
     </div>
 
+    <!-- //TODO cards left align au lieu de milieu plus petit + 2 card par row au plus petit -->
+
     <!--Food Menu Container-->
     <div class="container my-4 mb-5">
       <!--Accordion wrapper-->
-      <div id="accordionAppetizer">
-        <!-- Accordion card -->
+      <div id="accordionFoodMenu">
+
+        <!-- //* Soupes Accordion card -->
+         <!-- //TODO background sur les items (gris pale) -->
         <div class="card">
-          <!--Accordion card Header -->
-          <div class="card-header" id="headingOne1">
-            <a data-toggle="collapse" data-parent="#accordionAppetizer" href="#collapseAppetizer">
+          <!--Card Header -->
+          <div class="card-header collapseSoupes" id="headingSoupes">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSoupes" class="targetID">
               <h5 class="mb-0">
                 <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Entrées
+                Soupes
               </h5>
             </a>
           </div>
-          <!--Accordion card Body -->
-          <div id="collapseAppetizer" class="collapse" data-parent="#accordionAppetizer">
+          <!--Card Body -->
+          <div id="collapseSoupes" class="collapse" data-parent="#accordionFoodMenu">
             <!-- Card Element 1 -->
             <div class="card element">
               <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
@@ -371,7 +384,303 @@
             </div>
           </div>
         </div>
+
+        <!-- //* Entrées Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+        <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseEntrees" id="headingEntrees">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseEntrees" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Entrées
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseEntrees" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- //* Salades Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+         <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseSalades" id="headingSalades">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSalades" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Salades
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseSalades" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- //* Fruits de mer Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+         <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseFruitsDeMer" id="headingFruitDeMer">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseFruitsDeMer" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Fruits de mer
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseFruitsDeMer" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- //* Caris Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+        <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseCaris" id="headingCaris">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseCaris" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Caris
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseCaris" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+         <!-- //* Sautés Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+         <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseSautés" id="headingSautés">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSautés" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Sautés
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseSautés" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- //* Riz Frit Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+         <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseRizFrit" id="headingRizFrit">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseRizFrit" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Riz Frit
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseRizFrit" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- //* Nouilles Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+         <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseNouilles" id="headingNouilles">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseNouilles" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Nouilles
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseNouilles" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         <!-- //* Végétarien Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+         <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseVegetarien" id="headingVegetarien">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseVegetarien" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Végétarien
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseVegetarien" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <!-- //* Desserts Accordion card  -->
+         <!-- //TODO background sur les items (gris pale) -->
+         <div class="card">
+          <!--Card Header -->
+          <div class="card-header collapseDesserts" id="headingDesserts">
+            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseDesserts" class="targetID">
+              <h5 class="mb-0">
+                <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                Desserts
+              </h5>
+            </a>
+          </div>
+          <!--Card Body -->
+          <div id="collapseDesserts" class="collapse" data-parent="#accordionFoodMenu">
+             <!-- Card Element 1 -->
+             <div class="card element">
+              <img src="img/food-pictures/tom-yum-goong.jpg" class="card-img-top" alt="..." />
+              <div class="card-body">
+                <h5 class="card-title text-center mt-1">Tom Yum Goong 7$</h5>
+                <p class="card-text">
+                  Bouillon a la citronnelle aux crevettes
+                </p>
+                <button class="ajoutButton">
+                  <i class="fa fa-plus" aria-hidden="true"></i>
+                  <span>Ajouter</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </div>
   </main>
   <footer class="bg-dark">test</footer>
@@ -380,6 +689,7 @@
   <script src="/js/bootstrap.min.js"></script>
 
   <script src="js/main.js"></script>
+  <script src="js/collapse-menu.js"></script>
   <script src="js/smooth-scroll.js"></script>
 </body>
 
