@@ -13,7 +13,6 @@ CREATE TABLE compte (
     nom VARCHAR(50) NOT NULL,
     adresse VARCHAR(100) NOT NULL,
     code_postal CHAR(7) NOT NULL,
-    ville VARCHAR(50) NOT NULL,
     courriel VARCHAR(50) NOT NULL,
     mot_de_passe VARCHAR(50) NOT NULL,
     CONSTRAINT PRIMARY KEY(id_compte),
@@ -80,24 +79,24 @@ ON UPDATE CASCADE;
 
 
 -- ---------------------- COMPTE TRAVAILLEUR TEST ----------------------------------------------------------------
-INSERT INTO compte(type_de_compte, prenom, nom, adresse, code_postal, ville, courriel)
-VALUES('travailleur', 'Gabriel', 'Bellemare','95 rue Le Loutre', 'J8V 2A8','Gatineau','gabrielbellemare@gmail.com');
+INSERT INTO compte(type_de_compte, prenom, nom, adresse, code_postal, courriel)
+VALUES('travailleur', 'Gabriel', 'Bellemare','95 rue Le Loutre', 'J8V 2A8','gabrielbellemare@gmail.com');
 
 -- ---------------------- SOUPE ----------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Tom Yum Goong', 'Soupes', 'tom-yum-goong.jpg','7.0','Boullion a la citronnelle aux crevettes');
+VALUES('Tom Yum Goong', 'Soupes', 'tom-yum-goong.jpg','7.0','Bouillon à la citronnelle et aux crevettes');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Tom Kha Goong', 'Soupes', 'tom-kha-goong.jpg','7.0','Potage au lait de noix de coco aux crevettes');
+VALUES('Tom Kha Goong', 'Soupes', 'tom-kha-goong.jpg','7.0','Potage au lait de noix de coco et aux crevettes');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Tom Yum Gai', 'Soupes', 'tom-yum-gai.jpg','7.0','Boullion a la citronnelle au poulet');
+VALUES('Tom Yum Gai', 'Soupes', 'tom-yum-gai.jpg','7.0','Boullion à la citronnelle et au poulet');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Tom Kha Gai', 'Soupes', 'tom-kha-gai.jpg','7.0','Potage au lait de noix de coco au poulet');
+VALUES('Tom Kha Gai', 'Soupes', 'tom-kha-gai.jpg','7.0','Potage au lait de noix de coco et au poulet');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Tom Yum Talay', 'Soupes', 'tom-yum-talay.jpg','7.5','Boullion a la citronnelle aux fruits de mer');
+VALUES('Tom Yum Talay', 'Soupes', 'tom-yum-talay.jpg','7.5','Boullion à la citronnelle et aux fruits de mer');
 
 -- ---------------------- ENTREE -------------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)
@@ -119,7 +118,7 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Poa Pia Tod', 'Entrées', 'poa-pia-tod-du-chef.jpg','12.0','Rouleaux frits aux crevettes hachées avec sauce aigre-douce');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Gai Tod', 'Entrées', 'gai-tod.jpg','12.0','Ailes de poulet farcis de vermicelles avec sauce aigre-douce');
+VALUES('Gai Tod', 'Entrées', 'gai-tod.jpg','12.0','Ailes de poulet farcis de vermicelle avec sauce aigre-douce');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Poa Pia Jay', 'Entrées', 'poa-pia-jay.jpg','10.0','Rouleaux frits végétariens servi avec sauce aigre-douce');
@@ -135,7 +134,7 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Yum Talay', 'Salades', 'yum-talay.jpg','20.0','Salade de fruits de mer avec sauce limette épicée');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Yum Woon Sen', 'Salades', 'yum-woon-sen.jpg','20.0','Salade de fruits de mer avec vermicelles et sauce limette');
+VALUES('Yum Woon Sen', 'Salades', 'yum-woon-sen.jpg','20.0','Salade de fruits de mer avec vermicelle et sauce limette');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Neua Nam Tok', 'Salades', 'neua-nam-tok.jpg','18.0','Salade de bœuf barbecue émincé à la menthe pimentée');
@@ -157,7 +156,7 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Pad Priew Wan Goong', 'Fruits De Mer', 'pad-priew-wan-goong.jpg','20.0','Sauté de crevettes aigre-douce avec ananas');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Woon Sen Talay', 'Fruits De Mer', 'pad-woon-sen-talay.jpg','20.0','Sauté de vermicilles aux fruits de mer');
+VALUES('Pad Woon Sen Talay', 'Fruits De Mer', 'pad-woon-sen-talay.jpg','20.0','Sauté de vermicelle aux fruits de mer');
 
 -- ---------------------- CARI -------------------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)
@@ -186,7 +185,7 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Pad Ped Moo', 'Sautés', 'pad-ped-moo.jpg','18.0','Sauté de porc avec poudre de cari rouge et légumes servi avec riz');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Neua Nam Mun Hoy', 'Sautés', 'pad-neua-nam-mun-hoy.jpg','16.0','Sauté au boeuf avec sauce aux huitres.');
+VALUES('Pad Neua Nam Mun Hoy', 'Sautés', 'pad-neua-nam-mun-hoy.jpg','16.0','Sauté au boeuf avec sauce aux huitres');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Pad Neua Tra Khi', 'Sautés', 'pad-neua-tra-khi.jpg','16.0','Sauté au boeuf à la citronnelle servi sur riz');
@@ -212,16 +211,16 @@ VALUES('Kao Pad Pu', 'Riz Frit', 'kao-pad-pu.jpg','20.0','Riz frit au crabe avec
 
 -- ---------------------- NOUILLES ---------------------------------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Thai Goong', 'Nouilles', 'pad-thai-goong.jpg','20.0','Nouilles de riz sautées avec crevettes, sauce pad thai maison, fèves germées');
+VALUES('Pad Thai Goong', 'Nouilles', 'pad-thai-goong.jpg','20.0','Nouilles de riz sautées avec crevettes, sauce pad thai maison et fèves germées');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Thai Gai', 'Nouilles', 'pad-thai-gai.jpg','20.0','Nouilles de riz sautées avec poulet, sauce pad thai maison, fèves germées');
+VALUES('Pad Thai Gai', 'Nouilles', 'pad-thai-gai.jpg','20.0','Nouilles de riz sautées avec poulet, sauce pad thai maison et fèves germées');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Thai Jay', 'Nouilles', 'pad-thai-jay.jpg','18.0','Nouilles de riz sautées avec légumes, sauce pad thai maison, fèves germées');
+VALUES('Pad Thai Jay', 'Nouilles', 'pad-thai-jay.jpg','18.0','Nouilles de riz sautées avec légumes, sauce pad thai maison et fèves germées');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Kee Mao', 'Nouilles', 'pad-kee-mao.jpg','20.0','Nouilles de riz sautées avec poulet, basilic, piments forts et légumes');
+VALUES('Pad Kee Mao', 'Nouilles', 'pad-kee-mao.jpg','20.0','Nouilles de riz sautées avec poulet, basilic et piments forts et légumes');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Rad NA', 'Nouilles', 'rad-na.jpg','20.0','Nouilles de riz garnie d\'une sauce brune maison');
@@ -231,7 +230,7 @@ VALUES('Pad See Ew', 'Nouilles', 'pad-see-ew.jpg','20.0','Nouilles de riz sauté
 
 -- ---------------------- VEGETARIEN ---------------------------------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Pak Ruam Mit', 'Végétarien', 'pad-pak-ruam-mit.jpg','14.0','Sauté de légumes avec chou chinois et bok choy');
+VALUES('Pad Pak Ruam Mit', 'Végétarien', 'pad-pak-ruam-mit.jpg','14.0','Sauté de légumes avec choux chinois et bok choy');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Pad Kha Na', 'Végétarien', 'pad-kha-na.jpg','14.0','Sauté de brocolis chinois');
@@ -240,7 +239,7 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Kao Pad Jay', 'Végétarien', 'kao-pad-jay.jpg','16.0','Riz frit avec carottes, brocolis et chou-fleurs');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Thai Jay', 'Végétarien', 'pad-thai-jay.jpg','18.0','Nouilles de riz sautées avec légumes, sauce pad thai maison, fèves germées');
+VALUES('Pad Thai Jay', 'Végétarien', 'pad-thai-jay.jpg','18.0','Nouilles de riz sautées avec légumes, sauce pad thai maison et fèves germées');
 
 -- ---------------------- DESSERTS ---------------------------------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)

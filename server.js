@@ -7,6 +7,7 @@ const cors = require("cors");
 const sse = require("./middleware-sse.js");
 const item = require("./Database/item");
 const compte = require("./Database/compte");
+const validation = require("./isCompteValid");
 
 /** Port pour le serveur */
 const PORT = process.env.PORT;
@@ -28,29 +29,38 @@ app.use(bodyParser.json({ strict: false }));
 app.use(serveStatic("./public"));
 app.use(sse());
 // Redirect, CSS bootstrap JS jQuery, bootstrap JS
-app.use("/js", express.static(__dirname + "/node_modules/bootstrap/dist/js"));
 app.use("/js", express.static(__dirname + "/node_modules/jquery/dist"));
+app.use("/js", express.static(__dirname + "/node_modules/popper.js/dist/umd"));
+app.use("/js", express.static(__dirname + "/node_modules/bootstrap/dist/js"));
+
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
 
 // Ajouter vos routes ici
+//* Route pour aller chercher les items du menu.
 app.get("/item", async (request, response) => {
   let data = await item.getAll();
   response.status(200).json(data);
 });
 
+//* Route pour ajouter un compte client.
 app.post("/compte", async (request, response) => {
-  compte.add(
-    request.body.idCompte,
-    request.body.typeDeCompte,
-    request.body.prenom,
-    request.body.nom,
-    request.body.adresse,
-    request.body.codePostal,
-    request.body.ville,
-    request.body.email,
-    request.body.motDePasse
-  );
-  response.sendStatus(200);
+  if (!validation.validateAll(request.body)) {
+    response.sendStatus(400);
+    return;
+  } else {
+    compte.add(
+      request.body.prenom,
+      request.body.nom,
+      request.body.adresse,
+      request.body.codePostal,
+      request.body.courriel,
+      request.body.motDePasse
+    );
+    response.sendStatus(200);
+    //TODO afficher dans le html
+    // let compteExiste = compte.compteExiste();
+  }
+  //
 });
 
 // Renvoyer une erreur 404 pour les routes non définies

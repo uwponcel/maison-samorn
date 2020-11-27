@@ -128,6 +128,7 @@
     });
   });
 
+  // ? Get les items du menu sur le serveur -> BDD
   getItemServeur();
 
   // some code…
