@@ -116,7 +116,7 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Satay', 'Entrées', 'satay.jpg','10.0','Brochettes au poulet avec sauce arachides');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Poa Pia Tod Du Chef', 'Entrées', 'poa-pia-tod-du-chef.jpg','12.0','Rouleaux frits aux crevettes hachées avec sauce aigre-douce');
+VALUES('Poa Pia Tod', 'Entrées', 'poa-pia-tod-du-chef.jpg','12.0','Rouleaux frits aux crevettes hachées avec sauce aigre-douce');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Gai Tod', 'Entrées', 'gai-tod.jpg','12.0','Ailes de poulet farcis de vermicelles avec sauce aigre-douce');
@@ -125,7 +125,7 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Poa Pia Jay', 'Entrées', 'poa-pia-jay.jpg','10.0','Rouleaux frits végétariens servi avec sauce aigre-douce');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Gai Haw Bai Toey', 'Entrées', 'gai-haw-toey.jpg','12.0','Poulet mariné dans une feuille de pandanus');
+VALUES('Gai Haw Bai Toey', 'Entrées', 'gai-haw-bai-toey.jpg','12.0','Poulet mariné dans une feuille de pandanus');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Pla Muek Tod', 'Entrées', 'pla-muek-tod.jpg','12.0','Calmars frits servi avec sauce aigre-douce');
@@ -177,13 +177,13 @@ INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Pad Khing', 'Sautés', 'pad-khing.jpg','16.0','Sauté au poulet avec gingembre, ail, oignons et poivrons');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Poulet Frit Avec Sauce Au Citron', 'Sautés', 'poulet-au-citron','16.0','Poitrine de poulet frit avec sauce au citron maison');
+VALUES('Poulet Frit Avec Sauce Au Citron', 'Sautés', 'poulet-au-citron.jpg','16.0','Poitrine de poulet frit avec sauce au citron maison');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Poulet Général Tao', 'Sautés', 'poulet-general-tao.jpg','18.0','Poulet frit sauté avec sauce maison samorn');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Ped Moo', 'Sautés', 'pad-med-moo.jpg','18.0','Sauté de porc avec poudre de cari rouge et légumes servi avec riz');
+VALUES('Pad Ped Moo', 'Sautés', 'pad-ped-moo.jpg','18.0','Sauté de porc avec poudre de cari rouge et légumes servi avec riz');
 
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Pad Neua Nam Mun Hoy', 'Sautés', 'pad-neua-nam-mun-hoy.jpg','16.0','Sauté au boeuf avec sauce aux huitres.');
@@ -231,16 +231,16 @@ VALUES('Pad See Ew', 'Nouilles', 'pad-see-ew.jpg','20.0','Nouilles de riz sauté
 
 -- ---------------------- VEGETARIEN ---------------------------------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Pak Ruam Mit', 'Nouilles', 'pad-pak-ruam-mit.jpg','14.0','Sauté de légumes avec chou chinois et bok choy');
+VALUES('Pad Pak Ruam Mit', 'Végétarien', 'pad-pak-ruam-mit.jpg','14.0','Sauté de légumes avec chou chinois et bok choy');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Kha Na', 'Nouilles', 'pad-kha-na.jpg','14.0','Sauté de brocolis chinois');
+VALUES('Pad Kha Na', 'Végétarien', 'pad-kha-na.jpg','14.0','Sauté de brocolis chinois');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Kao Pad Jay', 'Nouilles', 'kao-pad-jay.jpg','16.0','Riz frit avec carottes, brocolis et chou-fleurs');
+VALUES('Kao Pad Jay', 'Végétarien', 'kao-pad-jay.jpg','16.0','Riz frit avec carottes, brocolis et chou-fleurs');
 
 INSERT INTO item(nom, categorie, image, prix, description)
-VALUES('Pad Thai Jay', 'Nouilles', 'pad-thai-jay.jpg','18.0','Nouilles de riz sautées avec légumes, sauce pad thai maison, fèves germées');
+VALUES('Pad Thai Jay', 'Végétarien', 'pad-thai-jay.jpg','18.0','Nouilles de riz sautées avec légumes, sauce pad thai maison, fèves germées');
 
 -- ---------------------- DESSERTS ---------------------------------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)

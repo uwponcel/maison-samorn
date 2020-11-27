@@ -1,12 +1,13 @@
 let connectionPromise = require("../connection");
 
-exports.get = async () => {
-  let connection = await connectionPromise;
-  let results = await connection.query(
-    "SELECT c.courriel, c.mot_de_passe FROM compte c"
-  );
-  return results;
-};
+// exports.get = async () => {
+//   let connection = await connectionPromise;
+//   let results = await connection.query(
+//     "SELECT c.courriel, c.mot_de_passe FROM compte c"
+//   );
+//   return results;
+// };
+
 //signUpEmail
 //signUpPassword
 exports.add = async (

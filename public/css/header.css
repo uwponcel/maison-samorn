@@ -22,6 +22,9 @@
   background: url("../img/food-pictures/soupe1.jpg") no-repeat center fixed;
   filter: brightness(90%);
   height: 100vh;
+
+  /* TODO Margin social bar */
+ 
 }
 
 .masthead h1 {

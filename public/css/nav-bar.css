@@ -34,9 +34,6 @@
   color:white;
 }
 
-.top-nav a:hover{
-  transform: scale(1.1);
-}
 /**======================== NavBar ========================*/
 .navbar-brand{
   font-family: navBar2;
@@ -65,7 +62,7 @@ nav {
   color: var(--main-accent-color) !important;
 }
 
-.collapse.show {
+nav .collapse.show {
   background-color: transparent !important;
 }
 

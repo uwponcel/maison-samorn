@@ -5,6 +5,7 @@ const bodyParser = require("body-parser");
 const serveStatic = require("serve-static");
 const cors = require("cors");
 const sse = require("./middleware-sse.js");
+const item = require("./Database/item");
 const compte = require("./Database/compte");
 
 /** Port pour le serveur */
@@ -32,6 +33,11 @@ app.use("/js", express.static(__dirname + "/node_modules/jquery/dist"));
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
 
 // Ajouter vos routes ici
+app.get("/item", async (request, response) => {
+  let data = await item.getAll();
+  response.status(200).json(data);
+});
+
 app.post("/compte", async (request, response) => {
   compte.add(
     request.body.idCompte,

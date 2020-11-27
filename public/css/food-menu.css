@@ -1,7 +1,7 @@
 /* Selection is so the player cant select text.*/
 ::selection {
-    color: none;
-    background: none;
+  color: none;
+  background: none;
 }
 
 /* It is the same as before but for firefox.*/
@@ -9,166 +9,154 @@
   color: none;
   background: none;
 }
+
+a:hover {
+  text-decoration: none;
+}
 /*========================Fonts========================*/
 @font-face {
-  font-family: "asianFont";
+  font-family: asianFont;
   src: url("../font/navbar/Moyko.ttf");
-  font-style: normal;
-  font-weight: bold;
 }
 
 @font-face {
-  font-family: itemTitle;
+  font-family: headerFont;
   src: url(../font/OpenSansCondensed-Bold.ttf);
 }
 
-/*========================Background Cover========================*/
-/* main {
-  background: url("../img/food-pictures/soupe1.jpg") no-repeat center center
-    fixed;
-  filter: brightness(90%);
-  background-size: cover;
-} */
-
-/* #menu{
-  min-height: 100vh;
+@font-face {
+  font-family: cardBodyFont;
+  src: url(../font/OpenSansCondensed-LightItalic.ttf);
 }
 
-
-.main-background #image1{
-  background: url("../img/food-pictures/pad-thai-jay.jpg") no-repeat center center
-  fixed;
-  min-height: 100%;
-  
-} */
-
-
-/*========================Menu Title========================*/
-#MenuTitre {
-  padding-top: 5em;
-  padding-bottom: 2em;
-  text-align: center;
+@font-face {
+  font-family: cardAddFont;
+  src: url(../font/OpenSansCondensed-Light.ttf);
 }
+
+/*========================Colors========================*/
+:root {
+  --headerColor: rgba(0, 0, 0, 0.945);
+  --headerActionColor: rgb(0, 0, 0);
+  --collapseColor: rgba(0, 0, 0, 0.8);
+  --cardColor: rgba(0, 0, 0, 0.445);
+  --blue: #00b;
+}
+
+#menu{
+  /* TODO Margin social bar */
+  margin-top: 135em;
+}
+
+/*========================Titre tu menu========================*/
 #titre {
-  margin: -240px auto 0;
   font-family: asianFont;
-  font-weight: bold;
-  font-size: 10em;
   color: white;
   text-shadow: 1.5px 1.5px 2px black;
 }
 
-/*========================Food Menu========================*/
-a:hover{
-  text-decoration: none;
+/*========================The container========================*/
+#foodContainer {
+  max-width: 70%;
 }
-.mb-0{
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0.em .5em;  
-  text-align: left;
-  outline: none;
-}
-.card-header{
-  background-color: rgba(0, 0, 0, 0.63);
-  font-weight: bold;
+
+/*========================Accordion header========================*/
+#foodContainer .card-header {
+  background-color: var(--headerColor);
   cursor: pointer;
   padding: 1em;
-  width: 100%;
   border: none;
-  text-align: left;
-  outline: none;
-  font-size: 20px;
 }
-.card-header:hover{
-  background-color: rgba(0, 0, 0, 0.808);
-}
-
-.card-header:active{
-  display: block;
-  background-color: rgba(0, 0, 0, 0.808);
-}
-.collapse.show{
-  background-color: #83838391;
-} 
-.card{
-  border: none;
-  
-  background-color: rgba(0, 0, 0, 0);
-  
-}
-
-.card-header h5{
- font-family: itemTitle;
-}
-
-.card-title{
-  font-size: larger;
-  font-weight: 700;
-  margin-bottom: 0.3em;
-  
-}
-.card-text{
-  margin-bottom: 0;
-  font-weight: normal;
-  font-weight: 500;
-}
-.card-body p:last-of-type{
-  padding-bottom: .75em;
-}
-.card-body{
-  padding: 0;
-  
-}
-.element{
-  margin: 1em;
-  max-width: 15em;
-  min-width: 10em;
-  padding: .6em;
+#foodContainer .card-header h5 {
+  font-family: headerFont;
   color: white;
-  background-color: rgba(0, 0, 0, 0.445);
-  
+  cursor: pointer;
+  font-size: 1.3em;
+  text-align: left;
 }
 
-.container .ajoutButton{
-  margin-right: 10px;
-  margin-bottom: 3px;
+#foodContainer .card-header:hover {
+  background-color: var(--headerActionColor);
+}
+
+#foodContainer .card-header:active {
+  display: block;
+  background-color: var(--headerActionColor);
+}
+
+#collapseSoupes,
+#collapseEntrees,
+#collapseSalades,
+#collapseFruitsDeMer,
+#collapseCaris,
+#collapseSautes,
+#collapseRizFrit,
+#collapseNouilles,
+#collapseVegetarien,
+#collapseDesserts {
+  background-color: var(--collapseColor);
+}
+
+/*========================Cards========================*/
+#foodCard {
+  margin: 0.5em;
+  max-width: 12em;
+  padding: 0.2em;
+  color: white;
+  background-color: var(--cardColor);
+}
+#foodContainer .card {
+  border-color: black;
+}
+#foodCard .card-body {
+  padding: 1em;
+}
+#foodCard .card-title {
+  font-size: 1.3em;
+  font-family: headerFont;
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5em;
+}
+#foodCard .card-prix {
+  font-size: 1.2em;
+  font-family: headerFont;
+  color: #df5e25;
+}
+#foodCard .card-text {
+  font-size: 1.2em;
+  font-family: cardBodyFont;
+}
+
+#foodCard .ajoutButton {
   width: 40px;
   height: 40px;
   color: white;
-  float: right;
   background-color: rgb(238, 98, 4);
   border: none;
   outline: none;
   box-shadow: 2px 3px rgba(0, 0, 0, 0.452);
   border-radius: 100px;
 }
-.card-body .ajoutButton span{
+#foodCard .ajoutButton span {
   min-width: 3.5em;
   display: none;
+  font-family: headerfont;
 }
-.card-body .ajoutButton i:hover{
-  
-  background-color: rgb(255, 115, 22);
-}
-.card-body .ajoutButton:hover span{
+
+#foodCard .ajoutButton:hover span {
   border: none;
   display: block;
-  
 }
-.card-body .ajoutButton:hover{
+#foodCard .ajoutButton:hover {
   transition: width 0.35s ease-in-out;
   width: 6em;
 }
-.card-body .ajoutButton:hover i{
+#foodCard .ajoutButton:hover i {
   display: none;
 }
 
-.card-body .ajoutButton:active{
+#foodCard .ajoutButton:active {
   border: none;
   background-color: rgb(255, 115, 22);
   transform: translateY(2px) translateX(1px);
 }
-
-

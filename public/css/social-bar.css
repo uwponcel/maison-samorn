@@ -19,6 +19,11 @@
   position: sticky;
   width: 4em;
   top: 30%;
+  z-index: 1;
+
+  /* TODO Margin social bar */
+  margin-top: -150em;
+  
 }
 
 .social-bar li {
