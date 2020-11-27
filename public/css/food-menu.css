@@ -38,12 +38,16 @@ a:hover {
 :root {
   --headerColor: rgba(0, 0, 0, 0.945);
   --headerActionColor: rgb(0, 0, 0);
-  --collapseColor: rgba(0, 0, 0, 0.8);
+  --collapseColor: rgba(0, 0, 0, 0.685);
   --cardColor: rgba(0, 0, 0, 0.445);
   --blue: #00b;
 }
-
+body{
+  background-image: url("../img/food-pictures/background-body-1.jpg");
+  
+}
 #menu{
+  
   /* TODO Margin social bar */
   margin-top: 135em;
 }
@@ -62,9 +66,9 @@ a:hover {
 
 /*========================Accordion header========================*/
 #foodContainer .card-header {
-  background-color: var(--headerColor);
+  background-color: rgba(0, 0, 0, 0.849);
   cursor: pointer;
-  padding: 1em;
+  padding: 1.5em;
   border: none;
 }
 #foodContainer .card-header h5 {
@@ -76,7 +80,7 @@ a:hover {
 }
 
 #foodContainer .card-header:hover {
-  background-color: var(--headerActionColor);
+  background-color:  rgba(0, 0, 0, 0.911);
 }
 
 #foodContainer .card-header:active {
@@ -94,19 +98,19 @@ a:hover {
 #collapseNouilles,
 #collapseVegetarien,
 #collapseDesserts {
-  background-color: var(--collapseColor);
+  background-color: rgba(0, 0, 0, 0.534);
 }
 
 /*========================Cards========================*/
 #foodCard {
-  margin: 0.5em;
+  margin: 0.8em;
   max-width: 12em;
   padding: 0.2em;
   color: white;
-  background-color: var(--cardColor);
+  background-color: rgba(0, 0, 0, 0.623);
 }
-#foodContainer .card {
-  border-color: black;
+.card{
+  background-color:rgba(0, 0, 0, 0);
 }
 #foodCard .card-body {
   padding: 1em;
