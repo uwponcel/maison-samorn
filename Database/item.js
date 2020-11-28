@@ -6,6 +6,5 @@ exports.getAll = async () => {
     "SELECT i.nom, i.categorie, i.image, i.prix, i.description FROM item i"
   );
 
-  //   console.log(results);
   return results;
 };

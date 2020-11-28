@@ -107,7 +107,7 @@
 
     $(href).on("show.bs.collapse", () => {
       // do something…
-      $(href).addClass("d-flex flex-wrap justify-content-start");
+      $(href).addClass("d-flex flex-wrap justify-content-around");
       $(`.card-header.${slicedHref}`)
         .find("i")
         .removeClass("fas fa-angle-right rotate-icon");
@@ -118,7 +118,7 @@
 
     $(href).on("hidden.bs.collapse", () => {
       // do something…
-      $(href).removeClass("d-flex flex-wrap justify-content-start");
+      $(href).removeClass("d-flex flex-wrap justify-content-around");
       $(`.card-header.${slicedHref}`)
         .find("i")
         .removeClass("fas fa-angle-down rotate-icon");

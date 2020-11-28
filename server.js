@@ -7,7 +7,7 @@ const cors = require("cors");
 const sse = require("./middleware-sse.js");
 const item = require("./Database/item");
 const compte = require("./Database/compte");
-const validation = require("./isCompteValid");
+const validation = require("./is-compte-valid");
 
 /** Port pour le serveur */
 const PORT = process.env.PORT;

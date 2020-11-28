@@ -36,16 +36,17 @@ a:hover {
 
 /*========================Colors========================*/
 :root {
-  --headerColor: rgba(0, 0, 0, 0.945);
-  --headerActionColor: rgb(0, 0, 0);
-  --collapseColor: rgba(0, 0, 0, 0.685);
-  --cardColor: rgba(0, 0, 0, 0.445);
-  --blue: #00b;
+  --headerColor: rgba(0, 0, 0, 0.849);
+  --headerActionColor:rgba(0, 0, 0, 0.911);
+  --collapseColor: rgba(0, 0, 0, 0.534);
+  --cardColor:  rgba(0, 0, 0, 0.623);
 }
-body{
-  background-image: url("../img/food-pictures/background-body-1.jpg");
-  
+body { 
+  /*ackground: linear-gradient(90deg, rgba(124,124,124,1) 0%, rgba(57,57,57,1) 100%);*/
+  background: radial-gradient(circle, rgba(175,175,175,1) 0%, rgba(125,125,125,1) 50%, rgba(57,57,57,1) 100%);
+  /*background: linear-gradient(90deg, rgba(223,94,37,1) 0%, rgba(57,57,57,1) 100%);*/
 }
+
 #menu{
   
   /* TODO Margin social bar */
@@ -63,13 +64,14 @@ body{
 #foodContainer {
   max-width: 70%;
 }
-
+#foodContainer .card {
+  border: 1px solid black;
+}
 /*========================Accordion header========================*/
 #foodContainer .card-header {
-  background-color: rgba(0, 0, 0, 0.849);
+  background-color: var(--headerColor);
   cursor: pointer;
   padding: 1.5em;
-  border: none;
 }
 #foodContainer .card-header h5 {
   font-family: headerFont;
@@ -80,11 +82,10 @@ body{
 }
 
 #foodContainer .card-header:hover {
-  background-color:  rgba(0, 0, 0, 0.911);
+  background-color:  var(--headerActionColor);
 }
 
 #foodContainer .card-header:active {
-  display: block;
   background-color: var(--headerActionColor);
 }
 
@@ -98,7 +99,7 @@ body{
 #collapseNouilles,
 #collapseVegetarien,
 #collapseDesserts {
-  background-color: rgba(0, 0, 0, 0.534);
+  background-color: var(--collapseColor);
 }
 
 /*========================Cards========================*/
@@ -107,11 +108,9 @@ body{
   max-width: 12em;
   padding: 0.2em;
   color: white;
-  background-color: rgba(0, 0, 0, 0.623);
+  background-color: var(--cardColor);
 }
-.card{
-  background-color:rgba(0, 0, 0, 0);
-}
+
 #foodCard .card-body {
   padding: 1em;
 }

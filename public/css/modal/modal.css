@@ -14,8 +14,6 @@
   
   :root {
     --main-accent-color: #df5e25;
-  
-    /* #e33a36*/
   }
   
   
@@ -41,12 +39,13 @@
   .modal .close {
     font-size: 40px;
     color: white;
-   
   }
   
   .modal .close:hover,
-  .modal .close:focus {
+  .modal .close:focus,
+  .modal .close:active {
     color: var(--main-accent-color);
+    outline:none;
   }
   
   
