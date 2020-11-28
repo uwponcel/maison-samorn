@@ -19,8 +19,7 @@
 
 
 .masthead {
-  background: url("../img/background-pictures/background.png") no-repeat center
-    center fixed;
+  background: url("../img/background-pictures/background.png") no-repeat fixed;
   background-size: cover;
   
   height: 100vh;
@@ -34,7 +33,7 @@
   color: white;
   font-family: headerSub;
   text-transform: uppercase;
-  text-shadow: 1.5px 1.5px 2px black;
+  text-shadow: 2.5px 2.5px 0.5px black;
 }
 
 .masthead h2 {
@@ -42,7 +41,7 @@
   color: #fff;
   font-family: headerAccent;
   text-transform: uppercase;
-  text-shadow: 1.5px 1.5px 2px black;
+  text-shadow: 2.5px 2.5px 0.5px black;
 }
 
 .masthead h3 {
@@ -51,7 +50,7 @@
   font-family: headerSub;
   text-transform: uppercase;
   display: flex;
-  text-shadow: 1.5px 1.5px 2px black;
+  text-shadow: 2.5px 2.5px 0.5px black;
 }
 
 .masthead h3:before,
