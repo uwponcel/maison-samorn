@@ -17,6 +17,7 @@
           item.description
         );
       }
+      //console.log(listeItem);
     }
   };
 
@@ -64,11 +65,7 @@
         console.log(
           "Error : Check collapse matching and categorie word in Database"
         );
-      // code block
     }
-
-    console.log(categorie);
-    // switch
   };
 
   const selectCategorie = (nom, image, prix, description) => {
@@ -98,6 +95,7 @@
   $(".targetID").on("click", function (e) {
     e.preventDefault();
     let href = $(this).attr("href");
+    let test = $(this).id;
     let slicedHref = href.slice(1, href.length);
 
     $(href).on("show.bs.collapse", () => {
