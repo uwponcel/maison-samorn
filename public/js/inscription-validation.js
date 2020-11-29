@@ -206,6 +206,13 @@
     validateMotDePasseConfirm();
   });
 
+  /**
+   ** Event listeners pour les buttons inscriptions.
+   */
+  $("#navSignUpButton").on("click", () => {
+    $("#signUpModal").modal();
+  });
+
   $(inscriptionButton).on("click", (event) => {
     event.preventDefault();
 
@@ -217,6 +224,10 @@
     validateMotDePasse();
     validateMotDePasseConfirm();
 
+    ajouterCompte();
+  });
+
+  const ajouterCompte = async () => {
     if (form.checkValidity()) {
       let formData = {
         prenom: $("#inscriptionPrenom").val(),
@@ -226,11 +237,14 @@
         courriel: $("#inscriptionCourriel").val(),
         motDePasse: $("#inscriptionMotDePasse").val(),
       };
-      fetch("/compte", {
+      let response = await fetch("/compte", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
+      // let data = await response.json();
+
+      // console.log(data);
     }
-  });
+  };
 })();

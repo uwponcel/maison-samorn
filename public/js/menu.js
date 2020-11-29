@@ -90,11 +90,6 @@
       </div>
     </div>`;
 
-    //   <div class="d-flex align-items-end flex-column" style="height: 200px;">
-    //   <div class="p-2">Flex item</div>
-    //   <div class="p-2">Flex item</div>
-    //   <div class="mt-auto p-2">Flex item</div>
-    // </div>
     return html;
   };
 

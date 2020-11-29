@@ -22,11 +22,8 @@ exports.add = async (
       if (err) {
         if (err.code === "ER_DUP_ENTRY" || err.errno == 1062) {
           //TODO afficher dans le html
-          exports.compteExiste = () => {
-            let error = "Un compte existe déjà avec ce courriel.";
-            return error;
-          };
           console.log("Un compte existe déjà avec ce courriel.");
+          // exports.compteExiste = "Un compte existe déjà avec ce courriel.";
         }
       } else {
         console.log("Aucune erreure dans la requête.");

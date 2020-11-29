@@ -71,3 +71,40 @@ nav .collapse.show {
 
 
 
+/**======================== DropDown Cart ========================*/
+.navbar-nav .dropdown-container {
+  position: relative;
+}
+
+.navbar-nav .dropdown-container button.btn.btn-primary.dropdown-toggle.btn-sm {
+  color: #fff;
+  background-color: black;
+  border-color: white;
+  box-shadow: none;
+}
+
+.navbar-nav .dropdown-menu{
+  position: absolute; 
+  float: left;
+}
+
+.navbar-nav .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
+}
+
+@media screen and (max-width: 548px) {
+  .navbar-nav .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: auto;
+    left: 0;
+  }  
+}
+
+
+
+
+

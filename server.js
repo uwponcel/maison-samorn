@@ -8,6 +8,7 @@ const sse = require("./middleware-sse.js");
 const item = require("./Database/item");
 const compte = require("./Database/compte");
 const validation = require("./is-compte-valid");
+// //* String si le compte existe déjà avec le unique courriel dans la DB.
 
 /** Port pour le serveur */
 const PORT = process.env.PORT;
@@ -57,6 +58,12 @@ app.post("/compte", async (request, response) => {
       request.body.motDePasse
     );
     response.sendStatus(200);
+    // if (erreur) {
+    //   response.sendStatus(409);
+    // } else {
+    //   response.sendStatus(200);
+    // }
+
     //TODO afficher dans le html
     // let compteExiste = compte.compteExiste();
   }

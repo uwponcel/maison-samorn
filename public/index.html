@@ -22,6 +22,7 @@
   <link href="css/social-bar.css" rel="stylesheet" />
   <link href="css/food-menu.css" rel="stylesheet" />
   <link href="css/modal/modal.css" rel="stylesheet" />
+
 </head>
 
 <body class="d-flex flex-column min-vh-100 ">
@@ -31,7 +32,8 @@
     <div class="row justify-content-between">
       <div class="col-6 d-flex align-items-center justify-content-start" id="emplacement">
         <img src="./img/nav-bar/map-pinpoint.svg" alt="Find your location" class="mr-1" />
-        <a href="https://www.google.com/maps/search/?api=1&query=maison+samorn" target="_blank" class="ml-1 text-white text-uppercase">Trouver votre emplacement</a>
+        <a href="https://www.google.com/maps/search/?api=1&query=maison+samorn" target="_blank"
+          class="ml-1 text-white text-uppercase">Trouver votre emplacement</a>
       </div>
       <div class="col-6 d-flex align-items-center justify-content-end">
         <a href="#menu" class="text-uppercase mr-4">Découvrer notre menu</a>
@@ -53,26 +55,50 @@
         <i class="fas fa-bars"></i>
       </button>
       <div class="collapse navbar-collapse" id="burgerMenu">
-        <ul class="navbar-nav ml-auto" id="navBarContainer">
-          <li class="nav-item active">
+        <ul class="navbar-nav ml-auto flex-row float-right flex-wrap" id="navBarContainer">
+          <li class="nav-item active mr-3">
             <a class="nav-link text-white" href="#">Menu</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mr-3">
             <a class="nav-link text-white" href="#">À propos</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mr-3">
             <a class="nav-link text-white" href=" #" id="navConnectButton">Se connecter</a>
           </li>
-          <li class="slash-bar">
+          <li class="slash-bar mr-3">
             <span class="navbar-text text-white">/</span>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mr-3">
             <a class="nav-link text-white" href="#" id="navSignUpButton">S'inscrire</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mr-3">
             <a class="nav-link text-white" href="#">
               <i class="far fa-user"></i>
             </a>
+          </li>
+          <li class="nav-item">
+            <div class="dropdown-container nav-link">
+              <button class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" type="button">
+                <span id="qtyTotalPanier" class="badge badge-pill badge-light">2</span>
+                <i class="fa fa-shopping-cart mx-2"></i>
+                <span id="totalPrixPanier">14$</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu">
+                <li class="p-2 text-nowrap text-center">
+                  <span class="badge badge-pill badge-dark align-text-top mr-1 mt-1">1</span>
+                  Pad thai
+                  <strong>7$</strong>
+                  <a href="#" class="badge badge-danger text-white ml-1">-</a>
+                </li>
+                <li class="p-2 text-nowrap text-center">
+                  <span class="badge badge-pill badge-dark align-text-top mr-1 mt-1">1</span>
+                  Pad Sew
+                  <strong>7$</strong>
+                  <a href="#" class="badge badge-danger text-white ml-1">-</a>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
@@ -85,10 +111,10 @@
     <div class="container my-auto mx-auto text-center">
       <h1 class="mb-1">Bienvenue</h1>
       <h2 class="mb-1">Maison Samorn</h2>
-        <h3 class="mb-5">Consultez notre menu</h3>
-        <a class="btn btn-primary btn-xl shadow-none js-scroll-trigger bounce" role="button" href="#menu" id="menu-link">
-          <i class="fas fa-chevron-down"></i>
-        </a>
+      <h3 class="mb-5">Consultez notre menu</h3>
+      <a class="btn btn-primary btn-xl shadow-none js-scroll-trigger bounce" role="button" href="#menu" id="menu-link">
+        <i class="fas fa-chevron-down"></i>
+      </a>
     </div>
   </header>
 
@@ -217,46 +243,48 @@
           </div>
         </div>
         <!-- Body -->
-        <form  id="inscriptionForm" novalidate>
+        <form id="inscriptionForm" novalidate>
           <div class="modal-body">
             <div class="form-row">
               <div class="form-group col text-white">
                 <label for="inscriptionPrenom">Prénom</label>
-                <input autocomplete="off"  type="text" class="form-control"
-                  id="inscriptionPrenom" placeholder="Prénom" minlength="2" maxlength="50" required />
+                <input autocomplete="off" type="text" class="form-control" id="inscriptionPrenom" placeholder="Prénom"
+                  minlength="2" maxlength="50" required />
               </div>
               <div class="form-group col text-white">
                 <label for="inscriptionNom">Nom</label>
-                <input autocomplete="off"  type="text" class="form-control"
-                  id="inscriptionNom" placeholder="Nom" minlength="2" maxlength="50" required />
+                <input autocomplete="off" type="text" class="form-control" id="inscriptionNom" placeholder="Nom"
+                  minlength="2" maxlength="50" required />
               </div>
             </div>
             <div class="form-row">
               <div class="form-group col-md-9 text-white">
                 <label for="inscriptionAdresse">Adresse</label>
-                <input autocomplete="off"  type="text" class="form-control"
-                  id="inscriptionAdresse" placeholder="Entrer une adresse" minlength="5" maxlength="100" required />
+                <input autocomplete="off" type="text" class="form-control" id="inscriptionAdresse"
+                  placeholder="Entrer une adresse" minlength="5" maxlength="100" required />
               </div>
               <div class="form-group col-md-3 text-white">
                 <label for="inscriptionCodePostal">Code Postal</label>
-                <input autocomplete="off"  type="text" class="form-control"
-                  id="inscriptionCodePostal" placeholder="A1A 1A1" pattern="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]" minlength="7" maxlength="7" required />
+                <input autocomplete="off" type="text" class="form-control" id="inscriptionCodePostal"
+                  placeholder="A1A 1A1"
+                  pattern="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]"
+                  minlength="7" maxlength="7" required />
               </div>
             </div>
             <div class="form-group text-white">
               <label for="inscriptionCourriel">Courriel</label>
-              <input autocomplete="off"  type="text" class="form-control"
-                id="inscriptionCourriel" placeholder="Email" pattern="^[^ ]+@[^ ]+\.[a-z]{2,6}$" minlength="5" maxlength="50" required />
+              <input autocomplete="off" type="text" class="form-control" id="inscriptionCourriel" placeholder="Email"
+                pattern="^[^ ]+@[^ ]+\.[a-z]{2,6}$" minlength="5" maxlength="50" required />
             </div>
             <div class="form-group text-white">
               <label for="inscriptionMotDePasse">Mot de passe</label>
-              <input autocomplete="off"  type="password" class="form-control"
-                id="inscriptionMotDePasse" placeholder="Entrer un mot de passe" minlength="6" maxlength="50" required />
+              <input autocomplete="off" type="password" class="form-control" id="inscriptionMotDePasse"
+                placeholder="Entrer un mot de passe" minlength="6" maxlength="50" required />
             </div>
             <div class="form-group text-white">
               <label for="inscriptionMotDePasseConfirm">Confirmation du mot de passe</label>
-              <input autocomplete="off"  type="password" class="form-control"
-                id="inscriptionMotDePasseConfirm" placeholder="Confirmer le mot de passe" minlength="6" maxlength="50" required />
+              <input autocomplete="off" type="password" class="form-control" id="inscriptionMotDePasseConfirm"
+                placeholder="Confirmer le mot de passe" minlength="6" maxlength="50" required />
             </div>
             <div class="form-group text-white">
               <div class="form-check">
