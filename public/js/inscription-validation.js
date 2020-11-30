@@ -11,6 +11,8 @@
   );
   let inscriptionButton = document.getElementById("inscriptionButton");
 
+
+
   //* Formulaire
   let form = document.getElementById("inscriptionForm");
 
@@ -180,6 +182,23 @@
     $(id).tooltip("show");
   };
 
+  const tooTipCourrielExiste = (label) => {
+    $(courriel).tooltip({
+      title: `<strong class='text-danger'>${label}</strong>`,
+      html: true,
+      placement: "top",
+      trigger: "manual",
+
+    });
+    $(courriel).tooltip("show");
+    //code before the pause
+    setTimeout(() => {
+      $(courriel).tooltip("hide");
+      $(courriel).val('');
+    }, 2000);
+
+  }
+
   /**
    ** Ajouter les fonctions de validation lorsque l'utilisateur change la valeur ou dé-focus l'input
    */
@@ -239,12 +258,19 @@
       };
       let response = await fetch("/compte", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify(formData),
       });
-      // let data = await response.json();
 
-      // console.log(data);
+      console.log(response);
+
+      if (response.status === 409) {
+        let error = await response.text();
+        tooTipCourrielExiste(error);
+      }
+
     }
   };
 })();

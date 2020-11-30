@@ -1,7 +1,7 @@
 // connection.js
-let mysql = require("promise-mysql");
+const mysql = require("promise-mysql");
 
-let connectionPromise = mysql.createPool({
+const pool = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
   user: "root",
@@ -9,4 +9,4 @@ let connectionPromise = mysql.createPool({
   database: "maison_samorn",
 });
 
-module.exports = connectionPromise;
+module.exports = pool;

@@ -17,6 +17,10 @@ const MemoryStore = require("memorystore")(session);
 const item = require("./Database/item");
 const compte = require("./Database/compte");
 const validation = require("./is-compte-valid");
+
+
+// my collection of custom exceptions
+// const { catch } = require("./Database/pool.js");
 // //* String si le compte existe déjà avec le unique courriel dans la DB.
 
 //=============================================================================
@@ -43,16 +47,23 @@ if (app.settings.env === "development") {
 app.use(helmet(helmetOptions));
 app.use(compression());
 app.use(cors());
-app.use(bodyParser.json({ strict: false }));
+app.use(bodyParser.json({
+  strict: false
+}));
 app.use(serveStatic("./public"));
 app.use(sse());
 app.use(
   session({
-    cookie: { maxAge: 3600000 },
+    cookie: {
+      maxAge: 3600000
+    },
     name: process.env.npm_package_name,
-    store: new MemoryStore({ checkPeriod: 3600000 }), //1 heure
+    store: new MemoryStore({
+      checkPeriod: 3600000
+    }), //1 heure
     resave: false,
     secret: "mot de passe infaillible",
+    saveUninitialized: false,
   })
 );
 
@@ -73,11 +84,12 @@ app.get("/item", async (request, response) => {
 
 //* Route pour ajouter un compte client.
 app.post("/compte", async (request, response) => {
+
   if (!validation.validateAll(request.body)) {
     response.sendStatus(400);
     return;
   } else {
-    compte.add(
+    let courrielExiste = await compte.add(
       request.body.prenom,
       request.body.nom,
       request.body.adresse,
@@ -85,17 +97,17 @@ app.post("/compte", async (request, response) => {
       request.body.courriel,
       request.body.motDePasse
     );
-    response.sendStatus(200);
-    // if (erreur) {
-    //   response.sendStatus(409);
-    // } else {
-    //   response.sendStatus(200);
-    // }
 
-    //TODO afficher dans le html
-    // let compteExiste = compte.compteExiste();
+    if (courrielExiste) {
+      response.status(409).send("Un compte existe déjà avec ce courriel.")
+      return;
+    }
+
+    response.sendStatus(200);
   }
-  //
+
+
+
 });
 
 // Renvoyer une erreur 404 pour les routes non définies
