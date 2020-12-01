@@ -1,20 +1,25 @@
 (() => {
     // TODO SESSIONS + CONNEXION VALIDATION
     //==================================================================================================
-    //* Nav Link + modal
+    //* Modal
     //==================================================================================================
-    let connexionLien = document.getElementById("connexionLien");
-    let connectionModal = document.getElementById("connectionModal")
-    $(connexionLien).on("click", () => {
-        $(connectionModal).modal();
-    });
+    //Click listener modal.
+    const clickListenerModal = () => {
+        $("#connexionLien").on("click", () => {
+            $("#connectionModal").modal();
+        });
+    }
+    //==================================================================================================
+    //* Form + fields
+    //==================================================================================================
     let courriel = document.getElementById("connexionCourriel");
     let motDePasse = document.getElementById("connexionMotDePasse");
     let connexionButton = document.getElementById("connexionButton");
     let form = document.getElementById("connexionForm");
 
-
-
+    //==================================================================================================
+    //* Form + fields + simple required validation
+    //==================================================================================================
     const validateCourriel = () => {
         disposeToolTip(courriel);
         if (courriel.validity.valid) {
@@ -37,6 +42,9 @@
         }
     };
 
+    //==================================================================================================
+    //* Tooltip
+    //==================================================================================================
     const disposeToolTip = (id) => {
         $(id).tooltip("dispose");
     };
@@ -51,16 +59,12 @@
         $(id).tooltip("show");
     };
 
-
-
     $(courriel).on("input blur", () => {
         validateCourriel();
     });
     $(motDePasse).on("input blur", () => {
         validateMotDePasse();
     });
-
-
 
     $(connexionButton).on("click", (event) => {
         event.preventDefault();
@@ -72,6 +76,9 @@
         connecterCompte();
     });
 
+    //==================================================================================================
+    //* Connection au compte + nav links change.
+    //==================================================================================================
     const connecterCompte = async () => {
         if (form.checkValidity()) {
             let formData = {
@@ -93,29 +100,16 @@
                 $(motDePasse).val("");
 
                 //Destruction du modal
-                $(connectionModal).modal("hide");
+                $("#connectionModal").modal("hide");
 
                 //Changer le nav bar avec le prénom du user.
                 let data = await response.json();
                 let prenom = data[0]['prenom'];
 
-                $(connexionLien).text(`${prenom}`);
-                $("#barreObliqueContainer").addClass(`text-white`);
-                $("#barreObliqueContainer").append(`<a class="nav-link text-white" href="#">
-                <i class="fas fa-sign-out-alt"></i>
-              </a>`);
-                $("#barreOblique").hide();
+                //Connecter le user sur la navBar
+                navBarConnecter(prenom);
 
-
-                renameElement($(connexionLien), 'span');
-                // $(connexionLien).replaceWith($('<p class="navbar-text">' + this.innerHTML + '</p>'));
-
-                // $("#connexionLien").addClass("navbar-text").removeClass("nav-link").attr;
-                $("#inscriptionLienContainer").hide();
-                $("#inscriptionLienContainer").hide();
-
-
-                //$("#barreOblique").show();
+                $('.ajoutButton').show();
             }
         }
     }
@@ -136,6 +130,58 @@
         }, 2000);
     }
 
+    //Change les liens du nav bar. Prend en paramètre le prénom du user.
+    const navBarConnecter = (prenom) => {
+        renameElement($("#connexionLien"), 'span');
+        $("#connexionLien").text(`${prenom}`);
+
+        $("#barreObliqueContainer").addClass(`text-white`);
+        $("#barreObliqueContainer").append(`<a class="nav-link text-white" href="#" id="deconnexionLien">
+        <i class="fas fa-sign-out-alt"></i>
+      </a>`);
+        $("#barreOblique").hide();
+        $("#inscriptionLienContainer").hide();
+
+
+        //Ajouter un click listener sur le lien de déconnexion.
+        $("#deconnexionLien").on("click", (event) => {
+            event.preventDefault();
+            navBarDeconnecter();
+            $('.ajoutButton').hide();
+        });
+    }
+
+    //Déconnect l'utilisateur et change les liens sur la navbar.
+    const navBarDeconnecter = () => {
+        renameElement($("#connexionLien"), 'a');
+        $("#connexionLien").text("Se connecter");
+
+
+        $("barreObliqueContainer").removeClass("text-white");
+        $("#deconnexionLien").remove();
+        $("#barreOblique").show();
+
+        $("#inscriptionLienContainer").show();
+
+        //Rajouter le click listener pour le modal.
+        clickListenerModal();
+
+        //Déconnecter l'utilisateur de la session.
+        disconnectUser();
+    }
+
+    const disconnectUser = async () => {
+        let response = await fetch("/compte/connexion", {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+        if (response.status === 200) {
+            console.log("Déconnecter");
+        }
+    }
+
     const renameElement = ($element, newElement) => {
 
         $element.wrap("<" + newElement + ">");
@@ -150,5 +196,29 @@
 
         return $newElement;
     }
+
+    const connexionCheck = async () => {
+        let response = await fetch("/compte/connexion", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            },
+        });
+        if (response.status === 401) {
+            //Connecter vous ...
+            return;
+        } else if (response.status === 200) {
+            //Si la session existe on reprend les infos et on les affiche.
+            let data = await response.json();
+            let prenom = data.prenom;
+            navBarConnecter(prenom);
+
+            //Afficher les bouttons
+            $('.ajoutButton').show();
+        }
+    }
+
+    clickListenerModal();
+    connexionCheck();
 
 })();

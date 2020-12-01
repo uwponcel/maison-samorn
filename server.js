@@ -17,6 +17,9 @@ const MemoryStore = require("memorystore")(session);
 const item = require("./Database/item");
 const compte = require("./Database/compte");
 const validation = require("./inscription-validation");
+const {
+  default: referrerPolicy
+} = require("helmet/dist/middlewares/referrer-policy");
 
 
 // my collection of custom exceptions
@@ -105,7 +108,6 @@ app.post("/compte/inscription", async (request, response) => {
   }
 });
 
-
 //* Route pour se connecter à un compte.
 app.post("/compte/connexion", async (request, response) => {
 
@@ -113,13 +115,48 @@ app.post("/compte/connexion", async (request, response) => {
   if (isEmptyObject(data)) {
     response.sendStatus(401);
   } else {
-    if (!request.session.compte) {
-      request.session.compte = [];
+    //Si la session existe pas on la crée.
+    if (!request.session) {
+      request.session = [];
     }
-    request.session.compte = request.body.courriel
+
+    // Store le courriel et le prenom en session.
+    let courriel = data[0]["courriel"]
+    let prenom = data[0]["prenom"];
+    request.session.courriel = courriel;
+    request.session.prenom = prenom;
+
+    //Envoie les données de la BDD (sécurité).
     response.status(200).json(data);
   }
 });
+
+//* Route pour la vérification d'une connexion...
+app.get("/compte/connexion", async (request, response) => {
+  if (!request.session.courriel) {
+    response.sendStatus(401);
+  } else {
+    let compte = {
+      courriel: request.session.courriel,
+      prenom: request.session.prenom
+    }
+    response.status(200).send(compte);
+  }
+});
+
+
+//* Route pour déconnecter un user...
+app.delete("/compte/connexion", async (request, response) => {
+  if (!request.session) {
+    response.sendStatus(404);
+  } else {
+    delete request.session.courriel;
+    delete request.session.prenom;
+    response.sendStatus(200);
+  }
+});
+
+
 
 
 // Renvoyer une erreur 404 pour les routes non définies

@@ -3,10 +3,10 @@
   let listeItem = [];
 
   const getItemServeur = async () => {
-    let response = await fetch("/item");
-    console.log(response);
-    if (response.ok) {
-      listeItem = await response.json();
+    let responseItem = await fetch("/item");
+    console.log(responseItem);
+    if (responseItem.ok) {
+      listeItem = await responseItem.json();
       console.log(listeItem);
       for (let item of listeItem) {
         ajouterItemCollapse(
@@ -19,6 +19,20 @@
       }
       //console.log(listeItem);
     }
+
+    //Regarde si une connexion est présente.
+    let responseAutorisation = await fetch("/compte/connexion", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json"
+      },
+    });
+
+    //Si aucune connexion, cacher les bouttons ajouts.
+    if (responseAutorisation.status === 401) {
+      $('.ajoutButton').show();
+    }
+
   };
 
   const ajouterItemCollapse = (nom, categorie, image, prix, description) => {
