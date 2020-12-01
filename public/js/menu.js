@@ -17,6 +17,8 @@
           item.description
         );
       }
+
+
       //console.log(listeItem);
     }
 
@@ -30,9 +32,8 @@
 
     //Si aucune connexion, cacher les bouttons ajouts.
     if (responseAutorisation.status === 401) {
-      $('.ajoutButton').show();
+      $('.ajoutButton').hide();
     }
-
   };
 
   const ajouterItemCollapse = (nom, categorie, image, prix, description) => {
@@ -80,9 +81,12 @@
           "Error : Check collapse matching and categorie word in Database"
         );
     }
+
   };
 
   const selectCategorie = (nom, image, prix, description) => {
+    let buttonID = nom.replace(/\s/g, '');
+    console.log(buttonID);
     let html = ` 
    <div class="card element flex-shrink" id="foodCard">
       <img src="img/food-pictures/${image}" class="card-img-top" alt="..." />
@@ -93,7 +97,7 @@
           ${description}
         </p>
         <div class="mt-auto ml-auto mr-3 mb-1">
-          <button class="ajoutButton">
+          <button class="ajoutButton" id="${buttonID}" productId>
             <i class="fa fa-plus" aria-hidden="true"></i>
             <span>Ajouter</span>
           </button>
@@ -137,6 +141,7 @@
 
   // ? Get les items du menu sur le serveur -> BDD
   getItemServeur();
+
 
   // some code…
 })();
