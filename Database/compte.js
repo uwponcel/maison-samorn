@@ -1,6 +1,6 @@
 const pool = require("./pool");
 
-exports.add = async (
+exports.inscription = async (
   prenom,
   nom,
   adresse,
@@ -19,16 +19,31 @@ exports.add = async (
                   code_postal,
                   courriel,
                   mot_de_passe)
-               VALUES(?, ?, ?, ?, ?, ?)`,
+                  VALUES(?, ?, ?, ?, ?, ?)`,
       [prenom, nom, adresse, codePostal, courriel, motDePasse],
       (err, rows) => {
         if (err) {
           if (err.code === "ER_DUP_ENTRY" || err.errno == 1062) {
             //TODO afficher dans le html
-            resolve(true);
+            resolve(1);
           }
+        } else {
+          resolve(2);
         }
       }
     );
   });
+};
+
+exports.connection = async (courriel, motDePasse) => {
+  let connection = await pool;
+  let results = await connection.query(
+    `SELECT c.courriel, c.mot_de_passe, c.prenom
+       FROM compte c
+       WHERE c.courriel = ? 
+       AND c.mot_de_passe = ?`,
+    [courriel, motDePasse]
+  );
+
+  return results;
 };

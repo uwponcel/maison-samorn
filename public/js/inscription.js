@@ -1,21 +1,26 @@
 (() => {
-  //* Champs du formulaire
+  //==================================================================================================
+  //* Formulaire + champs
+  //==================================================================================================
+  let form = document.getElementById("inscriptionForm");
   let prenom = document.getElementById("inscriptionPrenom");
   let nom = document.getElementById("inscriptionNom");
   let adresse = document.getElementById("inscriptionAdresse");
   let codePostal = document.getElementById("inscriptionCodePostal");
   let courriel = document.getElementById("inscriptionCourriel");
   let motDePasse = document.getElementById("inscriptionMotDePasse");
-  let confirmationMotDePasse = document.getElementById(
-    "inscriptionMotDePasseConfirm"
-  );
+  let confirmationMotDePasse = document.getElementById("inscriptionMotDePasseConfirm");
   let inscriptionButton = document.getElementById("inscriptionButton");
 
+  //==================================================================================================
+  //* Nav Link + modal
+  //==================================================================================================
+  let inscriptionLien = document.getElementById("inscriptionLien");
+  let inscriptionModal = document.getElementById("inscriptionModal")
 
-
-  //* Formulaire
-  let form = document.getElementById("inscriptionForm");
-
+  //==================================================================================================
+  //* Fonctions de validation
+  //==================================================================================================
   const validatePrenom = () => {
     disposeToolTip(prenom);
     if (prenom.validity.valid) {
@@ -128,6 +133,9 @@
     }
   };
 
+  //==================================================================================================
+  //* ToolTip
+  //==================================================================================================
   const disposeToolTip = (id) => {
     $(id).tooltip("dispose");
   };
@@ -182,27 +190,9 @@
     $(id).tooltip("show");
   };
 
-  const tooTipCourrielExiste = (label) => {
-    $(courriel).tooltip({
-      title: `<strong class='text-danger'>${label}</strong>`,
-      html: true,
-      placement: "top",
-      trigger: "manual",
-
-    });
-    $(courriel).tooltip("show");
-    //code before the pause
-    setTimeout(() => {
-      $(courriel).tooltip("hide");
-      $(courriel).val('');
-    }, 2000);
-
-  }
-
-  /**
-   ** Ajouter les fonctions de validation lorsque l'utilisateur change la valeur ou dé-focus l'input
-   */
-  //* Code IMBD
+  //==================================================================================================
+  //* Ajouter les fonctions de validation lorsque l'utilisateur change la valeur ou dé-focus l'input.
+  //==================================================================================================
   $(prenom).on("input blur", () => {
     validatePrenom();
   });
@@ -225,11 +215,11 @@
     validateMotDePasseConfirm();
   });
 
-  /**
-   ** Event listeners pour les buttons inscriptions.
-   */
-  $("#navSignUpButton").on("click", () => {
-    $("#signUpModal").modal();
+  //==================================================================================================
+  //* Event listeners pour les buttons inscriptions + modal.
+  //==================================================================================================
+  $(inscriptionLien).on("click", () => {
+    $(inscriptionModal).modal();
   });
 
   $(inscriptionButton).on("click", (event) => {
@@ -246,17 +236,18 @@
     ajouterCompte();
   });
 
+  //* Ajout du compte sur la BDD 
   const ajouterCompte = async () => {
     if (form.checkValidity()) {
       let formData = {
-        prenom: $("#inscriptionPrenom").val(),
-        nom: $("#inscriptionNom").val(),
-        adresse: $("#inscriptionAdresse").val(),
-        codePostal: $("#inscriptionCodePostal").val(),
-        courriel: $("#inscriptionCourriel").val(),
-        motDePasse: $("#inscriptionMotDePasse").val(),
+        prenom: $(prenom).val(),
+        nom: $(nom).val(),
+        adresse: $(adresse).val(),
+        codePostal: $(codePostal).val(),
+        courriel: $(courriel).val(),
+        motDePasse: $(motDePasse).val(),
       };
-      let response = await fetch("/compte", {
+      let response = await fetch("/compte/inscription", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -264,13 +255,42 @@
         body: JSON.stringify(formData),
       });
 
-      console.log(response);
-
+      //* Un compte existe déjà avec cet adresse courriel.
       if (response.status === 409) {
         let error = await response.text();
-        tooTipCourrielExiste(error);
+        tooTipEmailExist(error);
+      }
+      //* All good.
+      else if (response.status === 200) {
+        //Vidange des champs
+        $(prenom).val("");
+        $(nom).val("");
+        $(adresse).val("");
+        $(codePostal).val("");
+        $(courriel).val("");
+        $(motDePasse).val("");
+        $(confirmationMotDePasse).val("");
+
+        //Destruction du modal
+        $(inscriptionModal).modal("hide");
       }
 
     }
   };
+
+  //* Si le courriel existe pas afficher un ToolTip avec une erreure.
+  const tooTipEmailExist = (label) => {
+    $(courriel).tooltip({
+      title: `<strong class='text-danger'>${label}</strong>`,
+      html: true,
+      placement: "top",
+      trigger: "manual",
+    });
+    $(courriel).tooltip("show");
+    //Pause then hide.
+    setTimeout(() => {
+      $(courriel).tooltip("dispose");
+      $(courriel).val('');
+    }, 2000);
+  }
 })();

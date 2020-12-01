@@ -56,22 +56,22 @@
       </button>
       <div class="collapse navbar-collapse" id="burgerMenu">
         <ul class="navbar-nav ml-auto flex-row float-right flex-wrap" id="navBarContainer">
-          <li class="nav-item active mr-3">
+          <li class="nav-item active mr-2">
             <a class="nav-link text-white" href="#">Menu</a>
           </li>
-          <li class="nav-item mr-3">
+          <li class="nav-item mr-2">
             <a class="nav-link text-white" href="#">À propos</a>
           </li>
-          <li class="nav-item mr-3">
-            <a class="nav-link text-white" href=" #" id="navConnectButton">Se connecter</a>
+          <li class="nav-item mr-2" id="connexionLienContainer">
+            <a class="nav-link text-white" href=" #" id="connexionLien">Se connecter</a>
           </li>
-          <li class="slash-bar mr-3">
-            <span class="navbar-text text-white">/</span>
+          <li class="nav-item mr-2" id="barreObliqueContainer">
+            <span class="navbar-text text-white" id="barreOblique">/</span>
           </li>
-          <li class="nav-item mr-3">
-            <a class="nav-link text-white" href="#" id="navSignUpButton">S'inscrire</a>
+          <li class="nav-item mr-2" id="inscriptionLienContainer">
+            <a class="nav-link text-white" href="#" id="inscriptionLien">S'inscrire</a>
           </li>
-          <li class="nav-item mr-3">
+          <li class="nav-item mr-2">
             <a class="nav-link text-white" href="#">
               <i class="far fa-user"></i>
             </a>
@@ -171,14 +171,14 @@
         </div>
         <!--Body-->
         <div class="modal-body">
-          <form>
+          <form id="connexionForm" novalidate>
             <div class="form-group text-white">
               <label for="signInEmail">Email</label>
-              <input type="email" class="form-control" id="signInEmail" placeholder="Entrer votre email" required />
+              <input type="text" class="form-control" id="connexionCourriel" placeholder="Entrer votre email" required />
             </div>
             <div class="form-group text-white">
               <label for="signInPassword">Mot de passe</label>
-              <input type="password" class="form-control" id="signInPassword" placeholder="Entrer un mot de passe"
+              <input type="password" class="form-control" id="connexionMotDePasse" placeholder="Entrer un mot de passe"
                 required />
               <p class="font-small d-flex justify-content-end">
                 <a href="#" class="ml-1"> Mot de passe oublié ?</a>
@@ -186,7 +186,7 @@
             </div>
           </form>
           <div class="text-center mb-3">
-            <button type="button" class="btn btn-block btn-rounded z-depth-1a" id="connectButton">
+            <button type="button" class="btn btn-block btn-rounded z-depth-1a" id="connexionButton">
               Se connecter
             </button>
           </div>
@@ -224,7 +224,7 @@
   <!-- ./ Modal Connect Form -->
 
   <!-- Modal Signup Form -->
-  <div class="modal fade" id="signUpModal">
+  <div class="modal fade" id="inscriptionModal">
     <div class="modal-dialog">
       <!--Content-->
       <div class="modal-content">
@@ -542,7 +542,8 @@
   <script src="js/main.js"></script>
   <script src="js/menu.js"></script>
   <script src="js/smooth-scroll.js"></script>
-  <script src="js/inscription-validation.js"></script>
+  <script src="js/inscription.js"></script>
+  <script src="js/connexion.js"></script>
 </body>
 
 </html>

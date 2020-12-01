@@ -1,9 +1,5 @@
 (() => {
-  $("#navConnectButton").on("click", () => {
-    $("#connectionModal").modal();
-  });
-
-  //Switch modal windows connect -> signup
+  // TODO Switch modal windows connect -> signup
   $("#connectInscription").on("click", () => {
     $("#connectionModal").modal("hide");
     $("#signUpModal").modal();

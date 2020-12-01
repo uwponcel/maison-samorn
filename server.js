@@ -16,7 +16,7 @@ const MemoryStore = require("memorystore")(session);
 //=============================================================================
 const item = require("./Database/item");
 const compte = require("./Database/compte");
-const validation = require("./is-compte-valid");
+const validation = require("./inscription-validation");
 
 
 // my collection of custom exceptions
@@ -82,14 +82,14 @@ app.get("/item", async (request, response) => {
   response.status(200).json(data);
 });
 
-//* Route pour ajouter un compte client.
-app.post("/compte", async (request, response) => {
+//* Route pour inscrire un compte client.
+app.post("/compte/inscription", async (request, response) => {
 
   if (!validation.validateAll(request.body)) {
     response.sendStatus(400);
     return;
   } else {
-    let courrielExiste = await compte.add(
+    let courrielExiste = await compte.inscription(
       request.body.prenom,
       request.body.nom,
       request.body.adresse,
@@ -97,18 +97,30 @@ app.post("/compte", async (request, response) => {
       request.body.courriel,
       request.body.motDePasse
     );
-
-    if (courrielExiste) {
+    if (courrielExiste === 1) {
       response.status(409).send("Un compte existe déjà avec ce courriel.")
-      return;
+    } else if (courrielExiste === 2) {
+      response.status(200).send("Bienvenue !");
     }
-
-    response.sendStatus(200);
   }
-
-
-
 });
+
+
+//* Route pour se connecter à un compte.
+app.post("/compte/connexion", async (request, response) => {
+
+  let data = await compte.connection(request.body.courriel, request.body.motDePasse);
+  if (isEmptyObject(data)) {
+    response.sendStatus(401);
+  } else {
+    if (!request.session.compte) {
+      request.session.compte = [];
+    }
+    request.session.compte = request.body.courriel
+    response.status(200).json(data);
+  }
+});
+
 
 // Renvoyer une erreur 404 pour les routes non définies
 app.use(function (request, response) {
@@ -120,3 +132,11 @@ app.use(function (request, response) {
 // Démarage du serveur
 //=============================================================================
 app.listen(PORT);
+
+
+//=============================================================================
+// Fonctions de validation d'objets
+//=============================================================================
+const isEmptyObject = (obj) => {
+  return !Object.keys(obj).length;
+}

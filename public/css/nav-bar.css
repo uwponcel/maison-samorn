@@ -67,6 +67,10 @@ nav .collapse.show {
   background-color: transparent !important;
 }
 
+/* .slash-bar{
+  align
+} */
+
 
 
 
@@ -95,14 +99,14 @@ nav .collapse.show {
   left: auto;
 }
 
-@media screen and (max-width: 548px) {
+/* @media screen and (max-width: 548px) {
   .navbar-nav .dropdown-menu {
     position: absolute;
     top: 100%;
-    right: auto;
-    left: 0;
+    right: 0;
+    left: auto;
   }  
-}
+} */
 
 
 
