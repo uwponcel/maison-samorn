@@ -6,6 +6,15 @@
         alert(id);
     });
 
+
+    $(document).on('click', '#btnPanier', function () {
+        $("#modalPanier").modal();
+    });
+
+    // $("#btnPanier").on("click", () => {
+    //     $("#modalPanier").modal();
+    // });
+
     //1 Aller chercher le ID ITEM SUR DB
 
 

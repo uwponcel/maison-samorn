@@ -77,27 +77,13 @@
             </a>
           </li>
           <li class="nav-item">
-            <div class="dropdown-container nav-link">
-              <button class="btn btn-primary dropdown-toggle btn-sm" data-toggle="dropdown" type="button">
+            <div class="nav-link">
+              <button class="btn btn-primary btn-sm" type="button" id="btnPanier">
                 <span id="qtyTotalPanier" class="badge badge-pill badge-light">2</span>
                 <i class="fa fa-shopping-cart mx-2"></i>
                 <span id="totalPrixPanier">14$</span>
                 <span class="caret"></span>
               </button>
-              <ul class="dropdown-menu">
-                <li class="p-2 text-nowrap text-center">
-                  <span class="badge badge-pill badge-dark align-text-top mr-1 mt-1">1</span>
-                  Pad thai
-                  <strong>7$</strong>
-                  <a href="#" class="badge badge-danger text-white ml-1">-</a>
-                </li>
-                <li class="p-2 text-nowrap text-center">
-                  <span class="badge badge-pill badge-dark align-text-top mr-1 mt-1">1</span>
-                  Pad Sew
-                  <strong>7$</strong>
-                  <a href="#" class="badge badge-danger text-white ml-1">-</a>
-                </li>
-              </ul>
             </div>
           </li>
         </ul>
@@ -174,7 +160,8 @@
           <form id="connexionForm" novalidate>
             <div class="form-group text-white">
               <label for="signInEmail">Email</label>
-              <input type="text" class="form-control" id="connexionCourriel" placeholder="Entrer votre email" required />
+              <input type="text" class="form-control" id="connexionCourriel" placeholder="Entrer votre email"
+                required />
             </div>
             <div class="form-group text-white">
               <label for="signInPassword">Mot de passe</label>
@@ -186,7 +173,7 @@
             </div>
           </form>
           <div class="text-center mb-3">
-            <button type="button" class="btn btn-block btn-rounded z-depth-1a" id="connexionButton">
+            <button type="button" class="btn btn-block btn-rounded" id="connexionButton">
               Se connecter
             </button>
           </div>
@@ -231,7 +218,7 @@
         <!-- Header -->
         <div class="modal-header mx-3 px-0">
           <div class="container-fluid">
-            <div class="row mb-3">
+            <div class="row mb-2">
               <h1 class="modal-title text-white">S'inscrire</h1>
               <button type="button" class="close mr-3" data-dismiss="modal">
                 <span>&times;</span>
@@ -307,11 +294,172 @@
       </div>
     </div>
   </div>
-  <!-- ./ Modal Signup Form -->
 
-  <main class="wrapper flex-grow-1" id="menu">
-    <!-- //TODO background images -->
-    <!-- <div class= "container main-background">
+  <!-- Modal Cart -->
+  <div class="modal fade" id="modalPanier">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content p-2">
+        <div class="modal-header mx-3 px-0">
+          <div class="container px-0">
+            <h1 class="modal-title mt-1">Votre commande</h1>
+            <div class="row">
+              <div class="col">
+                <span>Veuillez réviser votre commande avant de la soumettre</span>
+              </div>
+            </div>
+          </div><button type="button" class="close mr-3 mt-2 py-0 px-0" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body">
+          <div class="container">
+            <div class="row">
+              <div class="col pl-0 pr-0" id="modalPanierCol">
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th class="border-0" scope="col">
+                          <div class="py-2 px-3">
+                            <h6 class="mb-0">Produit</h6>
+                          </div>
+                        </th>
+                        <th class="border-0 text-center" scope="col">
+                          <div class="py-2">
+                            <h6 class="mb-0">Prix</h6>
+                          </div>
+                        </th>
+                        <th class="border-0 text-center" scope="col">
+                          <div class="py-2">
+                            <h6 class="mb-0">Quantité</h6>
+                          </div>
+                        </th>
+                        <th class="border-0 text-center" scope="col">
+                          <div class="py-2">
+                            <h6 class="mb-0">Supprimer</h6>
+                          </div>
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="border-0">
+                          <div><img class="img-fluid rounded" src="./img/food-pictures/ananas-frit.jpg" width="80" />
+                            <div class="ml-3 d-inline-block align-middle">
+                              <h5 class="mb-0 d-none d-lg-block">Ramen</h5>
+                              <span class="d-none d-lg-block">Catégorie: Soupes</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <span>10$</span>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <span>1</span>
+                          <div class="d-inline-block align-middle ml-4">
+                            <i class="fa fa-plus mb-3"></i>
+                            <i class="fa fa-minus d-block"></i>
+                          </div>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <a href="#">
+                            <i class="fa fa-trash fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="border-0">
+                          <div><img class="img-fluid rounded" src="./img/food-pictures/ananas-frit.jpg" width="80" />
+                            <div class="ml-3 d-inline-block align-middle">
+                              <h5 class="mb-0 d-none d-lg-block">Ramen</h5>
+                              <span class="d-none d-lg-block">Catégorie: Soupes</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <span>10$</span>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <span>1</span>
+                          <div class="d-inline-block align-middle ml-4">
+                            <i class="fa fa-plus mb-3"></i>
+                            <i class="fa fa-minus d-block"></i>
+                          </div>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <a href="#">
+                            <i class="fa fa-trash fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td class="border-0">
+                          <div><img class="img-fluid rounded" src="./img/food-pictures/ananas-frit.jpg" width="80" />
+                            <div class="ml-3 d-inline-block align-middle">
+                              <h5 class="mb-0 d-none d-lg-block">Ramen</h5>
+                              <span class="d-none d-lg-block">Catégorie: Soupes</span>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <span>10$</span>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <span>1</span>
+                          <div class="d-inline-block align-middle ml-4">
+                            <i class="fa fa-plus mb-3"></i>
+                            <i class="fa fa-minus d-block"></i>
+                          </div>
+                        </td>
+                        <td class="border-0 align-middle text-center">
+                          <a href="#">
+                            <i class="fa fa-trash fa-lg"></i>
+                          </a>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col px-0" id="modalPanierCol">
+                <div class="px-3 py-3" id="modalPanierResume">
+                  <h6 class="mb-0">Résumé de la commande</h6>
+                </div>
+                <div class="p-2 px-3">
+                  <ul class="list-unstyled">
+                    <li class="d-flex justify-content-between py-3">
+                      <strong>Sous-total</strong>
+                      <strong>$10</strong>
+                    </li>
+                    <li class="d-flex justify-content-between py-3" id="modalPanierResumeList">
+                      <strong>Taxes</strong>
+                      <strong>15%</strong>
+                    </li>
+                    <li class="d-flex justify-content-between py-3" id="modalPanierResumeList">
+                      <strong>Total</strong>
+                      <strong>$11.50</strong>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer mx-3 py-2 px-0">
+          <button class="btn btn-block btn-rounded m-0 mt-1" type="button" id="commandeButton">Commander</button>
+        </div>
+      </div>
+    </div>
+    <!-- ./ Modal Cart -->
+
+
+
+    <!-- ./ Modal Signup Form -->
+
+    <main class="wrapper flex-grow-1" id="menu">
+      <!-- //TODO background images -->
+      <!-- <div class= "container main-background">
     <div class="row">
       <div class="col-12 text-white" id="image1">Image 1</div>
     </div>
@@ -322,200 +470,199 @@
   </div> -->
 
 
-    <div class="container-fluid text-center" id="titre">
-      <h1 class="display-1">Menu</h1>
-    </div>
-
-    <!-- //TODO cards left align au lieu de milieu plus petit + 2 card par row au plus petit -->
-
-    <!--Food Menu Container-->
-    <div class="container my-4 mb-5" id="foodContainer">
-      <!--Accordion wrapper-->
-      <div id="accordionFoodMenu">
-
-        <!-- //* Soupes Accordion card -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseSoupes" id="headingSoupes">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSoupes" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Soupes
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseSoupes" class="collapse" data-parent="#accordionFoodMenu">
-
-
-          </div>
-        </div>
-
-        <!-- //* Entrées Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseEntrees" id="headingEntrees">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseEntrees" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Entrées
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseEntrees"class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-        <!-- //* Salades Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseSalades" id="headingSalades">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSalades" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Salades
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseSalades" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-        <!-- //* Fruits de mer Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseFruitsDeMer" id="headingFruitDeMer">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseFruitsDeMer" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Fruits de mer
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseFruitsDeMer" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-        <!-- //* Caris Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseCaris" id="headingCaris">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseCaris" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Caris
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseCaris" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-
-        <!-- //* Sautés Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseSautes" id="headingSautes">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSautes" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Sautés
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseSautes" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-        <!-- //* Riz Frit Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseRizFrit" id="headingRizFrit">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseRizFrit" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Riz Frit
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseRizFrit" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-        <!-- //* Nouilles Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseNouilles" id="headingNouilles">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseNouilles" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Nouilles
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseNouilles" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-        <!-- //* Végétarien Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseVegetarien" id="headingVegetarien">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseVegetarien" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Végétariens
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseVegetarien" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
-
-        <!-- //* Desserts Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
-        <div class="card bg-transparent">
-          <!--Card Header -->
-          <div class="card-header collapseDesserts" id="headingDesserts">
-            <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseDesserts" class="targetID">
-              <h5 class="mb-0">
-                <i class="fas fa-angle-right rotate-icon pr-2"></i>
-                Desserts
-              </h5>
-            </a>
-          </div>
-          <!--Card Body -->
-          <div id="collapseDesserts" class="collapse" data-parent="#accordionFoodMenu">
-
-          </div>
-        </div>
+      <div class="container-fluid text-center" id="titre">
+        <h1 class="display-1">Menu</h1>
       </div>
 
+      <!-- //TODO cards left align au lieu de milieu plus petit + 2 card par row au plus petit -->
+
+      <!--Food Menu Container-->
+      <div class="container my-4 mb-5" id="foodContainer">
+        <!--Accordion wrapper-->
+        <div id="accordionFoodMenu">
+
+          <!-- //* Soupes Accordion card -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseSoupes" id="headingSoupes">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSoupes" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Soupes
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseSoupes" class="collapse" data-parent="#accordionFoodMenu">
+
+
+            </div>
+          </div>
+
+          <!-- //* Entrées Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseEntrees" id="headingEntrees">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseEntrees" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Entrées
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseEntrees" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+          <!-- //* Salades Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseSalades" id="headingSalades">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSalades" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Salades
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseSalades" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+          <!-- //* Fruits de mer Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseFruitsDeMer" id="headingFruitDeMer">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseFruitsDeMer" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Fruits de mer
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseFruitsDeMer" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+          <!-- //* Caris Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseCaris" id="headingCaris">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseCaris" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Caris
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseCaris" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+
+          <!-- //* Sautés Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseSautes" id="headingSautes">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseSautes" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Sautés
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseSautes" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+          <!-- //* Riz Frit Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseRizFrit" id="headingRizFrit">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseRizFrit" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Riz Frit
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseRizFrit" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+          <!-- //* Nouilles Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseNouilles" id="headingNouilles">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseNouilles" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Nouilles
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseNouilles" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+          <!-- //* Végétarien Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseVegetarien" id="headingVegetarien">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseVegetarien" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Végétariens
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseVegetarien" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+
+          <!-- //* Desserts Accordion card  -->
+          <!-- //TODO background sur les items (gris pale) -->
+          <div class="card bg-transparent">
+            <!--Card Header -->
+            <div class="card-header collapseDesserts" id="headingDesserts">
+              <a data-toggle="collapse" data-parent="#accordionFoodMenu" href="#collapseDesserts" class="targetID">
+                <h5 class="mb-0">
+                  <i class="fas fa-angle-right rotate-icon pr-2"></i>
+                  Desserts
+                </h5>
+              </a>
+            </div>
+            <!--Card Body -->
+            <div id="collapseDesserts" class="collapse" data-parent="#accordionFoodMenu">
+
+            </div>
+          </div>
+        </div>
 
 
 
@@ -531,21 +678,22 @@
 
 
 
-    </div>
-  </main>
-  <footer class="bg-dark"></footer>
 
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/popper.min.js"></script>
-  <script src="/js/bootstrap.min.js"></script>
+      </div>
+    </main>
+    <footer class="bg-dark"></footer>
 
-  
-  <script src="js/menu.js"></script>
-  <script src="js/smooth-scroll.js"></script>
-  <script src="js/inscription.js"></script>
-  <script src="js/connexion.js"></script>
-  <script src="js/main.js"></script>
-  <script src="js/panier.js"></script>
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+
+
+    <script src="js/menu.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/inscription.js"></script>
+    <script src="js/connexion.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/panier.js"></script>
 </body>
 
 </html>

@@ -10,6 +10,7 @@
       console.log(listeItem);
       for (let item of listeItem) {
         ajouterItemCollapse(
+          item.id_item,
           item.nom,
           item.categorie,
           item.image,
@@ -36,8 +37,8 @@
     }
   };
 
-  const ajouterItemCollapse = (nom, categorie, image, prix, description) => {
-    let htmlElement = selectCategorie(nom, image, prix, description);
+  const ajouterItemCollapse = (id, nom, categorie, image, prix, description) => {
+    let htmlElement = selectCategorie(id, nom, image, prix, description);
     switch (categorie) {
       case "Soupes":
         $("#collapseSoupes").append(htmlElement);
@@ -84,9 +85,9 @@
 
   };
 
-  const selectCategorie = (nom, image, prix, description) => {
-    let buttonID = nom.replace(/\s/g, '');
-    console.log(buttonID);
+  const selectCategorie = (id, nom, image, prix, description) => {
+    // let buttonID = nom.replace(/\s/g, '');
+    // console.log(buttonID);
     let html = ` 
    <div class="card element flex-shrink" id="foodCard">
       <img src="img/food-pictures/${image}" class="card-img-top" alt="..." />
@@ -97,7 +98,7 @@
           ${description}
         </p>
         <div class="mt-auto ml-auto mr-3 mb-1">
-          <button class="ajoutButton" id="${buttonID}" productId>
+          <button class="ajoutButton" id="${id}">
             <i class="fa fa-plus" aria-hidden="true"></i>
             <span>Ajouter</span>
           </button>
