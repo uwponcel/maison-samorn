@@ -86,17 +86,17 @@ app.get("/item", async (request, response) => {
 });
 
 app.get("/panier", async (request, response) => {
-  if (!request.session.courriel) {
+  if (!request.session.courriel || !request.session.panier) {
     response.sendStatus(401);
   } else {
     let data = request.session.panier
-    console.log(data);
     response.status(200).json(data);
   }
 });
 
 app.post("/panier", async (request, response) => {
-  request.session.panier = await request.body;
+  request.session.panier = request.body;
+  response.sendStatus(200);
   console.log(request.session.panier);
 });
 
@@ -132,9 +132,9 @@ app.post("/compte/connexion", async (request, response) => {
     response.sendStatus(401);
   } else {
     //Si la session existe pas on la crée.
-    if (!request.session) {
-      request.session = [];
-    }
+    // if (!request.session.courriel) {
+    //   request.session = [];
+    // }
 
     // Store le courriel et le prenom en session.
     let courriel = data[0]["courriel"]
@@ -163,11 +163,12 @@ app.get("/compte/connexion", async (request, response) => {
 
 //* Route pour déconnecter un user...
 app.delete("/compte/connexion", async (request, response) => {
-  if (!request.session) {
+  if (!request.session.courriel) {
     response.sendStatus(404);
   } else {
     delete request.session.courriel;
     delete request.session.prenom;
+    delete request.session.panier;
     response.sendStatus(200);
   }
 });

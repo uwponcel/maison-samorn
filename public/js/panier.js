@@ -6,40 +6,46 @@
     let sessionProduit = [];
 
 
-    // const checkPanierSession = async () => {
-    //     let response = await fetch("/panier");
-    //     console.log(response);
-    //     if (response.ok) {
-    //         listeItem = await response.json();
-    //         console.log(listeItem);
-    //         // const isPanierSessionVide = listeItem.length === 0;
-    //         // console.log(isPanierSessionVide);
-    //     }
-    // };
-
-
-    const getItemServeur = async () => {
-        let response = await fetch("/item");
-        if (response.ok) {
-            listeProduit = await response.json();
+    const checkPanierSession = async () => {
+        let responseBDD = await fetch("/item");
+        if (responseBDD.ok) {
+            listeProduit = await responseBDD.json();
             console.log(listeProduit);
+
+            let responseSession = await fetch("/panier");
+            if (responseSession.ok) {
+                let listeItem = await responseSession.json();
+                const isSessionVide = !Object.keys(listeItem).length;
+                if (isSessionVide) {
+                    return;
+                } else {
+                    sessionProduit = listeItem;
+
+                    updatePanier();
+                    construireListeProduit();
+                    attacherEvenements();
+                }
+            } else if (responseSession.status === 401) {
+                return;
+            }
         }
     };
+
 
     //Modal panier.
     $('#btnPanier').on('click', () => {
         $("#modalPanier").modal();
 
-        // const sessionStore = async () => {
-        //     let response = await fetch("/panier", {
-        //         method: "POST",
-        //         headers: {
-        //             "Content-Type": "application/json"
-        //         },
-        //         body: JSON.stringify(sessionProduit),
-        //     });
-        // }
-        // sessionStore();
+        (async () => {
+            let response = await fetch("/panier", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(sessionProduit),
+            });
+        })();
+
     });
 
     //Bouttons ajouter.
@@ -93,12 +99,15 @@
             const qty = element.qty;
 
             $.each(listeProduit, (i, element) => {
+                console.log(element);
                 if (id == element.id_item) {
                     element.qty = qty;
                     produitPanier.push(element)
                 }
             });
         });
+
+        console.log(produitPanier);
     };
 
     //On update le nav pill avec la qty totale dans le panier.
@@ -255,8 +264,5 @@
         updateListeProduit();
     }
 
-
-    getItemServeur();
-    // checkPanierSession();
-
+    checkPanierSession();
 })();
