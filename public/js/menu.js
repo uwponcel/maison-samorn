@@ -3,11 +3,9 @@
   let listeItem = [];
 
   const getItemServeur = async () => {
-    let responseItem = await fetch("/item");
-    console.log(responseItem);
-    if (responseItem.ok) {
-      listeItem = await responseItem.json();
-      console.log(listeItem);
+    let response = await fetch("/item");
+    if (response.ok) {
+      listeItem = await response.json();
       for (let item of listeItem) {
         ajouterItemCollapse(
           item.id_item,

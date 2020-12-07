@@ -85,6 +85,22 @@ app.get("/item", async (request, response) => {
   response.status(200).json(data);
 });
 
+app.get("/panier", async (request, response) => {
+  if (!request.session.courriel) {
+    response.sendStatus(401);
+  } else {
+    let data = request.session.panier
+    console.log(data);
+    response.status(200).json(data);
+  }
+});
+
+app.post("/panier", async (request, response) => {
+  request.session.panier = await request.body;
+  console.log(request.session.panier);
+});
+
+
 //* Route pour inscrire un compte client.
 app.post("/compte/inscription", async (request, response) => {
 
