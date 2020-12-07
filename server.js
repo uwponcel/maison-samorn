@@ -16,10 +16,15 @@ const MemoryStore = require("memorystore")(session);
 //=============================================================================
 const item = require("./Database/item");
 const compte = require("./Database/compte");
+const commande = require("./Database/commande");
 const validation = require("./inscription-validation");
-const {
-  default: referrerPolicy
-} = require("helmet/dist/middlewares/referrer-policy");
+// const {
+//   default: referrerPolicy
+// } = require("helmet/dist/middlewares/referrer-policy");
+// const {
+//   request,
+//   response
+// } = require("express");
 
 
 // my collection of custom exceptions
@@ -101,6 +106,51 @@ app.post("/panier", async (request, response) => {
 });
 
 
+app.get("/commande", async (request, response) => {
+
+  if (request.session.type_de_compte === "client") {
+    console.log("compte: client");
+    response.sendStatus(200);
+  } else if (request.session.type_de_compte === "travailleur") {
+    console.log("compte: travailleur");
+    response.sendStatus(201);
+  } else {
+    response.sendStatus(401);
+  }
+});
+
+app.post("/commande", async (request, response) => {
+
+  //Date d'aujourd'hui
+  let date_ob = new Date();
+  const dateCourante = date_ob.getFullYear() + "-" + ("0" + (date_ob.getMonth() + 1)).slice(-2) + "-" + ("0" + date_ob.getDate()).slice(-2);
+
+  //Envoyer la commande sur la BDD
+  let responseCommande = await commande.commande(
+    request.session.id_compte,
+    dateCourante,
+    request.body.prixTotal,
+  )
+  console.log(responseCommande);
+
+  //Get le ID de la commande courrante.
+  let data = await commande.getCommandeID(
+    request.session.id_compte
+  );
+  let idCommande = data[0]["MAX(c.id_commande)"];
+  console.log(idCommande);
+
+  //Join la commande et les items à commande_item sur la BDD
+  let responseJoinCommandeItem = await commande.joinCommandeItem(
+    idCommande,
+    request.body.produits
+  )
+  console.log(responseJoinCommandeItem);
+
+  response.sendStatus(200);
+});
+
+
 //* Route pour inscrire un compte client.
 app.post("/compte/inscription", async (request, response) => {
 
@@ -136,9 +186,13 @@ app.post("/compte/connexion", async (request, response) => {
     //   request.session = [];
     // }
 
-    // Store le courriel et le prenom en session.
+    // Store le id du compte, le courriel et le prenom en session.
+    let id_compte = data[0]["id_compte"];
+    let type_de_compte = data[0]["type_de_compte"];
     let courriel = data[0]["courriel"]
     let prenom = data[0]["prenom"];
+    request.session.id_compte = id_compte;
+    request.session.type_de_compte = type_de_compte;
     request.session.courriel = courriel;
     request.session.prenom = prenom;
 
@@ -147,7 +201,7 @@ app.post("/compte/connexion", async (request, response) => {
   }
 });
 
-//* Route pour la vérification d'une connexion...
+//* Route pour la vérification d'une connexion.
 app.get("/compte/connexion", async (request, response) => {
   if (!request.session.courriel) {
     response.sendStatus(401);
@@ -161,11 +215,13 @@ app.get("/compte/connexion", async (request, response) => {
 });
 
 
-//* Route pour déconnecter un user...
+//* Route pour déconnecter un user.
 app.delete("/compte/connexion", async (request, response) => {
   if (!request.session.courriel) {
     response.sendStatus(404);
   } else {
+    delete request.session.id_compte;
+    delete request.session.type_de_compte;
     delete request.session.courriel;
     delete request.session.prenom;
     delete request.session.panier;
@@ -189,7 +245,7 @@ app.listen(PORT);
 
 
 //=============================================================================
-// Fonctions de validation d'objets
+// Fonction de validation d'objets
 //=============================================================================
 const isEmptyObject = (obj) => {
   return !Object.keys(obj).length;

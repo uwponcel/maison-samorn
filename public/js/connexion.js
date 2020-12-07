@@ -110,6 +110,7 @@
                 navBarConnecter(prenom);
 
                 $('.ajoutButton').show();
+                $('#panier').show();
             }
         }
     }
@@ -148,6 +149,7 @@
             event.preventDefault();
             navBarDeconnecter();
             $('.ajoutButton').hide();
+            $('#panier').hide();
         });
     }
 
@@ -205,7 +207,7 @@
             },
         });
         if (response.status === 401) {
-            //Connecter vous ...
+            $('#panier').hide();
             return;
         } else if (response.status === 200) {
             //Si la session existe on reprend les infos et on les affiche.
@@ -215,6 +217,7 @@
 
             //Afficher les bouttons
             $('.ajoutButton').show();
+            $('#panier').show();
         }
     }
 

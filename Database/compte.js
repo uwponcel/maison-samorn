@@ -38,7 +38,7 @@ exports.inscription = async (
 exports.connection = async (courriel, motDePasse) => {
   let connection = await pool;
   let results = await connection.query(
-    `SELECT c.courriel, c.mot_de_passe, c.prenom
+    `SELECT c.id_compte, c.courriel, c.mot_de_passe, c.prenom, c.type_de_compte
        FROM compte c
        WHERE c.courriel = ? 
        AND c.mot_de_passe = ?`,

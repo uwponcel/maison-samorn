@@ -72,11 +72,11 @@
             <a class="nav-link text-white" href="#" id="inscriptionLien">S'inscrire</a>
           </li>
           <li class="nav-item mr-2">
-            <a class="nav-link text-white" href="#">
+            <a class="nav-link text-white" href="#" id="commandesLien">
               <i class="far fa-user"></i>
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" id="panier">
             <div class="nav-link">
               <button class="btn btn-primary btn-sm" type="button" id="btnPanier">
                 <span id="qtyTotalNav" class="badge badge-pill badge-light"></span>
@@ -173,7 +173,7 @@
             </div>
           </form>
           <div class="text-center mb-3">
-            <button type="button" class="btn btn-block btn-rounded" id="connexionButton">
+            <button type="button" class="btn btn-block btn-rounded soumettre" id="connexionButton">
               Se connecter
             </button>
           </div>
@@ -286,7 +286,7 @@
                 <a href="#" class="ml-1"> Conditions et Confidentailité.</a>
               </span>
             </div>
-            <button type="button" class="btn btn-block btn-rounded" id="inscriptionButton">
+            <button type="button" class="btn btn-block btn-rounded soumettre" id="inscriptionButton">
               S'inscrire
             </button>
           </div>
@@ -342,31 +342,7 @@
                       </tr>
                     </thead>
                     <tbody id="listeProduit">
-                      <tr>
-                        <td class="border-0">
-                          <div><img class="img-fluid rounded" src="./img/food-pictures/ananas-frit.jpg" width="80" />
-                            <div class="ml-3 d-inline-block align-middle">
-                              <h5 class="mb-0 d-none d-lg-block">Ramen</h5>
-                              <span class="d-none d-lg-block">Catégorie: Soupes</span>
-                            </div>
-                          </div>
-                        </td>
-                        <td class="border-0 align-middle text-center">
-                          <span>10$</span>
-                        </td>
-                        <td class="border-0 align-middle text-center">
-                          <span>1</span>
-                          <div class="d-inline-block align-middle ml-4">
-                            <i class="fa fa-plus mb-3"></i>
-                            <i class="fa fa-minus d-block"></i>
-                          </div>
-                        </td>
-                        <td class="border-0 align-middle text-center">
-                          <a href="#">
-                            <i class="fa fa-trash fa-lg"></i>
-                          </a>
-                        </td>
-                      </tr>
+
                     </tbody>
                   </table>
                 </div>
@@ -381,15 +357,15 @@
                   <ul class="list-unstyled">
                     <li class="d-flex justify-content-between py-3">
                       <strong>Sous-total</strong>
-                      <strong id="sousTotal">$10</strong>
+                      <strong id="sousTotal"></strong>
                     </li>
                     <li class="d-flex justify-content-between py-3" id="modalPanierResumeList">
                       <strong>Taxes</strong>
-                      <strong id="taxes">15%</strong>
+                      <strong id="taxes"></strong>
                     </li>
                     <li class="d-flex justify-content-between py-3" id="modalPanierResumeList">
                       <strong>Total</strong>
-                      <strong id="total">$11.50</strong>
+                      <strong id="total"></strong>
                     </li>
                   </ul>
                 </div>
@@ -398,12 +374,76 @@
           </div>
         </div>
         <div class="modal-footer mx-3 py-2 px-0">
-          <button class="btn btn-block btn-rounded m-0 mt-1" type="button" id="commandeButton">Commander</button>
+          <button class="btn btn-block btn-rounded m-0 mt-1 soumettre" type="button" id="commandeButton">Commander</button>
         </div>
       </div>
     </div>
   </div>
   <!-- ./ Modal Cart -->
+
+  <!-- Modal orders -->
+  <div class="modal fade" id="modalCommandes">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content p-2">
+        <div class="modal-header mx-3 px-0">
+          <div class="container px-0">
+            <h1 class="modal-title mt-1">Commandes</h1>
+            <div class="row">
+              <div class="col">
+                <span>Consulter ici les commandes passé.</span>
+              </div>
+            </div>
+          </div><button type="button" class="close mr-3 mt-2 py-0 px-0" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">×</span></button>
+        </div>
+        <div class="modal-body px-0 mx-3">
+          <div class="container">
+            <div class="row">
+              <div class="col px-0">
+                <div class="card order-list shadow-sm">
+                  <div class="p-4">
+                    <span class="float-right badge badge-info">En traitement</span>
+                    <h6 class="mb-2">
+                      <p>Numéro de la commande: 1111</p>
+                    </h6>
+                    <ul class="list-inline">
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+
+
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+
+
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+                      <li class="list-inline-item"><span>orem ipsum</span></li>
+                    </ul>
+                    <hr>
+                    <span class="float-right">YYYY-MM-DD</span>
+                    <h6 class="mb-0 pt-2 orange">
+                      <span class="text-white font-weight-bold">Prix total:</span> $300
+                    </h6>
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer mx-3 py-2 px-0">
+          <button class="btn btn-block btn-rounded m-0 mt-1 fermer" type="button" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ./ Modal orders -->
 
 
 
@@ -630,6 +670,7 @@
   <script src="js/connexion.js"></script>
   <script src="js/main.js"></script>
   <script src="js/panier.js"></script>
+  <script src="js/commandes.js"></script>
 </body>
 
 </html>

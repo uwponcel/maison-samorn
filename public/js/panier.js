@@ -4,6 +4,7 @@
     let listeProduit = [];
     let produitPanier = [];
     let sessionProduit = [];
+    let qtyCheck = 0;
 
 
     const checkPanierSession = async () => {
@@ -17,6 +18,7 @@
                 let listeItem = await responseSession.json();
                 const isSessionVide = !Object.keys(listeItem).length;
                 if (isSessionVide) {
+                    $('#commandeButton').prop('disabled', true);
                     return;
                 } else {
                     sessionProduit = listeItem;
@@ -24,8 +26,11 @@
                     updatePanier();
                     construireListeProduit();
                     attacherEvenements();
+
+                    $('#commandeButton').prop('disabled', false);
                 }
             } else if (responseSession.status === 401) {
+
                 return;
             }
         }
@@ -33,7 +38,9 @@
 
 
     //Modal panier.
-    $('#btnPanier').on('click', () => {
+    $('#btnPanier').on('click', (e) => {
+        e.preventDefault();
+        e.stopImmediatePropagation();
         $("#modalPanier").modal();
 
         (async () => {
@@ -48,8 +55,37 @@
 
     });
 
+    $('#commandeButton').on('click', () => {
+        console.log("test");
+
+        //Petit refresh de sécurité
+        updatePrixTotal();
+
+        //Prix total de la commande
+        let commandeData = {
+            prixTotal: Number($('#total').text().slice(1)),
+            produits: sessionProduit
+        };
+        //Envoyer la commande au serveur.
+        const envoyerCommande = async () => {
+            let response = await fetch("/commande", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(commandeData)
+            });
+        };
+
+        envoyerCommande();
+    });
+
     //Bouttons ajouter.
     $(document).on("click", ".ajoutButton", (e) => {
+        qtyCheck += 1;
+        if (qtyCheck > 0) {
+            $('#commandeButton').prop('disabled', false);
+        }
         ajouterPanier(e.currentTarget);
     });
 
@@ -106,8 +142,6 @@
                 }
             });
         });
-
-        console.log(produitPanier);
     };
 
     //On update le nav pill avec la qty totale dans le panier.
@@ -120,6 +154,8 @@
 
         $('#qtyTotalNav').html(qtyProduitPanier);
     }
+
+
 
     //On update le sous-total, taxes et le total sur le nav pill ainsi que dans le panier.
     const updatePrixTotal = () => {

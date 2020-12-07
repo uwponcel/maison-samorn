@@ -41,7 +41,8 @@
 
 
 
-.modal #modalPanierCol {
+.modal #modalPanierCol,
+.modal .card {
   background: rgba(61, 61, 61, 0.55);
 }
 
@@ -75,9 +76,9 @@
   }
   
   
-  .modal #connexionButton,
-  .modal #inscriptionButton,
-  .modal #commandeButton {
+
+  .modal .soumettre,
+  .modal .fermer {
     background-color:#df5e25;
     font-size: 1.1em;
     font-family: modalText;
@@ -87,9 +88,9 @@
     box-shadow: 0 0 3px rgb(250, 92, 0);
   }
   
-  .modal #connexionButton:hover,
-  .modal #inscriptionButton:hover,
-  .modal #commandeButton:hover {
+  .modal .soumettre:hover,
+  .modal .fermer:hover
+  {
     background-color:#b93c06;
     box-shadow: 0 0 3px rgb(255, 100, 10);
   }
@@ -105,7 +106,8 @@
   .modal p,
   .modal label,
   .modal h6,
-  .modal h5{
+  .modal h5,
+  .modal li{
       color: white;
       font-family: modalText;
       font-weight: bold;
@@ -135,6 +137,14 @@
   .modal i{
     font-size: .8em;
     color: white;
+  }
+
+  .modal .orange{
+    color: var(--main-accent-color);
+  }
+
+  .modal .badge{
+    background-color: var(--main-accent-color);
   }
 
 
