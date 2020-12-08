@@ -66,9 +66,7 @@
         validateMotDePasse();
     });
 
-    $(connexionButton).on("click", (event) => {
-        event.preventDefault();
-        console.log("test");
+    $(connexionButton).on("click", () => {
 
         validateCourriel();
         validateMotDePasse();
@@ -180,6 +178,7 @@
             },
         });
         if (response.status === 200) {
+            location.reload();
             console.log("Déconnecter");
         }
     }

@@ -137,7 +137,7 @@
 
   <!-- Modal Connect Form -->
   <div class="modal fade" id="connectionModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <!--Content-->
       <div class="modal-content">
         <!-- Header -->
@@ -150,7 +150,7 @@
               </button>
             </div>
             <div class="row text-white">
-              <span>Veuillez remplir ce formulaire pour vous connecter à un
+              <span class="modal-resume">Veuillez remplir ce formulaire pour vous connecter à un
                 compte.</span>
             </div>
           </div>
@@ -212,7 +212,7 @@
 
   <!-- Modal Signup Form -->
   <div class="modal fade" id="inscriptionModal">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-lg">
       <!--Content-->
       <div class="modal-content">
         <!-- Header -->
@@ -225,7 +225,7 @@
               </button>
             </div>
             <div class="row text-white">
-              <span>Veuillez remplir ce formulaire pour créer un compte.</span>
+              <span class="modal-resume">Veuillez remplir ce formulaire pour créer un compte.</span>
             </div>
           </div>
         </div>
@@ -305,7 +305,7 @@
             <h1 class="modal-title mt-1">Votre commande</h1>
             <div class="row">
               <div class="col">
-                <span>Veuillez réviser votre commande avant de la soumettre</span>
+                <span class="modal-resume">Veuillez réviser votre commande avant de la soumettre</span>
               </div>
             </div>
           </div><button type="button" class="close mr-3 mt-2 py-0 px-0" data-dismiss="modal" aria-label="Close"><span
@@ -390,7 +390,7 @@
             <h1 class="modal-title mt-1">Commandes</h1>
             <div class="row">
               <div class="col">
-                <span>Consulter ici les commandes passé.</span>
+                <span class="modal-resume">Consultez ici les commandes passées</span>
               </div>
             </div>
           </div><button type="button" class="close mr-3 mt-2 py-0 px-0" data-dismiss="modal" aria-label="Close"><span
@@ -399,37 +399,8 @@
         <div class="modal-body px-0 mx-3">
           <div class="container">
             <div class="row">
-              <div class="col px-0">
-                <div class="card order-list shadow-sm">
-                  <div class="p-4">
-                    <span class="float-right badge badge-info">En traitement</span>
-                    <h6 class="mb-2">
-                      <p>Numéro de la commande: 1111</p>
-                    </h6>
-                    <ul class="list-inline">
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-
-
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-
-
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-                      <li class="list-inline-item"><span>orem ipsum</span></li>
-                    </ul>
-                    <hr>
-                    <span class="float-right">YYYY-MM-DD</span>
-                    <h6 class="mb-0 pt-2 orange">
-                      <span class="text-white font-weight-bold">Prix total:</span> $300
-                    </h6>
-                    
-
-                  </div>
-                </div>
+              <div class="col px-0" id="commandes">
+                <!-- commandes ici -->
               </div>
             </div>
           </div>

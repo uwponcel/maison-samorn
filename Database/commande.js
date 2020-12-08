@@ -56,3 +56,18 @@ exports.joinCommandeItem = async (
 
     return "Commande jointe.";
 };
+
+exports.getCommandesClient = async (
+    idCompte
+) => {
+    let connection = await pool;
+    let results = await connection.query(
+        `SELECT c.id_commande, i.nom, ci.quantite, c.etat, c.date, c.prix_total
+        FROM item i
+        LEFT JOIN commande_item ci ON i.id_item = ci.id_item
+        LEFT JOIN commande c ON ci.id_commande = c.id_commande
+        WHERE c.id_compte = ?`,
+        [idCompte]
+    );
+    return results;
+};

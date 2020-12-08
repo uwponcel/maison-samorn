@@ -18,13 +18,8 @@ const item = require("./Database/item");
 const compte = require("./Database/compte");
 const commande = require("./Database/commande");
 const validation = require("./inscription-validation");
-// const {
-//   default: referrerPolicy
-// } = require("helmet/dist/middlewares/referrer-policy");
-// const {
-//   request,
-//   response
-// } = require("express");
+
+
 
 
 // my collection of custom exceptions
@@ -91,10 +86,11 @@ app.get("/item", async (request, response) => {
 });
 
 app.get("/panier", async (request, response) => {
-  if (!request.session.courriel || !request.session.panier) {
+  if (request.session.panier === undefined) {
     response.sendStatus(401);
   } else {
     let data = request.session.panier
+    console.log(data);
     response.status(200).json(data);
   }
 });
@@ -102,15 +98,21 @@ app.get("/panier", async (request, response) => {
 app.post("/panier", async (request, response) => {
   request.session.panier = request.body;
   response.sendStatus(200);
-  console.log(request.session.panier);
 });
 
 
 app.get("/commande", async (request, response) => {
-
   if (request.session.type_de_compte === "client") {
+
+    let data = await commande.getCommandesClient(
+      request.session.id_compte
+    );
+
+    console.log(request.session.id_compte);
     console.log("compte: client");
-    response.sendStatus(200);
+    response.status(200).json(data);
+
+
   } else if (request.session.type_de_compte === "travailleur") {
     console.log("compte: travailleur");
     response.sendStatus(201);
@@ -225,6 +227,7 @@ app.delete("/compte/connexion", async (request, response) => {
     delete request.session.courriel;
     delete request.session.prenom;
     delete request.session.panier;
+    console.log(request.session.panier);
     response.sendStatus(200);
   }
 });
@@ -249,4 +252,4 @@ app.listen(PORT);
 //=============================================================================
 const isEmptyObject = (obj) => {
   return !Object.keys(obj).length;
-}
+};

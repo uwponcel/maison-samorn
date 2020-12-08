@@ -11,7 +11,7 @@
         let responseBDD = await fetch("/item");
         if (responseBDD.ok) {
             listeProduit = await responseBDD.json();
-            console.log(listeProduit);
+
 
             let responseSession = await fetch("/panier");
             if (responseSession.ok) {
@@ -30,7 +30,6 @@
                     $('#commandeButton').prop('disabled', false);
                 }
             } else if (responseSession.status === 401) {
-
                 return;
             }
         }
@@ -38,11 +37,9 @@
 
 
     //Modal panier.
-    $('#btnPanier').on('click', (e) => {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        $("#modalPanier").modal();
+    $('#btnPanier').on('click', () => {
 
+        $("#modalPanier").modal();
         (async () => {
             let response = await fetch("/panier", {
                 method: "POST",
@@ -56,7 +53,6 @@
     });
 
     $('#commandeButton').on('click', () => {
-        console.log("test");
 
         //Petit refresh de sécurité
         updatePrixTotal();
@@ -135,7 +131,6 @@
             const qty = element.qty;
 
             $.each(listeProduit, (i, element) => {
-                console.log(element);
                 if (id == element.id_item) {
                     element.qty = qty;
                     produitPanier.push(element)

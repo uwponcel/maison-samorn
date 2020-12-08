@@ -1,42 +1,44 @@
 @font-face {
-    font-family: modalTitle;
-    src: url(../../font/OpenSansCondensed-Bold.ttf);
+  font-family: modalTitle;
+  src: url(../../font/OpenSansCondensed-Bold.ttf);
 }
-@font-face {
-    font-family: modalText;
-    src: url(../../font/OpenSansCondensed-Light.ttf	);
-}
-@font-face {
-    font-family: modalTextItalic;
-    src: url(../../font/OpenSansCondensed-LightItalic.ttf);
-}
-  
-  
-  :root {
-    --main-accent-color: #df5e25;
-  }
-  
-  
-  /* The Modal (background) */
-  .modal {
-    background-color:rgba(0, 0, 0, 0.600);  
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: rgba(0, 0, 0, 0.600);
-  }
-  
-  .modal-header {
-    border-bottom: 2px solid white;
-  }
 
-  .modal h1 {
-    font-family: modalText;
-    font-weight: bold;
-    letter-spacing: 1.2px;
-    color: white;
-  }
+@font-face {
+  font-family: modalText;
+  src: url(../../font/OpenSansCondensed-Light.ttf	);
+}
+
+@font-face {
+  font-family: modalTextItalic;
+  src: url(../../font/OpenSansCondensed-LightItalic.ttf);
+}
+
+
+:root {
+  --main-accent-color: #df5e25;
+}
+
+
+/* The Modal (background) */
+.modal {
+  background-color: rgba(0, 0, 0, 0.600);
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: rgba(0, 0, 0, 0.600);
+}
+
+.modal-header {
+  border-bottom: 1px solid white;
+}
+
+.modal h1 {
+  font-family: modalText;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  color: white;
+}
 
 
 
@@ -47,110 +49,128 @@
 }
 
 
-.modal th{
+.modal th {
   background: rgba(71, 71, 71, 0.7);
 }
 
-.modal #modalPanierResume{
+.modal #modalPanierResume {
   background: rgba(82, 82, 82, 0.7);
-} 
-
-
-
-
-  .modal-footer {
-    border-top: 2px solid white;
-  }
-   
-  /* The Close Button (x) */
-  .modal .close {
-    font-size: 40px;
-    color: white;
-  }
-  
-  .modal .close:hover,
-  .modal .close:focus,
-  .modal .close:active {
-    color: var(--main-accent-color);
-    outline:none;
-  }
-  
-  
-
-  .modal .soumettre,
-  .modal .fermer {
-    background-color:#df5e25;
-    font-size: 1.1em;
-    font-family: modalText;
-    font-weight: bold;
-    width: 100%;
-    color: white;            
-    box-shadow: 0 0 3px rgb(250, 92, 0);
-  }
-  
-  .modal .soumettre:hover,
-  .modal .fermer:hover
-  {
-    background-color:#b93c06;
-    box-shadow: 0 0 3px rgb(255, 100, 10);
-  }
-
-  .modal .social-connect .btn{
-      color: white;
-  }
-
-  .modal .social-connect .btn:hover{
-    transform: scale(1.2);
 }
 
-  .modal p,
-  .modal label,
-  .modal h6,
-  .modal h5,
-  .modal li{
-      color: white;
-      font-family: modalText;
-      font-weight: bold;
-      font-size: 1.1em;
-      letter-spacing: 1.2px;
-      
-  }
-
-  .modal #modalPanierResumeList{
-    border-top: 1px solid white;
-  }
-  .modal strong,
-  .modal span{
-    color: white;
-    font-family: modalText;
-    font-weight: normal;
-    font-size: 1em;
-    font-style: italic;
-    letter-spacing: 1px;
-  }
 
 
-  .modal a{
-      color: var(--main-accent-color);
-  }
 
-  .modal i{
-    font-size: .8em;
-    color: white;
-  }
 
-  .modal .orange{
-    color: var(--main-accent-color);
-  }
 
-  .modal .badge{
-    background-color: var(--main-accent-color);
-  }
+/* The Close Button (x) */
+.modal .close {
+  font-size: 40px;
+  color: white;
+}
+
+.modal .close:hover,
+.modal .close:focus,
+.modal .close:active {
+  color: var(--main-accent-color);
+  outline: none;
+}
+
+
+
+.modal .soumettre,
+.modal .fermer {
+  background-color: #df5e25;
+  font-size: 1.1em;
+  font-family: modalText;
+  font-weight: bold;
+  width: 100%;
+  color: white;
+  box-shadow: 0 0 3px rgb(250, 92, 0);
+}
+
+.modal .soumettre:hover,
+.modal .fermer:hover {
+  background-color: #b93c06;
+  box-shadow: 0 0 3px rgb(255, 100, 10);
+}
+
+.modal .social-connect .btn {
+  color: white;
+}
+
+.modal .social-connect .btn:hover {
+  transform: scale(1.2);
+}
+
+.modal p,
+.modal label,
+.modal h6,
+.modal h5 {
+  color: white;
+  font-family: modalText;
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 1.2px;
+
+}
+
+.modal .divider {
+  font-weight: bold;
+  font-size: 1.2em;
+  color: var(--main-accent-color);
+}
+
+.modal span.total-price {
+  font-style: normal;
+}
+
+.modal span.modal-resume{
+  font-family: modalTextItalic;
+  font-size: 1.2em;
+
+  letter-spacing: 1.3px;
+}
+
+
+/* .modal #modalPanierResumeList {
+  border-top: 1px solid white;
+} */
+.modal-footer {
+  border-top: none;
+}
+.modal strong,
+.modal span {
+  color: white;
+  font-family: modalText;
+  font-weight: normal;
+  font-size: 1em;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+
+.modal a {
+  color: var(--main-accent-color);
+}
+
+.modal i {
+  font-size: .8em;
+  color: white;
+}
+
+.modal .orange {
+  color: var(--main-accent-color);
+}
+
+.modal .badge {
+  background-color: var(--main-accent-color);
+}
 
 
 
 /* The tooltip Arrow */
 
-  .bs-tooltip-top .arrow::before, .bs-tooltip-auto[x-placement^="top"] .arrow::before {
-    border-top-color: #dc3545 !important;
-  }
+.bs-tooltip-top .arrow::before,
+.bs-tooltip-auto[x-placement^="top"] .arrow::before {
+  border-top-color: #dc3545 !important;
+}
