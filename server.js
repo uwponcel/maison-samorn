@@ -108,9 +108,9 @@ app.get("/commande", async (request, response) => {
       request.session.id_compte
     );
 
-    console.log(request.session.id_compte);
-    console.log("compte: client");
+
     response.status(200).json(data);
+
 
 
   } else if (request.session.type_de_compte === "travailleur") {

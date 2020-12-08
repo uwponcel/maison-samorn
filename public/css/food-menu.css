@@ -66,9 +66,7 @@ body {
 #foodContainer {
   max-width: 70%;
 }
-#foodContainer .card {
-  border: 1px solid black;
-}
+
 /*========================Accordion header========================*/
 #foodContainer .card-header {
   background-color: var(--headerColor);

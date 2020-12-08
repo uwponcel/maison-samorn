@@ -6,7 +6,7 @@ exports.commande = async (
     prixTotal,
 ) => {
     let connection = await pool;
-    connection.query(
+    let results = await connection.query(
         `INSERT INTO commande(
             id_compte,
             date,
@@ -16,7 +16,7 @@ exports.commande = async (
         [idCompte, date, prixTotal]
     );
 
-    return "Commande ajouté.";
+    return results;
 };
 
 exports.getCommandeID = async (
@@ -42,6 +42,8 @@ exports.joinCommandeItem = async (
         for (let item of produits) {
             const id = item.id;
             const qty = item.qty;
+            console.log(id);
+            console.log(qty);
             connection.query(
                 `INSERT INTO commande_item(
                     id_commande,

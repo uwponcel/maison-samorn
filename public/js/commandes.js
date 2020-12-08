@@ -7,6 +7,7 @@
             if (response.status === 200) {
 
                 const listeCommandes = await response.json();
+
                 console.log(listeCommandes);
 
                 //Fonction qui réduit les résultats de la requêtes en une seule commande.

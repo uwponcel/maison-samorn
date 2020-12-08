@@ -74,6 +74,11 @@
         };
 
         envoyerCommande();
+
+        $("#modalPanier").modal("hide");
+        sessionProduit = [];
+        updatePanier();
+        $('#listeProduit').empty();
     });
 
     //Bouttons ajouter.
@@ -200,7 +205,7 @@
           </div>
         </td>
         <td class="border-0 align-middle text-center">
-          <span class="prix">${produit.prix}</span>
+          <span class="prix">$${produit.prix.toFixed(2)}</span>
         </td>
         <td class="border-0 align-middle text-center">
           <span class="qty">${produit.qty}</span>
