@@ -18,6 +18,10 @@ const item = require("./Database/item");
 const compte = require("./Database/compte");
 const commande = require("./Database/commande");
 const validation = require("./inscription-validation");
+const {
+  request,
+  response
+} = require("express");
 
 
 
@@ -107,16 +111,18 @@ app.get("/commande", async (request, response) => {
     let data = await commande.getCommandesClient(
       request.session.id_compte
     );
-
-
     response.status(200).json(data);
 
-
-
   } else if (request.session.type_de_compte === "travailleur") {
+
+    let data = await commande.getCommandesTravailleur();
+
     console.log("compte: travailleur");
-    response.sendStatus(201);
-  } else {
+
+    response.status(201).json(data);
+  }
+  //Aucun des deux compte : unauthorized
+  else {
     response.sendStatus(401);
   }
 });
@@ -150,6 +156,19 @@ app.post("/commande", async (request, response) => {
   console.log(responseJoinCommandeItem);
 
   response.sendStatus(200);
+});
+
+app.post("/commande/etat", async (request, response) => {
+
+  let data = await commande.postCommandeEtat(request.body.id, request.body.etat);
+
+  request.body
+  console.log(data);
+
+  response.sendStatus(200);
+
+  //! Broadcast de l'événement
+  response.pushJson(request.body, "change");
 });
 
 
@@ -233,7 +252,10 @@ app.delete("/compte/connexion", async (request, response) => {
 });
 
 
-
+//* Route pour se connecter au serveur en temps réel
+app.get("/notification", (request, response) => {
+  response.initStream();
+});
 
 // Renvoyer une erreur 404 pour les routes non définies
 app.use(function (request, response) {

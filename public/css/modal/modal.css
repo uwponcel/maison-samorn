@@ -131,6 +131,14 @@
   letter-spacing: 1.3px;
 }
 
+.modal .list-group-item{
+  background-color: transparent;
+  color: white;
+  border: none;
+
+  
+}
+
 
 /* .modal #modalPanierResumeList {
   border-top: 1px solid white;

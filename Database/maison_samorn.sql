@@ -75,8 +75,8 @@ ON UPDATE CASCADE;
 
 
 -- ---------------------- COMPTE TRAVAILLEUR TEST ----------------------------------------------------------------
-INSERT INTO compte(type_de_compte, prenom, nom, adresse, code_postal, courriel)
-VALUES('travailleur', 'Gabriel', 'Bellemare','95 rue Le Loutre', 'J8V 2A8','gabrielbellemare@gmail.com');
+INSERT INTO compte(type_de_compte, prenom, nom, adresse, code_postal, courriel, mot_de_passe)
+VALUES('travailleur', 'Gabriel', 'Bellemare','95 rue Le Loutre', 'J8V 2A8','gabrielbellemare@gmail.com', '123456');
 
 -- ---------------------- SOUPE ----------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)

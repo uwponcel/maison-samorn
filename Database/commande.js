@@ -73,3 +73,34 @@ exports.getCommandesClient = async (
     );
     return results;
 };
+
+
+exports.getCommandesTravailleur = async () => {
+    let connection = await pool;
+    let results = await connection.query(
+        `SELECT c.id_commande, c.etat, c.date, c.prix_total, compte.prenom, compte.nom, compte.adresse, compte.code_postal
+        FROM commande c
+        INNER JOIN compte ON compte.id_compte = c.id_compte
+        WHERE c.etat = "en traitement" OR c.etat = "en cuisine" OR c.etat = "en livraison" OR c.etat = "terminée";`,
+    );
+    return results;
+};
+
+exports.postCommandeEtat = async (
+    idCommande,
+    etat
+) => {
+
+    let connection = await pool;
+
+    console.log(idCommande);
+
+    let results = await connection.query(
+        `UPDATE commande
+                SET etat = ?
+                WHERE id_commande = ?;`,
+        [etat, idCommande]
+    );
+
+    return "État changé.";
+};

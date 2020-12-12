@@ -10,6 +10,7 @@
     const checkPanierSession = async () => {
         let responseBDD = await fetch("/item");
         if (responseBDD.ok) {
+
             listeProduit = await responseBDD.json();
 
 
@@ -30,6 +31,7 @@
                     $('#commandeButton').prop('disabled', false);
                 }
             } else if (responseSession.status === 401) {
+
                 return;
             }
         }
