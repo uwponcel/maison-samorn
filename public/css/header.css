@@ -33,7 +33,7 @@
   color: white;
   font-family: headerSub;
   text-transform: uppercase;
-  text-shadow: 2.5px 2.5px 0.5px black;
+  text-shadow: 2px 2px 0.5px black;
 }
 
 .masthead h2 {
@@ -41,7 +41,7 @@
   color: #fff;
   font-family: headerAccent;
   text-transform: uppercase;
-  text-shadow: 2.5px 2.5px 0.5px black;
+  text-shadow: 2px 2px 0.5px black;
 }
 
 .masthead h3 {
@@ -50,7 +50,7 @@
   font-family: headerSub;
   text-transform: uppercase;
   display: flex;
-  text-shadow: 2.5px 2.5px 0.5px black;
+  text-shadow: 1.2px 1.2px 0.5px black;
 }
 
 .masthead h3:before,

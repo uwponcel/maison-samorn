@@ -42,11 +42,8 @@ a:hover {
   --cardColor:  rgba(0, 0, 0, 0.623);
 }
 body { 
-  /*ackground: linear-gradient(90deg, rgba(124,124,124,1) 0%, rgba(57,57,57,1) 100%);*/
-  /* background: radial-gradient(circle, rgba(175,175,175,1) 0%, rgba(125,125,125,1) 50%, rgba(57,57,57,1) 100%); */
   background: url("../img/background-pictures/background-menu.png") no-repeat fixed;
   background-size: cover;
-  /* background: linear-gradient(90deg, rgba(223,94,37,1) 0%, rgba(57,57,57,1) 100%); */
 }
 
 #menu{

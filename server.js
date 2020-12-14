@@ -18,11 +18,6 @@ const item = require("./Database/item");
 const compte = require("./Database/compte");
 const commande = require("./Database/commande");
 const validation = require("./inscription-validation");
-const {
-  request,
-  response
-} = require("express");
-
 
 
 
@@ -81,6 +76,13 @@ app.use("/js", express.static(__dirname + "/node_modules/bootstrap/dist/js"));
 app.use("/css", express.static(__dirname + "/node_modules/bootstrap/dist/css"));
 
 //=============================================================================
+// Fonction de validation d'objets
+//=============================================================================
+const isEmptyObject = (obj) => {
+  return !Object.keys(obj).length;
+};
+
+//=============================================================================
 // Routes serveur
 //=============================================================================
 //* Route pour aller chercher les items du menu.
@@ -89,23 +91,26 @@ app.get("/item", async (request, response) => {
   response.status(200).json(data);
 });
 
+//* Route pour vérifier un panier en session.
 app.get("/panier", async (request, response) => {
   if (request.session.panier === undefined) {
-    response.sendStatus(401);
-  } else {
-    let data = request.session.panier
-    console.log(data);
-    response.status(200).json(data);
+    return;
   }
+  let data = request.session.panier
+  console.log(data);
+  response.status(200).json(data);
 });
 
+//* Route pour post en panier en session.
 app.post("/panier", async (request, response) => {
   request.session.panier = request.body;
   response.sendStatus(200);
 });
 
-
+//* Route pour aller chercher les commandes d'un client ou
+//* Les commandes globales pour un travailleur
 app.get("/commande", async (request, response) => {
+
   if (request.session.type_de_compte === "client") {
 
     let data = await commande.getCommandesClient(
@@ -127,6 +132,7 @@ app.get("/commande", async (request, response) => {
   }
 });
 
+//* Route pour envoyer une commande
 app.post("/commande", async (request, response) => {
 
   //Date d'aujourd'hui
@@ -158,6 +164,7 @@ app.post("/commande", async (request, response) => {
   response.sendStatus(200);
 });
 
+//* Route pour changer un état de commande.
 app.post("/commande/etat", async (request, response) => {
 
   let data = await commande.postCommandeEtat(request.body.id, request.body.etat);
@@ -202,20 +209,11 @@ app.post("/compte/connexion", async (request, response) => {
   if (isEmptyObject(data)) {
     response.sendStatus(401);
   } else {
-    //Si la session existe pas on la crée.
-    // if (!request.session.courriel) {
-    //   request.session = [];
-    // }
-
     // Store le id du compte, le courriel et le prenom en session.
-    let id_compte = data[0]["id_compte"];
-    let type_de_compte = data[0]["type_de_compte"];
-    let courriel = data[0]["courriel"]
-    let prenom = data[0]["prenom"];
-    request.session.id_compte = id_compte;
-    request.session.type_de_compte = type_de_compte;
-    request.session.courriel = courriel;
-    request.session.prenom = prenom;
+    request.session.id_compte = data[0]["id_compte"];
+    request.session.type_de_compte = data[0]["type_de_compte"];
+    request.session.courriel = data[0]["courriel"];
+    request.session.prenom = data[0]["prenom"];
 
     //Envoie les données de la BDD (sécurité).
     response.status(200).json(data);
@@ -267,11 +265,3 @@ app.use(function (request, response) {
 // Démarage du serveur
 //=============================================================================
 app.listen(PORT);
-
-
-//=============================================================================
-// Fonction de validation d'objets
-//=============================================================================
-const isEmptyObject = (obj) => {
-  return !Object.keys(obj).length;
-};

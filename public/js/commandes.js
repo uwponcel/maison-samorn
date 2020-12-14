@@ -3,7 +3,7 @@
 
         (async () => {
             let response = await fetch("/commande");
-            //client
+            //* Compte client
             if (response.status === 200) {
 
                 //Fetch les commandes d'un user sur la BDD
@@ -27,7 +27,7 @@
                 $("#modalCommandes").modal();
 
             }
-            //travailleur 
+            //* Compte travailleur 
             else if (response.status === 201) {
 
                 //Fetch les commandes des users sur la BDD
@@ -68,9 +68,9 @@
 
 
             }
-            //non connecté
+            //Aucun des deux compte : unauthorized
             else {
-
+                console.log('Compte invalide / non connecté');
             }
         })();
 
@@ -209,60 +209,31 @@
             })();
         }
 
-        /**
-         ** Connexion au serveur pour avoir les notifications en temps réel.
-         */
-        const connecterTempsReel = async () => {
-            let source = new EventSource("/notification");
 
-            source.addEventListener("change", (event) => {
-                let data = JSON.parse(event.data);
-                let id = data.id;
-                let etat = data.etat;
-
-                if ($('.order-list')) {
-                    $('.order-list').find('badge').html();
-                }
-
-
-                console.log(id);
-                console.log(etat);
-            });
-        };
-
-        connecterTempsReel();
     });
 
 
-    //Button compte on click
+    /**
+     ** Connexion au serveur pour avoir les notifications en temps réel.
+     */
+    const connecterTempsReel = async () => {
+        let source = new EventSource("/notification");
 
-    //si le compte est client : afficher les commandes passé pas cet utilisateur avec l'état en cours
+        source.addEventListener("change", (event) => {
+            let data = JSON.parse(event.data);
+            let id = data.id;
+            let etat = data.etat;
 
-    //Fetch sur la BDD des commandes passé avec ce idcompte.
-
-    //construire un tableau
-
-    //contruire un template de visualisation
-
-    //Afficher dans le html 
-
+            if ($('.order-list')) {
+                $('.order-list').find('badge').html();
+            }
 
 
-    //si le compte est travailleur : afficher toutes les commandes passé avec l'état en cours
-    //Fetch sur la BDD de toutes les commandes.  
+            console.log(id);
+            console.log(etat);
+        });
+    };
 
-    //construire un tableau
-
-    //contruire un template de visualisation
-
-    //Afficher dans le html 
-
-    //Bouttons état on click 
-    //Post sur la BDD de la nouvel état à partir du id de la commande
-
-    //Afficher en temps réel la nouvel état pour le client
-
-    //Si l'état est changé à terminée, disable tout les liens d'états (fin de la commannde)
-
+    connecterTempsReel();
 
 })();

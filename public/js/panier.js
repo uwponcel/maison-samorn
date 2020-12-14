@@ -6,42 +6,56 @@
     let sessionProduit = [];
     let qtyCheck = 0;
 
-
-    const checkPanierSession = async () => {
+    //*Fonction pour aller chercher les items du menu sur la BDD.
+    const getItemsBDD = async () => {
+        //Fetch les items sur la BDD
         let responseBDD = await fetch("/item");
         if (responseBDD.ok) {
-
             listeProduit = await responseBDD.json();
+            return true;
+        } else {
+            return;
+        }
+    };
+
+    //*Fonction pour reprendre une session d'achat.
+    const checkPanierSession = async () => {
+        //Fetch les produits en session.
+        let responseSession = await fetch("/panier");
+        if (responseSession.ok) {
 
 
-            let responseSession = await fetch("/panier");
-            if (responseSession.ok) {
-                let listeItem = await responseSession.json();
-                const isSessionVide = !Object.keys(listeItem).length;
-                if (isSessionVide) {
-                    $('#commandeButton').prop('disabled', true);
-                    return;
-                } else {
-                    sessionProduit = listeItem;
+            // Si la session est vide.
+            let listeItem = await responseSession.json();
+            const isSessionVide = !Object.keys(listeItem).length;
+            if (isSessionVide) {
+                //Désactivation du button commande.
+                $('#commandeButton').prop('disabled', true);
+                return;
+            }
 
+            // Sinon on reprend les produits en session.
+            else {
+                sessionProduit = listeItem;
+
+                //On attend les items de la BDD.
+                let itemsRdy = await getItemsBDD();
+                if (itemsRdy) {
                     updatePanier();
                     construireListeProduit();
                     attacherEvenements();
-
                     $('#commandeButton').prop('disabled', false);
                 }
-            } else if (responseSession.status === 401) {
-
-                return;
             }
         }
     };
 
 
-    //Modal panier.
+    //* Modal panier.
     $('#btnPanier').on('click', () => {
-
         $("#modalPanier").modal();
+
+        //Store lees produits en session à l'ouverture du panier.
         (async () => {
             let response = await fetch("/panier", {
                 method: "POST",
@@ -54,6 +68,7 @@
 
     });
 
+    //* Modal panier > button commande.
     $('#commandeButton').on('click', () => {
 
         //Petit refresh de sécurité
@@ -64,6 +79,7 @@
             prixTotal: Number($('#total').text().slice(1)),
             produits: sessionProduit
         };
+
         //Envoyer la commande au serveur.
         const envoyerCommande = async () => {
             let response = await fetch("/commande", {
@@ -77,6 +93,8 @@
 
         envoyerCommande();
 
+        //Vide les produits en session, 
+        //ferme le modal vide la liste de produit et update.
         $("#modalPanier").modal("hide");
         sessionProduit = [];
         updatePanier();
@@ -92,7 +110,7 @@
         ajouterPanier(e.currentTarget);
     });
 
-    //Fonction qui ajoute l'item au panier dépendant de l'ID du produit.
+    //*Fonction qui ajoute l'item au panier dépendant de l'ID du produit.
     const ajouterPanier = (product) => {
         //Prendre le ID du produit.
         const idProduit = $(product).attr('id');
@@ -120,13 +138,15 @@
         updateListeProduit();
     };
 
+    //*Fonction qui update le panier.
     const updatePanier = () => {
-        //Cookies.setStorage('cart', storageData);
-
         //On vide le panier.
         produitPanier = [];
+        //On reconstruit les données
         construireDataPanier();
+        //On update le Nav Pill.
         updateNavPill();
+        //On update le prix total.
         updatePrixTotal();
     };
 
@@ -229,6 +249,8 @@
                     `
     };
 
+    //*Fonction pour attacher les évenements 
+    //*aux buttons ajouter, diminuer et supprimer.
     const attacherEvenements = () => {
         $('button.augmenter').on('click', (e) => {
             augmenterQty(e.currentTarget);
@@ -243,20 +265,26 @@
         });
     };
 
+    //*Fonction pour augmenter la qty d'un produit dans le panier.
     const augmenterQty = (produit) => {
+        //Get le ID du produit.
         const productId = $(produit).parents('.produit').get(0).id;
 
+        //Get le prix du produit en le comparant au ID dans produit panier.
         const price = $.grep(produitPanier, element => {
             return element.id_item == productId
         })[0].prix;
 
+        //Pour chaque produit dans sessionProduit,
         $.each(sessionProduit, (i, element) => {
+            //Si le id du produit est = au id dans la session,
             if (element.id == productId) {
+                //Augmente la qty à partir du ID en session.
                 element.qty += 1;
 
+                //Ajuste le HTML avec la nouvelle qty, prix.
                 $(`#${productId}`).find('.qty').html(element.qty);
                 $(`#${productId}`).find('.prix').html(`$${(price * element.qty).toFixed(2)}`);
-                // $(`#${productId}-dropdown`).find('.price').html(`$${(price * element.itemsNumber).toFixed(2)}`);
             }
         });
 
@@ -264,24 +292,32 @@
         updatePanier();
     };
 
+    //*Fonction pour diminuer la qty d'un produit dans le panier.
     const diminuerQty = (produit) => {
+        //Get le ID du produit.
         const productId = $(produit).parents('.produit').get(0).id;
 
+        //Get le prix du produit en le comparant au ID dans produit panier.
         const price = $.grep(produitPanier, element => {
             return element.id_item == productId
         })[0].prix;
 
+        //Get la qty du produit choisis en comparant le ID du produit
+        //aux produits dans le panier.
         let itemsInCart = $.grep(produitPanier, element => {
             return element.id_item == productId
         })[0].qty;
 
-        console.log(itemsInCart);
-        console.log(sessionProduit);
-
+        //Si la qty est plus grande que 1 (sinon on peux pas diminuer)
         if (itemsInCart > 1) {
+            //On map sur les elements de sessionProduit,
             sessionProduit.map(element => {
+                //Si le id est égal au produit dans la session.
                 if (element.id == productId) {
+                    //On diminue la qty en session.
                     element.qty -= 1
+
+                    //Ajuste le HTML.
                     $(`#${productId}`).find('.qty').html(element.qty);
                     $(`#${productId}`).find('.prix').html(`$${(price * element.qty).toFixed(2)}`);
                 }
@@ -291,9 +327,12 @@
         };
     }
 
+    //* Fonction qui supprime un produit de la session.
     const supprimerProduit = (produit) => {
+        //Get le ID du produit.
         const productId = $(produit).parents('.produit').get(0).id
 
+        //Retourne un array sans le produit supprimé.
         sessionProduit = $.grep(sessionProduit, (element, i) => {
             return element.id != productId
         });
@@ -302,5 +341,6 @@
         updateListeProduit();
     }
 
+    getItemsBDD();
     checkPanierSession();
 })();

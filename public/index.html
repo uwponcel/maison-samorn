@@ -36,7 +36,7 @@
           class="ml-1 text-white text-uppercase">Trouver votre emplacement</a>
       </div>
       <div class="col-6 d-flex align-items-center justify-content-end">
-        <a href="#menu" class="text-uppercase mr-4">Découvrer notre menu</a>
+        <a href="#menu" class="text-uppercase mr-4 menu-link">Découvrer notre menu</a>
         <a href="#" class="mr-2">EN</a>
         <span class="mr-2"> |</span>
         <a href="#">FR</a>
@@ -57,7 +57,7 @@
       <div class="collapse navbar-collapse" id="burgerMenu">
         <ul class="navbar-nav ml-auto flex-row float-right flex-wrap" id="navBarContainer">
           <li class="nav-item active mr-2">
-            <a class="nav-link text-white" href="#">Menu</a>
+            <a class="nav-link text-white menu-link" href="#menu">Menu</a>
           </li>
           <li class="nav-item mr-2">
             <a class="nav-link text-white" href="#">À propos</a>
@@ -92,17 +92,18 @@
   </nav>
   <!-- ./ Sticky Navigation -->
 
-
+  <!-- HEADER -->
   <header class="d-flex masthead">
     <div class="container my-auto mx-auto text-center">
       <h1 class="mb-1">Bienvenue</h1>
       <h2 class="mb-1">Maison Samorn</h2>
       <h3 class="mb-5">Consultez notre menu</h3>
-      <a class="btn btn-primary btn-xl shadow-none js-scroll-trigger bounce" role="button" href="#menu" id="menu-link">
+      <a class="btn btn-primary btn-xl shadow-none js-scroll-trigger bounce menu-link" role="button" href="#menu">
         <i class="fas fa-chevron-down"></i>
       </a>
     </div>
   </header>
+   <!-- ./ HEADER -->
 
   <!-- Social Bar -->
   <div class="social-bar" id="social">
@@ -421,23 +422,10 @@
 
 
   <main class="wrapper flex-grow-1" id="menu">
-    <!-- //TODO background images -->
-    <!-- <div class= "container main-background">
-    <div class="row">
-      <div class="col-12 text-white" id="image1">Image 1</div>
-    </div>
-    <div class="row">
-      <div class="col-6 text-white" id="image2">Image 2</div>
-      <div class="col-6 text-white" id="image3">Image 3</div>
-    </div>
-  </div> -->
-
 
     <div class="container-fluid text-center" id="titre">
       <h1 class="display-1">Menu</h1>
     </div>
-
-    <!-- //TODO cards left align au lieu de milieu plus petit + 2 card par row au plus petit -->
 
     <!--Food Menu Container-->
     <div class="container my-4 mb-5" id="foodContainer">
@@ -445,7 +433,6 @@
       <div id="accordionFoodMenu">
 
         <!-- //* Soupes Accordion card -->
-        <!-- //TODO background sur les items (gris pale) -->
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseSoupes" id="headingSoupes">
@@ -464,7 +451,6 @@
         </div>
 
         <!-- //* Entrées Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseEntrees" id="headingEntrees">
@@ -482,7 +468,6 @@
         </div>
 
         <!-- //* Salades Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseSalades" id="headingSalades">
@@ -500,7 +485,7 @@
         </div>
 
         <!-- //* Fruits de mer Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
+    
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseFruitsDeMer" id="headingFruitDeMer">
@@ -517,8 +502,7 @@
           </div>
         </div>
 
-        <!-- //* Caris Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
+        <!-- //* Caris Accordion card  -->    
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseCaris" id="headingCaris">
@@ -536,8 +520,7 @@
         </div>
 
 
-        <!-- //* Sautés Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
+        <!-- //* Sautés Accordion card  -->  
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseSautes" id="headingSautes">
@@ -555,7 +538,6 @@
         </div>
 
         <!-- //* Riz Frit Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseRizFrit" id="headingRizFrit">
@@ -573,7 +555,6 @@
         </div>
 
         <!-- //* Nouilles Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseNouilles" id="headingNouilles">
@@ -591,7 +572,6 @@
         </div>
 
         <!-- //* Végétarien Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseVegetarien" id="headingVegetarien">
@@ -609,7 +589,6 @@
         </div>
 
         <!-- //* Desserts Accordion card  -->
-        <!-- //TODO background sur les items (gris pale) -->
         <div class="card bg-transparent">
           <!--Card Header -->
           <div class="card-header collapseDesserts" id="headingDesserts">
