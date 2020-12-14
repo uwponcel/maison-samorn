@@ -77,3 +77,8 @@
   color: white;
 }
 
+@media screen and (max-width: 992px) {
+  div.social-bar {
+    display: none;
+  }
+}
