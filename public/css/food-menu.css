@@ -52,6 +52,12 @@ body {
   margin-top: 135em;
 }
 
+@media screen and (max-width: 992px) {
+  #menu {
+    margin-top: 2em;
+  }
+}
+
 /*========================Titre tu menu========================*/
 #titre {
   font-family: asianFont;
