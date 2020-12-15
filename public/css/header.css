@@ -19,14 +19,12 @@
 
 
 .masthead {
-  background: url("../img/background-pictures/background.png") no-repeat fixed;
+  background: url("../img/background-pictures/background.png") no-repeat center fixed;
   background-size: cover;
   
   height: 100vh;
-
-
-  /* TODO Margin social bar */
 }
+
 
 .masthead h1 {
   font-size: 6em;
