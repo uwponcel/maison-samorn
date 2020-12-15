@@ -5,7 +5,8 @@
     //==================================================================================================
     //Click listener modal.
     const clickListenerModal = () => {
-        $("#connexionLien").on("click", () => {
+        $("#connexionLien").on("click", (e) => {
+            e.preventDefault();
             $("#connectionModal").modal();
         });
     }

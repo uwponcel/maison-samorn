@@ -1,5 +1,6 @@
 (() => {
-    $('#commandesLien').on('click', () => {
+    $('#commandesLien').on('click', (e) => {
+        e.preventDefault();
 
         (async () => {
             let response = await fetch("/commande");

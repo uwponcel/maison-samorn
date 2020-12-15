@@ -218,7 +218,8 @@
   //==================================================================================================
   //* Event listeners pour les buttons inscriptions + modal.
   //==================================================================================================
-  $(inscriptionLien).on("click", () => {
+  $(inscriptionLien).on("click", (e) => {
+    e.preventDefault();
     $(inscriptionModal).modal();
   });
 

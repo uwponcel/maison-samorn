@@ -78,6 +78,9 @@ ON UPDATE CASCADE;
 INSERT INTO compte(type_de_compte, prenom, nom, adresse, code_postal, courriel, mot_de_passe)
 VALUES('travailleur', 'Gabriel', 'Bellemare','95 rue Le Loutre', 'J8V 2A8','gabrielbellemare@gmail.com', '123456');
 
+INSERT INTO compte(type_de_compte, prenom, nom, adresse, code_postal, courriel, mot_de_passe)
+VALUES('client', 'William', 'Poncelet','446 rue de la rue', 'J8V 2A8','uwponcel@gmail.com', '123456');
+
 -- ---------------------- SOUPE ----------------------------------------------------------------------
 INSERT INTO item(nom, categorie, image, prix, description)
 VALUES('Tom Yum Goong', 'Soupes', 'tom-yum-goong.jpg','7.0','Bouillon à la citronnelle et aux crevettes');
