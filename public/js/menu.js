@@ -21,7 +21,7 @@
       //console.log(listeItem);
     }
 
-    //Regarde si une connexion est présente.
+    //*Regarde si une connexion est présente.
     let responseAutorisation = await fetch("/compte/connexion", {
       method: "GET",
       headers: {
@@ -29,7 +29,7 @@
       },
     });
 
-    //Si aucune connexion, cacher les bouttons ajouts.
+    //*Si aucune connexion, cacher les bouttons ajouts.
     if (responseAutorisation.status === 401) {
       $('.ajoutButton').hide();
     }
@@ -116,7 +116,6 @@
     let slicedHref = href.slice(1, href.length);
 
     $(href).on("show.bs.collapse", () => {
-      // do something…
       $(href).addClass("d-flex flex-wrap justify-content-around");
       $(`.card-header.${slicedHref}`)
         .find("i")
@@ -127,7 +126,6 @@
     });
 
     $(href).on("hidden.bs.collapse", () => {
-      // do something…
       $(href).removeClass("d-flex flex-wrap justify-content-around");
       $(`.card-header.${slicedHref}`)
         .find("i")
@@ -138,9 +136,6 @@
     });
   });
 
-  // ? Get les items du menu sur le serveur -> BDD
+  //* Get les items du menu sur le serveur -> BDD
   getItemServeur();
-
-
-  // some code…
 })();

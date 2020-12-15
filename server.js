@@ -223,7 +223,7 @@ app.post("/compte/connexion", async (request, response) => {
 //* Route pour la vérification d'une connexion.
 app.get("/compte/connexion", async (request, response) => {
   if (!request.session.courriel) {
-    response.sendStatus(401);
+    response.sendStatus(418);
   } else {
     let compte = {
       courriel: request.session.courriel,

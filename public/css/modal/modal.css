@@ -43,7 +43,7 @@
 
 
 
-.modal #modalPanierCol,
+.modal .modal-panier-col,
 .modal .card {
   background: rgba(61, 61, 61, 0.55);
 }
@@ -134,10 +134,6 @@
   
 }
 
-
-/* .modal #modalPanierResumeList {
-  border-top: 1px solid white;
-} */
 .modal-footer {
   border-top: none;
 }
